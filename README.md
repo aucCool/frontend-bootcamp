@@ -1,94 +1,95 @@
-# Frontend Bootcamp / Days in the Web
+# Frontend Bootcamp / Web'deki günler
 
-> 🚨🚨 This project is a work in progress! Issues and pull requests are encouraged. 🚨🚨
+> 🚨🚨 Bu proje devam eden bir çalışmadır! Sorunlar ve çekme istekleri teşvik edilir. 🚨🚨
 
-## Welcome
+## Hoş geldin
 
-In this two-day workshop you'll learn the basics of frontend development while building a working web app.
+Bu iki günlük atölyede, çalışan bir web uygulaması oluştururken ön uç geliştirmenin temellerini öğreneceksiniz.
 
-The first day provides an introduction to the fundamentals of the web: HTML, CSS and JavaScript. This is targeted at new and experienced developers alike. On the second day we'll dive into more advanced topics like TypeScript, state management, and testing. While the examples should be accessible to anyone, you'll get the most out of it if you have some prior experience with programming and web technologies.
+İlk gün, web'in temellerine bir giriş sağlar: HTML, CSS ve JavaScript. Bu, hem yeni hem de deneyimli geliştiricilere yöneliktir. İkinci gün TypeScript, durum yönetimi ve test gibi daha gelişmiş konulara dalacağız. Örnekler herkes tarafından erişilebilir olsa da, programlama ve web teknolojileri konusunda önceden deneyiminiz varsa, bundan en iyi şekilde yararlanacaksınız.
 
-## Getting set up
+## Kurulum
 
-### 1. Required software
+### 1. Gerekli yazılım
 
-Before starting, make sure your computer has up-to-date versions of the following installed:
+Başlamadan önce, bilgisayarınızda aşağıdakilerin güncel sürümlerinin kurulu olduğundan emin olun:
 
-- [Node/NPM](https://nodejs.org/en/) (choose the **LTS** option, which should be version 10)
+- [Node/NPM](https://nodejs.org/en/) (sürüm 10 olması gereken **LTS** seçeneğini seçin)
 - [Git](https://git-scm.com/downloads)
 - [Visual Studio Code](https://code.visualstudio.com)
-  - If using a Mac, also follow [these steps](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) to install the `code` terminal command.
-  - If you already had VS Code installed, check for updates!
-- React Developer Tools for [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+  - Bir Mac kullanıyorsanız, ayrıca takip edin [bu adımlar](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) terminal komutunu `code` yüklemek için.
+  - VS kodunu zaten yüklediyseniz, güncellemeleri kontrol edin!
+- [Chrome]için react Geliştirici Araçları(https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) ya da [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
 
-### 2. Installing and opening the project
+### 2. Projeyi yükleme ve açma
 
-- Open VS Code and then press ```ctrl + ` ``` (backtick, in top left corner of keyboard) to open the built-in terminal
-- Use the `cd` (change directory) command to find an appropriate place for your code
-- Type `git clone https://github.com/Microsoft/frontend-bootcamp.git` into the terminal to pull down a copy of the workshop code
-- Type `cd frontend-bootcamp` to change your current directory to the bootcamp folder
-- Type `npm install` to install all of the project dependencies
-- Type `code -r .` to open the bootcamp code in VS Code
-> If on a Mac, be sure you've followed [these steps](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) first to make the `code` command available.
+- Vs kodunu açın ve ardından yerleşik terminali açmak için `ctrl + ` " tuşlarına basın (klavyenin sol üst köşesindeki backtick)
 
-### 3. Run the "inner loop" build
+- Kodunuz için uygun bir yer bulmak için `cd` (dizini Değiştir) komutunu kullanın
+- Atölye kodunun bir kopyasını almak için terminale `git clone https://github.com/Microsoft/frontend-bootcamp.git` yazın
+- Geçerli dizini bootcamp klasörüne değiştirmek için `cd frontend-bootcamp` yazın
+- Tüm proje bağımlılıklarını kurmak için `npm install` yazın
+- VS Code'da bootcamp kodunu açmak için `code -r .` yazın
+>Mac kullanıyorsanız, takip ettiğinizden emin olun [bu adımlar](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) ilk önce `code` komutunu kullanılabilir hale getirmek için.
 
-At this point, your VS Code window should look something like this:
+### 3. "İç döngü" yapısını çalıştırın
+
+Bu noktada, VS Kodu pencereniz şöyle görünmelidir:
 
 <img src="https://user-images.githubusercontent.com/1434956/53654442-9c379400-3c02-11e9-8768-d19e092b606d.png" width=500 />
 
-To start the dev "inner loop," run:
+Dev "iç döngü"yü başlatmak için şunu çalıştırın:
 ```
 npm start
 ```
 
-This will load the site shown below.
+Bu, aşağıda gösterilen siteyi yükleyecektir.
 
 <img src="https://user-images.githubusercontent.com/1434956/53656239-88426100-3c07-11e9-8456-e3d958aa4def.png" width=500 />
 
-### 4. Lesson Structure
+### 4. Ders Yapısı
 
-1. Demos will either be via CodePen (Steps 1, 2 and 3) or done in the step folder. Follow the step README to walkthrough the demo.
+1. Demolar ya CodePen (Adım 1, 2 ve 3) ile olacak ya da adım klasöründe yapılacaktır. Demoyu izlemek için README adımını izleyin.
 
-2. Much like demos, exercises are done via CodePen or in the project step folders. These exercises will give you an opportunity to try what was demonstrated in the first step.
+2. Demolar gibi, alıştırmalar CodePen veya project step klasörlerinde yapılır. Bu alıştırmalar size ilk adımda gösterilenleri denemek için bir fırsat verecektir.
   
-## What to expect
+## Ne beklenir
 
-For each lesson, the presenter will walk through some demo code to teach core concepts about the topic. Don't worry about writing code at this point. Just follow along via the readmes linked below.
+Her ders için sunucu, konuyla ilgili temel kavramları öğretmek için bazı demo kodlarını gözden geçirecektir. Bu noktada kod yazma konusunda endişelenmeyin. Aşağıda bağlantısı verilen readmes aracılığıyla takip edin.
 
-Most lessons also have an exercise portion. Exercise instructions are usually found in the readme for each step's "exercise" folder.
+Çoğu dersin de bir egzersiz kısmı vardır. Egzersiz talimatları genellikle her adımın "exercise" klasörü içinde readme dosyasında bulunur.
 
-### Day one
+### Birinci gün
 
-Day one covers the basics of HTML, CSS and JavaScript, as well as an introduction to React and Typescript.
+Birinci gün, HTML, CSS ve JavaScript'in temellerinin yanı sıra React ve TypeScript'e giriş konularını kapsar.
 
-1. [Introduction to HTML](step1-01)
-2. [Introduction to CSS](step1-02)
-3. [Introduction JavaScript](step1-03)
-4. [Introduction to React](step1-04)
-5. [React Components](step1-05)
+1. [HTML'e Giriş](step1-01)
+2. [Css 'e Giriş](step1-02)
+3. [Java Script'e Giriş](step1-03)
+4. [React'a Giriş](step1-04)
+5. [React Bileşenleri](step1-05)
 6. [State-driven UI](step1-06)
 7. [Types and UI-driven state](step1-07)
 
-### Day two
+### 2. gün
 
-1. [TypeScript basics](step2-01)
-2. [UI Fabric component library](step2-02)
-3. [Theming and styling](step2-03)
-4. [React Context](step2-04)
-5. [Redux: Store](step2-05)
-6. [Redux: React binding](step2-06)
+1. [TypeScript temelleri](step2-01)
+2. [UI Fabric bileşen kitaplığı](step2-02)
+3. [Tema ve stil](step2-03)
+4. [Tepki Bağlamı](step2-04)
+5. [Redux: Mağaza](step2-05)
+6. [Redux: tepki bağlama](step2-06)
 
-### Bonus content
+### Bonus içerik
 
-* [Redux: Service calls](bonus-servicecalls)
-* [Testing with Jest](bonus-jest)
+* [Redux: Servis çağrıları](bonus-servicecalls)
+* [Jest ile test etme](bonus-jest)
 
-## Additional resources
+## Ek kaynaklar
 
-- [MDN Web Docs](https://developer.mozilla.org/en-US/)
-- [React Docs](https://reactjs.org/docs/getting-started.html)
-- [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
+- [MDN Web dokümanları](https://developer.mozilla.org/en-US/)
+- [React Dokümanları](https://reactjs.org/docs/getting-started.html)
+- [React'te Düşünme](https://reactjs.org/docs/thinking-in-react.html)
 
 ## Follow the authors!
 
