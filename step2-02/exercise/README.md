@@ -1,27 +1,29 @@
-# Step 2.2 - UI Fabric component library (Exercise)
+# Adım 2.2 - UI Fabric bileşen kitaplığı (Egzersiz)
+
 
 [Lessons](../../) | [Demo](../demo/)
 
-# Exercise 1: Getting familiar with the Fabric documentation site:
+# Egzersiz 1: Fabric dokümantasyon sitesine aşina olmak:
 
-Open the [documentation for DefaultButton](https://developer.microsoft.com/en-us/fabric/#/components/button). Use the sidebar to explore other available components.
 
-# Exercise 2: "Fabric"ize the TodoFooter.tsx
+[Documentation for DefaultButton](https://developer.microsoft.com/en-us/fabric/#/components/button).dosyasını açın mevcut diğer bileşenleri keşfetmek için kenar çubuğunu kullanın.
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 2 step 2 to see results.
+# Alıştırma 2: TodoFooter.tsx'i "Fabric"leştirin
 
-1. Open TSX file inside `exercise/src/components/TodoFooter.tsx`
-2. Follow the top TODO comment to import Stack, Text and DefaultButton components from Fabric
-3. Follow the TODO comment to:
+Zaten çalışan uygulamanız yoksa, `frontend-bootcamp` klasörünün kökünden `npm start` komutunu çalıştırarak başlatın. Sonuçları görmek için 2. gün 2. adımın altındaki "egzersiz" bağlantısına tıklayın.
 
-- replace `<footer>` with a `<Stack>`
-- replace `<span>` with a `<Text>`
-- replace `<button>` with a `<DefaultButton>`
+1. `exercise/src/components/TodoFooter.tsx` içindeki TSX dosyasını açın
+2. Yığın, Metin ve Default Button bileşenlerini Fabric'ten içe aktarmak için en iyi TODO yorumunu izleyin
+3. TODO yorumunu takip edin:
 
-## Bonus Exercise
+- `<footer>` yerine `<Stack>` yazın
+- `<span>` yerine `<Text>` yazın
+- `<button>` yerine  `<DefaultButton>` yazın
 
-GO WILD! There are so many components in the Fabric library! Try to put some components in the exercise component files. Try out these concepts mentioned earlier:
+## Bonus Egzersiz
 
-- Importing components from `office-ui-fabric-react`
-- Customizing component with props found on the documentation site
-- Customize component with render props (these will be called onRender\_\_\_ or similar)
+VAHŞİLEŞ! Fabric kütüphanesinde o kadar çok bileşen var ki! Egzersiz bileşen dosyalarına bazı bileşenleri koymayı deneyin. Daha önce bahsedilen bu kavramları deneyin:
+
+- `Office-uı-fabric-react` bileşenlerinden içe aktarma
+- Dokümantasyon sitesinde bulunan sahne ile bileşeni özelleştirme
+- Bileşeni render sahneleri ile özelleştirin (bunlar onRender\_\_\_ veya benzeri olarak adlandırılacaktır)
