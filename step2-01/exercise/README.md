@@ -1,46 +1,46 @@
-# Step 2.1 - Introduction to TypeScript (Exercise)
+# Adım 2.1 - TypeScript'e Giriş (Egzersiz)
 
-[Lessons](../../) | [Demo](../demo/) | [Final](../final/)
+[Dersler](../../) | [Demo](../demo/) | [Final](../final/)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder.
+Zaten çalışan uygulamanız yoksa, `frontend-bootcamp` klasörünün kökünden `npm start` komutunu çalıştırarak başlatın.
 
-Exercises will be completed under this step's `exercise/src` folder unless otherwise noted. You'll also want to open the [Step2-01 exercise page](http://localhost:8080/step2-01/exercise/) to see the results as you work.
+Alıştırmalar, aksi belirtilmedikçe bu adımın `exercise/src` klasörü altında tamamlanacaktır. Çalışırken sonuçları görmek için [Step2-01 exercise sayfasını](http://localhost:8080/step2-01/exercise/) da açmak isteyeceksiniz.
 
-## Modules
+## Modüller
 
-1. Open the file `exercise/src/fibonacci.ts` in VS Code
+1. VS Kodunda `exercise/src/fibonacci.ts` dosyasını açın
 
-2. Inside this file, write a function called `fib(n)` that takes in a number and returns the `n`-th Fibonacci number (be sure the specify the type of `n`).
+2. Bu dosyanın içine, bir sayı alan ve `n`inci Fibonacci sayısını döndüren`fib(n)` adlı bir işlev yazın (`n` türünü belirttiğinizden emin olun).
 
-> HINT: `function fib(n: number) { return n <= 1 ? n : fib(n - 1) + fib(n - 2); }`
+> İPUCU: `function fib(n: number) { return n <= 1 ? n : fib(n - 1) + fib(n - 2); }`
 
-3. Export `fib(n)` as a **named export**
+3. `fib(n)`yi **adlandırılmış bir dışa aktarma** olarak dışa aktarın
 
-4. Export a const variable `FibConst` as a **default export**
+4. `FibConst` sabit değişkenini **varsayılan dışa aktarma** olarak dışa aktarın
 
-5. Inside `index.ts` in the same folder, import both `fib` and `FibConst`, and use the built-in `console.log()` function to log the result of `fib(FibConst)`.
+5. Aynı klasördeki `index.ts` içinde, hem `fib` hem de `Fib Const` dosyasını içe aktarın ve `fib(Fib Const)` sonucunu kaydetmek için yerleşik `console.log()` işlevini kullanın.
 
-## Types and interfaces
+## Türler ve arayüzler
 
-Inside `exercise/src/index.ts`:
+İçinde `exercise/src/index.ts`:
 
-1. Add a type alias for string union type describing the states of Red-Green-Yellow traffic light: `type TrafficLight = ???`
+1. Kırmızı-Yeşil-Sarı trafik ışığının durumlarını açıklayan dize birliği türü için bir tür takma adı ekleyin: `type TrafficLight = ???`
 
-2. Describe a type of car with an interface: `interface Car { ... }` complete with `wheels`, `color`, `make`, `model`
+2. Bir arayüze sahip bir araba türünü tanımlayın: 'arayüz araba { ... } `tekerlekler`, `renk`, `marka`, `model`ile tamamlayın
 
-3. Create a valid car instance and log it using `console.log()`: `const myCar: Car = { ??? }`;
+3. Geçerli bir araba örneği oluşturun ve bunu `console.log()` kullanarak oturum açın: `const myCar: Car = { ??? }`;
 
-## Generics
+## Jenerik
 
-Inside `exercise/src/stack.ts`, create a generic class for a `Stack<T>` complete with a typed `pop()` and `push()` methods.
+`exercise/src/stack.ts` içinde, yazılan `pop()` ve `push()` yöntemleriyle tamamlanmış bir `Stack<T>` için genel bir sınıf oluşturun
 
-> Hint: the JavaScript array already has `push()` and `pop()` implemented for you. That can be your backing store.
+> İpucu: JavaScript dizisinde sizin için zaten `push()` ve `pop()` uygulandı. Bu sizin destek mağazanız olabilir.
 
-In `exercise/src/index.ts`, create a `Stack<number>` and use `console.log()` to demonstrate its functionality.
+`exercise/src/index.ts` içinde bir `Steak<number>` oluşturun ve işlevselliğini göstermek için `console.log()`u kullanın.
 
-## Spread and destructuring
+## Yayılma ve yok etme
 
-1. Note the following code in index.ts:
+1. index.ts dosyasında aşağıdaki kodu not edin:
 
 ```ts
 const obj1 = {
@@ -57,13 +57,13 @@ const obj2 = {
 };
 ```
 
-2. Now create a one-liner using the spread syntax `{...x, ...y}` to create a new variable `megaObj` that combines these two objects.
+2. Şimdi, bu iki nesneyi birleştiren yeni bir `megaObj` değişkeni oluşturmak için `{...x, ...y}` spread sözdizimini kullanarak bir tek-liner oluşturun.
 
-3. Use the destructuring syntax to retrieve the values for `{first, second, catcher}` from `megaObj`.
+3. `megaObj` öğesinden `{first, second, catcher}` değerlerini almak için yok etme sözdizimini kullanın.
 
-## Async / await
+## Zaman uyumsuz / bekliyor
 
-Note the following code in index.ts:
+index.ts dosyasında aşağıdaki kodu not edin:
 
 ```ts
 function makePromise() {
@@ -71,6 +71,6 @@ function makePromise() {
 }
 ```
 
-1. Call `makePromise()` with the `await` syntax and log the results.
+1. `Await` sözdizimi ile `makePromise ()` öğesini çağırın ve sonuçları günlüğe kaydedin.
 
-2. Create a new function that uses the `async` keyword. Inside the function, make an `await` call to `makePromise()` and return the results.
+2. `async` anahtar sözcüğünü kullanan yeni bir işlev oluşturun. Fonksiyonun içinde, `makePromise()` için bir `await` çağrısı yapın ve sonuçları döndürün.
