@@ -1,88 +1,94 @@
-# Frontend Bootcamp / Days in the Web
+# Frontend Bootcamp / Zile petrecute pe WEB
 
-> 🚨🚨 This project is a work in progress! Issues and pull requests are encouraged. 🚨🚨
+> 🚨🚨 Asupra acestui proiect se lucrează! Întrebările și cererile de angajare sunt încurajate. 🚨🚨
 
-## Welcome
+## Bine ați venit
 
-In this two-day workshop you'll learn the basics of frontend development while building a working web app.
+În acest atelier desfășurat în două zile vei învăța bazele inițierii primei pagini în timp ce
+construiești o aplicație web funcțională.
+În prima zi de prevede o introducere în lumea termenilor fundamentali ai unei pagini web: 
+HTML, CSS și JavaScript. Această temă este adresată atât dezvoltatorilor începători cât și
+celor experimentați. În cea de a doua zi ne vom scufunda în teme mai avansate precum
+TypeScript, managementul statului și testarea. În timp ce exemplele vor fi disponibile pentru
+oricine, vei avea beneficii maxime dacă ai experiență anterioară în programare și tehnologii
+web.
 
-The first day provides an introduction to the fundamentals of the web: HTML, CSS and JavaScript. This is targeted at new and experienced developers alike. On the second day we'll dive into more advanced topics like TypeScript, state management, and testing. While the examples should be accessible to anyone, you'll get the most out of it if you have some prior experience with programming and web technologies.
+## Înființarea //TODO Irina - cred ca e necesar alt cuvint
 
-## Getting set up
+### 1. Software-ul necesar
 
-### 1. Required software
-
-Before starting, make sure your computer has up-to-date versions of the following installed:
-
-- [Node/NPM](https://nodejs.org/en/) (choose the **LTS** option, which should be version 10)
+Înainte de a începe, asigură-te că calculatorul tău versiunile updatate ale următoarelor
+aplicații:
+- [Node/NPM](https://nodejs.org/en/) (alege opțiunea LTS)
 - [Git](https://git-scm.com/downloads)
 - [Visual Studio Code](https://code.visualstudio.com)
   - If using a Mac, also follow [these steps](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) to install the `code` terminal command.
   - If you already had VS Code installed, check for updates!
 - React Developer Tools for [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
 
-### 2. Installing and opening the project
+### 2. Instalarea și deschiderea proiectului
 
-- Open VS Code and then press ```ctrl + ` ``` (backtick, in top left corner of keyboard) to open the built-in terminal
-- Use the `cd` (change directory) command to find an appropriate place for your code
-- Type `git clone https://github.com/Microsoft/frontend-bootcamp.git` into the terminal to pull down a copy of the workshop code
-- Type `cd frontend-bootcamp` to change your current directory to the bootcamp folder
-- Type `npm install` to install all of the project dependencies
-- Type `code -r .` to open the bootcamp code in VS Code
+- Deschide VS Code și apoi apasă ```ctrl + ` ``` (backtick, tasta înapoi, în colțul de stînga sus al tastaturii) pentru a deschide built-in terminal
+- Folosește comanda `cd` (change directory - schimb directoriu) ca să plasezi codul tău
+- Tastează `git clone https://github.com/aucCool/frontend-bootcamp.git` în terminal pentru a trage o copie al codului de lucru
+- Tastează `cd frontend-bootcamp` to change your current directory to the bootcamp folder
+- Tastează `npm install` pentru a instala toate dependențele 
+- Tastează `code -r .` pentru a deschide codul sursă in VS Code
 > If on a Mac, be sure you've followed [these steps](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) first to make the `code` command available.
 
 ### 3. Run the "inner loop" build
 
-At this point, your VS Code window should look something like this:
+Acum, fereastra VS Code ar trebui să arate astfel pe monitor:
 
 <img src="https://user-images.githubusercontent.com/1434956/53654442-9c379400-3c02-11e9-8768-d19e092b606d.png" width=500 />
 
-To start the dev "inner loop," run:
+Pentru a începe executia proiectului, parcurge următorii pași:
 ```
 npm start
 ```
 
-This will load the site shown below.
+Acesta va încărca site-ul prezentat mai jos.
 
 <img src="https://user-images.githubusercontent.com/1434956/53656239-88426100-3c07-11e9-8456-e3d958aa4def.png" width=500 />
 
-### 4. Lesson Structure
+### 4. Structurarea lecțiilor
 
-1. Demos will either be via CodePen (Steps 1, 2 and 3) or done in the step folder. Follow the step README to walkthrough the demo.
+1. Demonstrațiile vor fi realizate fie prin CodePen (pașii 1, 2 și 3), fie în folderul cu pași.  Urmați pasul README pentru a parcurge demonstrația.
 
-2. Much like demos, exercises are done via CodePen or in the project step folders. These exercises will give you an opportunity to try what was demonstrated in the first step.
+2. La fel ca și demonstrațiile, exercițiile se fac prin CodePen sau în folderele cu pași de proiect. Aceste exerciții vă vor oferi posibilitatea de a încerca ceea ce a fost demonstrat în primul pas.
   
-## What to expect
+## La ce să vă așteptați
 
-For each lesson, the presenter will walk through some demo code to teach core concepts about the topic. Don't worry about writing code at this point. Just follow along via the readmes linked below.
+Pentru fiecare lecție, prezentatorul va parcurge câteva coduri demonstrative pentru a preda conceptele de bază ale subiectului. Nu vă faceți griji în privința scrierii codului în acest moment. Doar urmăriți pașii de-a lungul link-urilor de mai jos.
 
-Most lessons also have an exercise portion. Exercise instructions are usually found in the readme for each step's "exercise" folder.
+De asemenea, cele mai multe lecții au partea lor de exerciții. Instrucțiunile exercițiilor se găsesc, de obicei, în folderul cu “exercise” pentru fiecare pas în parte.
 
-### Day one
 
-Day one covers the basics of HTML, CSS and JavaScript, as well as an introduction to React and Typescript.
+### Prima zi
 
-1. [Introduction to HTML](step1-01)
-2. [Introduction to CSS](step1-02)
-3. [Introduction JavaScript](step1-03)
-4. [Introduction to React](step1-04)
-5. [React Components](step1-05)
-6. [State-driven UI](step1-06)
-7. [Types and UI-driven state](step1-07)
+Prima zi acoperă bazele următoarelor programe HTML, CSS și JavaScript, as well as an introduction to React and Typescript.
 
-### Day two
+1. [Introducere în HTML](step1-01)
+2. [Introducere în CSS](step1-02)
+3. [Introducere în JavaScript](step1-03)
+4. [Introducere în React](step1-04)
+5. [Componentele React](step1-05)
+6. [Moduri de desfășurare UI](step1-06) //TODO Irina - nu e corect
+7. [Tipuri și UI- moduri de desfășurare ](step1-07) //TODO Irina - nu e corect
 
-1. [TypeScript basics](step2-01)
-2. [UI Fabric component library](step2-02)
-3. [Theming and styling](step2-03)
+### A doua zi
+
+1. [Bazele TypeScript](step2-01)
+2. [Librăria de componente UI Fabric](step2-02)
+3. [Teme și stiluri](step2-03)
 4. [React Context](step2-04)
 5. [Redux: Store](step2-05)
 6. [Redux: React binding](step2-06)
 
-### Bonus content
+### Conținut bonus
 
-* [Redux: Service calls](bonus-servicecalls)
-* [Testing with Jest](bonus-jest)
+* [Redux: Apeluri la servicii](bonus-servicecalls)
+* [Testare cu Jest](bonus-jest)
 
 ## Additional resources
 
