@@ -1,94 +1,93 @@
-# Frontend Bootcamp / Days in the Web
+# Frontend Bootcamp / Дни в Интернете
 
 > 🚨🚨 This project is a work in progress! Issues and pull requests are encouraged. 🚨🚨
 
-## Welcome
+## Добро пожаловать
 
-In this two-day workshop you'll learn the basics of frontend development while building a working web app.
+В данном двухдневном семинаре вы изучите основы разработки интерфейсов при создании рабочего веб-приложения. Первый день дает представление об основах Интернета: HTML, CSS и JavaScript. Это ориентировано как на новых, так и на опытных разработчиков. На второй день мы углубимся в более продвинутые темы, такие как TypeScript, управление состоянием и тестирование. Несмотря на это, примеры должны быть доступны для каждого и вы получите максимальную отдачу от них, при этом, если у вас есть некий предыдущий опыт в программировании и веб-технологиях.
 
-The first day provides an introduction to the fundamentals of the web: HTML, CSS and JavaScript. This is targeted at new and experienced developers alike. On the second day we'll dive into more advanced topics like TypeScript, state management, and testing. While the examples should be accessible to anyone, you'll get the most out of it if you have some prior experience with programming and web technologies.
+## Подготовка
 
-## Getting set up
+### 1. Необходимое программное обеспечение
 
-### 1. Required software
+Перед запуском убедитесь, что на вашем компьютере установлены последние версии нижеследующего:
 
-Before starting, make sure your computer has up-to-date versions of the following installed:
-
-- [Node/NPM](https://nodejs.org/en/) (choose the **LTS** option, which should be version 10)
+- [Node/NPM](https://nodejs.org/en/) (выберите LTS **LTS** опцию)
 - [Git](https://git-scm.com/downloads)
 - [Visual Studio Code](https://code.visualstudio.com)
-  - If using a Mac, also follow [these steps](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) to install the `code` terminal command.
-  - If you already had VS Code installed, check for updates!
-- React Developer Tools for [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+  - Если вы используете гаджет Mac, также выполните [следующие действия](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) для установки команды `code`.
+  - IЕсли у вас уже был установлен VS Code, проверьте наличие обновлений!
+- React Developer Tools для [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) или [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
 
-### 2. Installing and opening the project
+### 2. Установка и открытие проекта
 
-- Open VS Code and then press ```ctrl + ` ``` (backtick, in top left corner of keyboard) to open the built-in terminal
-- Use the `cd` (change directory) command to find an appropriate place for your code
-- Type `git clone https://github.com/Microsoft/frontend-bootcamp.git` into the terminal to pull down a copy of the workshop code
-- Type `cd frontend-bootcamp` to change your current directory to the bootcamp folder
-- Type `npm install` to install all of the project dependencies
-- Type `code -r .` to open the bootcamp code in VS Code
-> If on a Mac, be sure you've followed [these steps](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) first to make the `code` command available.
+- Откройте VS Code, а затем нажмите ```ctrl + ` ``` (отступ, в левом верхнем углу клавиатуры), чтобы открыть встроенный терминал.
+- Используйте команду `cd` (изменить папку) чтобы найти подходящее место для вашего кода.
+- Введите `git clone https://github.com/Microsoft/frontend-bootcamp.git` в терминал, чтобы получить копию кода мастерской.
+- Введите `cd frontend-bootcamp` чтобы изменить текущий указатель на папку `bootcamp` 
+- Введите `npm install` чтобы установить все зависящее от проекта.
+- Введите `code -r .` чтобы открыть код начальной загрузки в VS Code.
+> Если вы работаете на компьютере Mac, убедитесь, что сначала выполнили [данные действия](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line),
+чтобы сделать команду `code` доступной.
 
-### 3. Run the "inner loop" build
+### 3. Запустите сборку "внутренний цикл"
 
-At this point, your VS Code window should look something like this:
+На данный момент ваше окно VS-кода должно выглядеть примерно так:
 
 <img src="https://user-images.githubusercontent.com/1434956/53654442-9c379400-3c02-11e9-8768-d19e092b606d.png" width=500 />
 
-To start the dev "inner loop," run:
+Чтобы запустить "внутренний цикл разработки", выполните:
 ```
 npm start
 ```
 
-This will load the site shown below.
+Это приведет к загрузке сайта, показанного ниже.
 
 <img src="https://user-images.githubusercontent.com/1434956/53656239-88426100-3c07-11e9-8456-e3d958aa4def.png" width=500 />
 
-### 4. Lesson Structure
+### 4. Структура Урока
 
-1. Demos will either be via CodePen (Steps 1, 2 and 3) or done in the step folder. Follow the step README to walkthrough the demo.
+1. Демонстрации будут либо через CodePen (шаги 1, 2 и 3), либо выполнены в папке `step`. Следуйте шагу README, чтобы осмотреть демонстрацию.
 
-2. Much like demos, exercises are done via CodePen or in the project step folders. These exercises will give you an opportunity to try what was demonstrated in the first step.
+2. Как и демо-версии, упражнения выполняются с помощью CodePen или в папках шагов проекта. Эти упражнения дадут вам возможность попробовать то, что было продемонстрировано на первом шаге.
   
-## What to expect
+## Чего ожидать?
 
-For each lesson, the presenter will walk through some demo code to teach core concepts about the topic. Don't worry about writing code at this point. Just follow along via the readmes linked below.
+Для каждого урока докладчик будет проходить через некий демонстрационный код, чтобы обучиться основным понятиям по теме. На этом этапе не беспокойтесь о написании кода. Просто следуйте инструкциям, приведенным ниже.
 
-Most lessons also have an exercise portion. Exercise instructions are usually found in the readme for each step's "exercise" folder.
+Большинство уроков также содержат часть упражнений. Инструкции по упражнениям обычно находятся в файле `readme` для папки `excersise` каждого шага.
 
-### Day one
+### День первый
 
-Day one covers the basics of HTML, CSS and JavaScript, as well as an introduction to React and Typescript.
+Первый день посвящен основам HTML, CSS и JavaScript, а также с введением понятий React and Typescript.
 
-1. [Introduction to HTML](step1-01)
-2. [Introduction to CSS](step1-02)
-3. [Introduction JavaScript](step1-03)
-4. [Introduction to React](step1-04)
-5. [React Components](step1-05)
-6. [State-driven UI](step1-06)
-7. [Types and UI-driven state](step1-07)
+1. [Введение о HTML](step1-01)
+2. [Введение о CSS](step1-02)
+3. [Введение о JavaScript](step1-03)
+4. [Введение о React](step1-04)
+5. [Компоненты React](step1-05)
+6. [State-driven UI](step1-06) //TODO Lolita - we need to find a better translation "Управляемый пользовательский интерфейс" is not right
+7. [Types and UI-driven state](step1-07) //TODO Lolita - same here for "Типы и состояние, управляемые пользовательским интерфейсом"
 
-### Day two
+### День второй
 
-1. [TypeScript basics](step2-01)
-2. [UI Fabric component library](step2-02)
-3. [Theming and styling](step2-03)
-4. [React Context](step2-04)
-5. [Redux: Store](step2-05)
-6. [Redux: React binding](step2-06)
+1. [Базы TypeScript](step2-01)
+2. [Библиотека компонентов UI Fabric](step2-02)
+3. [Тематизация и укладка(step2-03)
+4. [Контекст React](step2-04)
+5. [Redux: Store](step2-05) //TODO Lolita - we need to find a better translation
+6. [Redux: React binding](step2-06) //TODO Lolita - we need to find a better translation
 
-### Bonus content
+### Бонусный контент
 
-* [Redux: Service calls](bonus-servicecalls)
-* [Testing with Jest](bonus-jest)
+* [Redux: Вызовы служб](bonus-servicecalls)
+* [Тестирование с Jest](bonus-jest)
 
-## Additional resources
+## Дополнительные ресурсы
 
-- [MDN Web Docs](https://developer.mozilla.org/en-US/)
-- [React Docs](https://reactjs.org/docs/getting-started.html)
-- [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
+- [Веб-документы MDN](https://developer.mozilla.org/en-US/) //TODO Lolita
+- [React Docs](https://reactjs.org/docs/getting-started.html) //TODO Lolita
+- [Thinking in React](https://reactjs.org/docs/thinking-in-react.html) //TODO Lolita
 
 ## Follow the authors!
 
