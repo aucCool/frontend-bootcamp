@@ -1,27 +1,27 @@
-# Step 2.4 - React Context (Exercise)
+# Adım 2.4-Tepki Bağlamı (Egzersiz)
 
 [Lessons](../../) | [Demo](../demo/)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 2 step 4 to see results.
+Zaten çalışan uygulamanız yoksa, `frontend-bootcamp` klasörünün kökünden `npm start` komutunu çalıştırarak başlatın. Sonuçları görmek için 2. gün 4. adımın altındaki `exercise` bağlantısını tıklayın.
 
-## TodoContext.Provider component
+## Todo Context.Provider bileşeni
 
-1. Open `exercise/src/components/TodoApp.tsx`
+1. `exercise/src/components/TodoApp.tsx` dosyasını açın
 
-2. Uncomment the missing functions inside the value prop
+2. Değer prop içindeki eksik işlevlerin yorumunu kaldırın
 
-## TodoFooter: context inside functional component
+## Todofooter: işlevsel bileşen içindeki bağlam
 
-1. Open `exercise/src/components/TodoFooter.tsx`
+1. `exercise/src/components/TodoFooter.tsx` dosyasını açın
 
-2. Use `useContext` to access the `TodoContext` and replace the two constants with values from the context
+2. `TodoContext`e erişmek için `useContext`i kullanın ve iki sabiti bağlamdan değerlerle değiştirin
 
-## TodoHeader: context inside class component
+## TodoHeader: sınıf bileşeni içindeki bağlam
 
-1. Open `exercise/src/components/TodoHeader.tsx`
+1. `exercise/src/components/TodoHeader.tsx` dosyasını açın
 
-2. Replace `onAdd` with a real implementation using the `this.context` object
+2. `this.context` nesnesini kullanarak `onAdd` öğesini gerçek bir uygulamayla değiştirin
 
-3. Replace `onFilter` with a real implementation using the `this.context` object
+3. `onFilter`ı, `this.context` nesnesini kullanarak gerçek bir uygulama ile değiştirin.
 
-4. Be sure to set the `contextType` of the TodoHeader component
+4. TodoHeader bileşeninin `contextType` değerini ayarladığınızdan emin olun
