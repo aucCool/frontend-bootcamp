@@ -1,21 +1,21 @@
-# Step 2.6 - Redux: React binding (Exercise)
+# Adım 2.6 - Redux: Tepki bağlama (Egzersiz)
 
 [Lessons](../../) | [Demo](../demo/)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 2 step 6 to see results.
+Zaten çalışan uygulamanız yoksa, `frontend-bootcamp` klasörünün kökünden `npm start` komutunu çalıştırarak başlatın. Sonuçları görmek için 2. gün 6. adımın altındaki "egzersiz" bağlantısını tıklayın.
 
-At the beginning of this exercise, the "Add" and "Clear Completed" buttons do not work. We'll be fixing that in this step!
+Bu alıştırmanın başında "Ekle" ve "Tamamlananları Temizle" düğmeleri çalışmıyor. Bu adımda bunu düzelteceğiz!
 
-1. Open `exercise/src/index.tsx` and wrap `<TodoApp>` with `<Provider>` as instructed in the comment
+1. `exercise/src/index.tsx` dosyasını açın ve yorumda belirtildiği gibi `<TodoApp>` dosyasını `<Provider>` ile sarın
 
-2. Open `exercise/src/components/TodoFooter.tsx` and erase the "nullable" type modifier (the `?`) in the interface definition of `TodoFooterProps`
+2. `exercise/src/components/TodoFooter.tsx` dosyasını açın ve `TodoFooterProps` arabirim tanımındaki "nullable" tür değiştiricisini (`?`) silin
 
-3. Uncomment the bottom bits of code and fill in `connect()` arguments - feel free to use `TodoListItem.tsx` as a guide
+3. Kodun alt bitlerini kaldırın ve `connect()` argümanlarını doldurun - `TodoListItem.tsx`i kılavuz olarak kullanmaktan çekinmeyin
 
-4. Repeat steps 2, 3 for the `TodoHeader.tsx` file
+4. `TodoHeader.tsx` dosyası için 2, 3 numaralı adımları tekrarlayın
 
-## Bonus exercise
+## Bonus egzersiz
 
-For further reading, go here to learn more about the `mergeProps` and `options` parameters to `connect()`:
+Daha fazla okumak için, `connect()` , `mergeProps` ve `options` parametreleri hakkında daha fazla bilgi edinmek için buraya gidin:
 
 https://react-redux.js.org/api/connect
