@@ -13,7 +13,7 @@ TypeScript, managementul statului și testarea. În timp ce exemplele vor fi dis
 oricine, vei avea beneficii maxime dacă ai experiență anterioară în programare și tehnologii
 web.
 
-## Înființarea //TODO Irina - cred ca e necesar alt cuvint
+## Înființarea //TODO Irina - cred ca sunt necesare alte cuvinte
 
 ### 1. Software-ul necesar
 
