@@ -2,7 +2,7 @@
 
 [Dersler](../../) | [Demo](../demo/) | [Final](../final/)
 
-Zaten çalışan uygulamanız yoksa, `frontend-bootcamp` klasörünün kökünden `npm start` komutunu çalıştırarak başlatın.
+Hâlâ çalışan uygulamanız yoksa, `frontend-bootcamp` klasörünün kökünden `npm start` komutunu çalıştırarak başlatın.
 
 Alıştırmalar, aksi belirtilmedikçe bu adımın `exercise/src` klasörü altında tamamlanacaktır. Çalışırken sonuçları görmek için [Step2-01 exercise sayfasını](http://localhost:8080/step2-01/exercise/) da açmak isteyeceksiniz.
 
@@ -10,7 +10,7 @@ Alıştırmalar, aksi belirtilmedikçe bu adımın `exercise/src` klasörü alt�
 
 1. VS Kodunda `exercise/src/fibonacci.ts` dosyasını açın
 
-2. Bu dosyanın içine, bir sayı alan ve `n`inci Fibonacci sayısını döndüren`fib(n)` adlı bir işlev yazın (`n` türünü belirttiğinizden emin olun).
+2. Bu dosyanın içine, bir sayı alan ve `n`inci Fibonacci sayısını döndüren`fib(n)` adlı bir işlev yazın (`n`) türünü belirttiğinizden emin olun.
 
 > İPUCU: `function fib(n: number) { return n <= 1 ? n : fib(n - 1) + fib(n - 2); }`
 
@@ -20,7 +20,7 @@ Alıştırmalar, aksi belirtilmedikçe bu adımın `exercise/src` klasörü alt�
 
 5. Aynı klasördeki `index.ts` içinde, hem `fib` hem de `Fib Const` dosyasını içe aktarın ve `fib(Fib Const)` sonucunu kaydetmek için yerleşik `console.log()` işlevini kullanın.
 
-## Türler ve arayüzler
+## Türler ve Arayüzler
 
 İçinde `exercise/src/index.ts`:
 
@@ -38,7 +38,7 @@ Alıştırmalar, aksi belirtilmedikçe bu adımın `exercise/src` klasörü alt�
 
 `exercise/src/index.ts` içinde bir `Steak<number>` oluşturun ve işlevselliğini göstermek için `console.log()`u kullanın.
 
-## Yayılma ve yok etme
+## Yayılma ve Yok Etme
 
 1. index.ts dosyasında aşağıdaki kodu not edin:
 
@@ -61,7 +61,7 @@ const obj2 = {
 
 3. `megaObj` öğesinden `{first, second, catcher}` değerlerini almak için yok etme sözdizimini kullanın.
 
-## Zaman uyumsuz / bekliyor
+## Zaman Uyumsuz / Bekliyor
 
 index.ts dosyasında aşağıdaki kodu not edin:
 
