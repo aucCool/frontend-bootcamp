@@ -2,9 +2,9 @@
 
 [Lessons](../../) | [Demo](../demo/)
 
-Zaten çalışan uygulamanız yoksa, `frontend-bootcamp` klasörünün kökünden `npm start` komutunu çalıştırarak başlatın. Sonuçları görmek için 2. gün 3. adımın altındaki "egzersiz" bağlantısını tıklayın.
+Hâlâ çalışan uygulamanız yoksa, `frontend-bootcamp` klasörünün kökünden `npm start` komutunu çalıştırarak başlatın. Sonuçları görmek için 2. gün 3. adımın altındaki "egzersiz" bağlantısını tıklayın.
 
-## Fabric temalarını uygulama
+## Fabric Temalarını Uygulama
 
 Altındaki Todo Uygulaması içindeki UI Fabric paketlerinden önceden tanımlanmış bazı temaları uygulamayı deneyin. `exercise/src/components/TodoApp.tsx`. Bunu değiştirerek yapın:
 
@@ -18,7 +18,7 @@ with:
 import { TeamsCustomizations } from '@uifabric/theme-samples';
 ```
 
-## Özelleştirilmiş temaları uygulama
+## Özelleştirilmiş Temaları Uygulama
 
 1. [Theme generator] kullanarak kendi temanızı oluşturun(https://developer.microsoft.com/en-us/fabric#/styles/themegenerator) ve oluşturulan kodu kopyalayın.
 
@@ -28,21 +28,21 @@ import { TeamsCustomizations } from '@uifabric/theme-samples';
 
 4. Değerlerle oynayın ve `ITheme` türünün daha fazla özelliğini keşfetmek için VS Kodunun zekasını kullanın.
 
-## Bir Fabric kontrol örneğini özelleştirme
+## Bir Fabric Kontrol Örneğini Özelleştirme
 
-1. `exercise/src/components/TodoFooter.tsx` dosyasını açın
+1. `exercise/src/components/TodoFooter.tsx` dosyasını açın.
 
-2. `<DefaultButton>` öğesini bulun ve bir `styles` desteği ekleyin
+2. `<DefaultButton>` öğesini bulun ve bir `styles` desteği ekleyin.
 
-3. Bunu bir styles nesnesiyle özelleştirmeye çalışın (Intellisense of VS Code'un özelleştirmek için ne kullanabileceğiniz konusunda size rehberlik etmesine izin verin)
+3. Bunu bir styles nesnesiyle özelleştirmeye çalışın (Intellisense of VS Code'un özelleştirmek için ne kullanabileceğiniz konusunda size rehberlik etmesine izin verin.)
 
-4. Bunu bir styles işleviyle özelleştirmeyi deneyin
+4. Bunu bir styles işleviyle özelleştirmeyi deneyin.
 
 ## `MergeStyles`ile CSS-in-JS
 
 Demoda belirtildiği gibi, bu, Fabric dışında da çalışan gelişmiş bir yaklaşımdır. Bu yaklaşımı genellikle Fabric tabanlı bir uygulamada kullanmazsınız.
 
-1. `mergeStyles` kullanarak bir class name oluşturmayı deneyin ve bunu `TodoApp` içinde bir `className` desteği olarak kullanın
+1. `mergeStyles` kullanarak bir class name oluşturmayı deneyin ve bunu `TodoApp` içinde bir `className` desteği olarak kullanın.
 
 ```jsx
 import { mergeStyles } from 'office-ui-fabric-react';
@@ -57,4 +57,4 @@ const className = mergeStyles({
 });
 ```
 
-2. Birkaç bileşene ekstra dolgu vermeyi deneyin
+2. Birkaç bileşene ekstra dolgu vermeyi deneyin.
