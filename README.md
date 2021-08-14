@@ -2,7 +2,7 @@
 
 > 🚨🚨 Bu proje devam eden bir çalışmadır! Sorunlar ve çekme istekleri teşvik edilir. 🚨🚨
 
-## Hoş geldin
+## Hoş Geldin
 
 Bu iki günlük atölyede, çalışan bir web uygulaması oluştururken ön uç geliştirmenin temellerini öğreneceksiniz.
 
@@ -10,29 +10,29 @@ Bu iki günlük atölyede, çalışan bir web uygulaması oluştururken ön uç 
 
 ## Kurulum
 
-### 1. Gerekli yazılım
+### 1. Gerekli Yazılım
 
 Başlamadan önce, bilgisayarınızda aşağıdakilerin güncel sürümlerinin kurulu olduğundan emin olun:
 
 - [Node/NPM](https://nodejs.org/en/) (sürüm 10 olması gereken **LTS** seçeneğini seçin)
 - [Git](https://git-scm.com/downloads)
 - [Visual Studio Code](https://code.visualstudio.com)
-  - Bir Mac kullanıyorsanız, ayrıca takip edin [bu adımlar](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) terminal komutunu `code` yüklemek için.
+  - Bir Mac kullanıyorsanız,terminal komutunu `code` yüklemek için ayrıca[bu adımları](https://https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) takip edin.
   - VS kodunu zaten yüklediyseniz, güncellemeleri kontrol edin!
 - [Chrome]için react Geliştirici Araçları(https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) ya da [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
 
-### 2. Projeyi yükleme ve açma
+### 2. Projeyi Yükleme ve Açma
 
-- Vs kodunu açın ve ardından yerleşik terminali açmak için `ctrl + ` " tuşlarına basın (klavyenin sol üst köşesindeki backtick)
+- Vs kodunu açın ve ardından yerleşik terminali açmak için `ctrl + ` " tuşlarına basın (klavyenin sol üst köşesindeki backtick.)
 
 - Kodunuz için uygun bir yer bulmak için `cd` (dizini Değiştir) komutunu kullanın
-- Atölye kodunun bir kopyasını almak için terminale `git clone https://github.com/Microsoft/frontend-bootcamp.git` yazın
-- Geçerli dizini bootcamp klasörüne değiştirmek için `cd frontend-bootcamp` yazın
-- Tüm proje bağımlılıklarını kurmak için `npm install` yazın
-- VS Code'da bootcamp kodunu açmak için `code -r .` yazın
+- Atölye kodunun bir kopyasını almak için terminale `git clone https://github.com/Microsoft/frontend-bootcamp.git` yazın.
+- Geçerli dizini bootcamp klasörüne değiştirmek için `cd frontend-bootcamp` yazın.
+- Tüm proje bağımlılıklarını kurmak için `npm install` yazın.
+- VS Code'da bootcamp kodunu açmak için `code -r .` yazın.
 >Mac kullanıyorsanız, takip ettiğinizden emin olun [bu adımlar](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) ilk önce `code` komutunu kullanılabilir hale getirmek için.
 
-### 3. "İç döngü" yapısını çalıştırın
+### 3. "İç Döngü" Yapısını Çalıştırın
 
 Bu noktada, VS Kodu pencereniz şöyle görünmelidir:
 
@@ -53,13 +53,13 @@ Bu, aşağıda gösterilen siteyi yükleyecektir.
 
 2. Demolar gibi, alıştırmalar CodePen veya project step klasörlerinde yapılır. Bu alıştırmalar size ilk adımda gösterilenleri denemek için bir fırsat verecektir.
   
-## Ne beklenir
+## Ne Beklenir
 
 Her ders için sunucu, konuyla ilgili temel kavramları öğretmek için bazı demo kodlarını gözden geçirecektir. Bu noktada kod yazma konusunda endişelenmeyin. Aşağıda bağlantısı verilen readmes aracılığıyla takip edin.
 
 Çoğu dersin de bir egzersiz kısmı vardır. Egzersiz talimatları genellikle her adımın "exercise" klasörü içinde readme dosyasında bulunur.
 
-### Birinci gün
+### Birinci Gün
 
 Birinci gün, HTML, CSS ve JavaScript'in temellerinin yanı sıra React ve TypeScript'e giriş konularını kapsar.
 
@@ -71,7 +71,7 @@ Birinci gün, HTML, CSS ve JavaScript'in temellerinin yanı sıra React ve TypeS
 6. [State-driven UI](step1-06)
 7. [Types and UI-driven state](step1-07)
 
-### 2. gün
+### 2. Gün
 
 1. [TypeScript temelleri](step2-01)
 2. [UI Fabric bileşen kitaplığı](step2-02)
@@ -80,12 +80,12 @@ Birinci gün, HTML, CSS ve JavaScript'in temellerinin yanı sıra React ve TypeS
 5. [Redux: Mağaza](step2-05)
 6. [Redux: tepki bağlama](step2-06)
 
-### Bonus içerik
+### Bonus İçerik
 
 * [Redux: Servis çağrıları](bonus-servicecalls)
 * [Jest ile test etme](bonus-jest)
 
-## Ek kaynaklar
+## Ek Kaynaklar
 
 - [MDN Web dokümanları](https://developer.mozilla.org/en-US/)
 - [React Dokümanları](https://reactjs.org/docs/getting-started.html)
