@@ -10,10 +10,10 @@
 
 # Alıştırma 2: TodoFooter.tsx'i "Fabric"leştirin
 
-Zaten çalışan uygulamanız yoksa, `frontend-bootcamp` klasörünün kökünden `npm start` komutunu çalıştırarak başlatın. Sonuçları görmek için 2. gün 2. adımın altındaki "egzersiz" bağlantısına tıklayın.
+Hâlâ çalışan uygulamanız yoksa, `frontend-bootcamp` klasörünün kökünden `npm start` komutunu çalıştırarak başlatın. Sonuçları görmek için 2. gün 2. adımın altındaki "egzersiz" bağlantısına tıklayın.
 
-1. `exercise/src/components/TodoFooter.tsx` içindeki TSX dosyasını açın
-2. Yığın, Metin ve Default Button bileşenlerini Fabric'ten içe aktarmak için en iyi TODO yorumunu izleyin
+1. `exercise/src/components/TodoFooter.tsx` içindeki TSX dosyasını açın.
+2. Yığın, Metin ve Default Button bileşenlerini Fabric'ten içe aktarmak için en iyi TODO yorumunu izleyin.
 3. TODO yorumunu takip edin:
 
 - `<footer>` yerine `<Stack>` yazın
@@ -24,6 +24,6 @@ Zaten çalışan uygulamanız yoksa, `frontend-bootcamp` klasörünün kökünde
 
 VAHŞİLEŞ! Fabric kütüphanesinde o kadar çok bileşen var ki! Egzersiz bileşen dosyalarına bazı bileşenleri koymayı deneyin. Daha önce bahsedilen bu kavramları deneyin:
 
-- `Office-uı-fabric-react` bileşenlerinden içe aktarma
-- Dokümantasyon sitesinde bulunan sahne ile bileşeni özelleştirme
-- Bileşeni render sahneleri ile özelleştirin (bunlar onRender\_\_\_ veya benzeri olarak adlandırılacaktır)
+- `Office-uı-fabric-react` bileşenlerinden içe aktarma.
+- Dokümantasyon sitesinde bulunan sahne ile bileşeni özelleştirme.
+- Bileşeni render sahneleri ile özelleştirin (Bunlar onRender\_\_\_ veya benzeri olarak adlandırılacaktır.)
