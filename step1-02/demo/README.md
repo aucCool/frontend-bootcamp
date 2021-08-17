@@ -41,4 +41,4 @@ selector2 {
 
 <img src="https://raw.githubusercontent.com/Microsoft/frontend-bootcamp/master/assets/css-syntax.png"/>
 
-Селектором может быть один тег, класс, идентификатор или атрибут. Это также может быть [combination](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors) из этих элементов.
+Селектором может быть один тег, класс, идентификатор или атрибут. Это также может быть комбинация (https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors) из этих элементов.
