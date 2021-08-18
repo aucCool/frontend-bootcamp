@@ -1,4 +1,4 @@
-# Step 1.3 - Introduction to JavaScript (Demo)
+# Step 1.3 - Введение в JavaScript (Demo)
 
 It's entirely possible to create a website with nothing but HTML and CSS, but as soon as you want user interaction other than links and forms, you'll need to reach for JavaScript, the scripting language of the web. Fortunately, JavaScript has grown up quite a bit since it was introduced in the '90s, and now runs just about everything: web applications, mobile applications, native applications, servers, robots and rocket ships.
 
