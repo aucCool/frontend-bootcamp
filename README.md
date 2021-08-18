@@ -109,7 +109,7 @@ If you are interested in JavaScript, TypeScript, React, Redux, or Design Systems
 - [Just](https://microsoft.github.io/just): The task library that just works - [github repo](https://github.com/Microsoft/just)
 - [Rush](https://rushjs.io): A scalable monorepo manager for the web - [github repo](https://github.com/Microsoft/web-build-tools/)
 
-## Contributing
+## Contribuirea
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
