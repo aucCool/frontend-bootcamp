@@ -90,7 +90,7 @@ Prima zi acoperă bazele următoarelor programe HTML, CSS și JavaScript, as wel
 * [Redux: Apeluri la servicii](bonus-servicecalls)
 * [Testare cu Jest](bonus-jest)
 
-## Additional resources
+## Resurse adiționale
 
 - [MDN Web Docs](https://developer.mozilla.org/en-US/)
 - [React Docs](https://reactjs.org/docs/getting-started.html)
