@@ -1,43 +1,42 @@
-# Step 1.1 - Introduction to HTML (Demo)
+# Pasul 1.1 - Introducere în lumea  HTML-ului (Demonstrație)
 
-## How the web works
+## Cum lucrează web-ul
 
-A simple web page is rendered on the screen via the following steps.
+O simplă pagină web este afișată pe ecran cu ajutorul următorilor pași.
 
-> There are many sub-steps in this process, but these are the highlights.
+> Există o mulțime de sub-pași în acest proces, însă aceștia sunt cei mai importanți.
 
-1. You instruct the browser which web page you'd like to see
-2. The browser looks up the site on a DNS server
-   - This is like a big phone book for website server addresses
-3. The browser asks the server to send over a specific page of the website, such as `developer.mozilla.org/filename.html` or `developer.mozilla.org`
-   - If asked for a "root"-level address, most servers will return `<root>/index.html`
-4. The server sends the HTML file back to the browser
-5. The browser starts to read the HTML file from the top to the bottom, stopping any time that additional resources are required:
-   - CSS stylesheets
-   - JavaScript files
-   - Fonts
-   - Images
-6. Browser makes requests for additional resources
-   - Those resources might request even more files
-7. Once the browser gets to the bottom of the page it can start working on rendering, and then display the page
+1. Indică browserului ce pagină web ai dori să vezi
+2. Browserul face o căutare pe site în serverul DNS
+   - Aceasta este ca o mare carte de telefoane pentru serverul de adrese ale site-urilor web
+3. Browserul solicită serverului să trimită pagini mai specifice ale site-urilor web, precum `developer.mozilla.org/filename.html` sau `developer.mozilla.org`
+   - Dacă soliciți "root"-adresa țintă, cele mai multe servere vor afișa`<root>/index.html`
+4. Serverul trimite înapoi file HTML browser-ului 
+5. Browserul începe să citească file HTML de sus în jos, oprindu-se ori de câte ori sunt necesare resurse adiționale:
+   - Foi de design CSS 
+   - File JavaScript
+   - Fonturi
+   - Imagini
+6. Browserul solicită resurse adiționale
+   - Aceste resurse ar putea solicita și mai multe pagini 
+7.O dată ce browser-ul ajunge în josul paginii, acesta începe să lucreze la redarea și apoi la afișarea paginii
 
 ![MDN Page Load](https://user-images.githubusercontent.com/1434956/53033758-9da8d580-3426-11e9-9ab8-09f42ccab9a8.png)
 
-## HTML demo
+## HTML demonstrație
 
-HTML tags are the basis of all web applications. They give the page structure and define the content within.
+Etichetele HTML reprezintă baza tuturor aplicațiilor web. Acestea oferă structură paginii și definesc conținutul din interior.
 
-An HTML tag takes the following form:
+O etichetă HTML ia următoarea formă:
 
 ```html
 <tag class="foo" onclick="myFunction()" otherAttributes="values"> </tag>
 ```
+Etichetele HTML pot fi, de asemenea, însumate pentru a crea o arborizație pe care o numim [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction).
 
-HTML tags can also be nested to create a tree that we call the [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction).
+[Pagina de demonstrație HTML](https://microsoft.github.io/frontend-bootcamp/step1-01/demo) oferă o largă colecție de elemente HTML pe care le veți întâlni în timpul derulării. Întreaga listă de elemente poate fi întâlnită pe pagina [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
 
-The [HTML demo page](https://microsoft.github.io/frontend-bootcamp/step1-01/demo) shows a large collection of HTML elements that you will come across during development. The full list of elements can be found on [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
-
-## Sample webpage
+## Eșantion din pagina web
 
 ```html
 <!DOCTYPE html>
