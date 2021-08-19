@@ -1,35 +1,35 @@
-# Step 1.2 - Introduction to CSS (Demo)
+# Pasul 1.2 - Introducere în CSS (Demonstrație)
 
-## CSS properties
+## Proprietățile CSS-ului
 
-Now that we've gone over adding HTML tags to the page, let's cover adding styles to those tags. We can do quite a lot with styles! We can change:
+Având în vedere că am exersat adăugarea etichetelor HTML la pagini web, haideți să exersăm adăugarea de stiluri la aceste etichete. Putem să facem destul de multe cu aceste stiluri! Putem modifica:
 
-- Typography
-- Colors
-- Appearance (corners, borders, decorations)
-- Layout
-- Position
-- Display format: inline vs block
-- Animations
-- and [many more](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+- Typografia
+- Culorile
+- Afișarea (colțuri, margini, decorații)
+- Aspectul
+- Poziția
+- Formatul de afișare: curent și blocat
+- Animațiile
+- și [mult mai multe](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 
-CSS styles are always written in `property: value` pairs (like `background: blue;`) and terminated with a semicolon.
+Stilurile CSS sunt mereu scrise în `property: value` perechi (precum `background: blue;`) și finisate cu semicoloane.
 
-## Applying CSS to an HTML file
+## Aplicarea CSS-ului la o pagină HTML 
 
-CSS can be applied to HTML tags in three different ways.
+CSS-ul poate fi aplicat la etichetele HTML în 3 moduri diferite.
 
-1. Inline using an HTML tag's `style` attribute
+1. Folosirea curentă a etichetelor HTML `style` atribuite
    - `<div style="background: blue; color: white;">Hello </div>`
-2. Via a `<style>` tag in the HTML page
-3. Through an external CSS file
+2. Prin intermediul etichetei `<style>` în pagina HTML 
+3. Printr-o filă externă CSS
    - `<link rel="stylesheet" href="./css-demo-finished.css" />`
 
-## Targeting specific elements
+## Vizarea elementelor specifice
 
-Inline styles are always applied directly to the element you place them on, but `<style>` tags and external CSS files need a way to match elements with their respective style sets. This is done with **[CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)**. When selectors are combined with CSS styles, we call this a **ruleset**.
+Stilurile curente sunt mereu aplicate direct elementului pe care îl alegi, însă etichetele `<style>` și filele externe CSS necesită o modalitate de a potrivi elementele cu seturile lor respective de stiluri. Aceasta se realizează cu  **[CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)**. Când cele selectate sunt combinate cu stilurile CSS, o vom numi **ruleset**.
 
-CSS rulesets take on the following form:
+Seturile de reguli CSS iau următoarea formă:
 
 ```css
 selector1,
@@ -39,8 +39,8 @@ selector2 {
 }
 ```
 
-Here's a more detailed view from [Chris Eppstein](https://twitter.com/chriseppstein/status/1100115119437111296):
+Aici este o afișare mai detaliată de la [Chris Eppstein](https://twitter.com/chriseppstein/status/1100115119437111296):
 
 <img src="https://raw.githubusercontent.com/Microsoft/frontend-bootcamp/master/assets/css-syntax.png"/>
 
-A selector can be a single tag, class, ID, or attribute. It can also be a [combination](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors) of those elements.
+Elementul de selectat poate fi o singură etichetă, o clasă, ID, sau atribuite. De asemenea, pot fi [combinații](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors) ale acestor elemente.
