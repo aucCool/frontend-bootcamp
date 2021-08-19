@@ -1,31 +1,30 @@
-# Step 1.4 - Introduction to React (Demo)
+# Шаг 1.4 - Введение в реакцию (демонстрация)
 
-In this demo we'll be creating a simple counter that will display a count and increment on click.
+В этой демонстрации мы создадим простой счетчик, который будет отображать количество и приращение при нажатии.
 
-Let's start this demo in [CodePen](https://codepen.io/micahgodbolt/pen/wOWeVb?editors=0010).
+Давайте начнем демонстрацию в [CodePen](https://codepen.io/micahgodbolt/pen/wOWeVb?editors=0010).
 
-## React Hello World
-
+## Реакция: "Hello World"
 ```js
 ReactDOM.render(<p>Hello World</p>, document.getElementById('app'));
 ```
 
-Calling `ReactDOM.render()` is how our code gets on the page. The function takes two parameters: the content to place on the page, and the element in which you want it placed.
+Вызов `ReactDOM.render () `  - это то, как наш код попадает на страницу. Функция принимает два параметра: содержимое для размещения на странице и элемент, в котором вы хотите его разместить.
 
-The first parameter to `render()` looks a lot like HTML, but actually, it's [JSX](https://reactjs.org/docs/introducing-jsx.html). There are a few key differences between JSX and HTML:
+Первый параметр `render()` очень похож на HTML, но на самом деле это [JSX](https://reactjs.org/docs/introducing-jsx.html). Существует несколько ключевых различий между JSX и HTML:
 
-- Since `class` is a [reserved word](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords) in JavaScript, you will need to use `className` on your HTML tags: `<div className="foo">`
-- We can use custom HTML tags corresponding to the React components we create: `<div><MyControl>hi</MyControl></div>`
-- Controls can be self-closing: `<MyControl text='hi' />`
-- You can use JavaScript inside of JSX!
+- Поскольку `class` - это [зарезервированное слово](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords) в JavaScript вам нужно будет использовать `className` в своих HTML-тегах: `<div className="foo">`
+- Мы можем использовать пользовательские HTML-теги, соответствующие компонентам React, которые мы создаем: `<div><MyControl>hi</MyControl></div>`
+- Элементы управления могут быть самозакрывающимися: `<MyControl text='hi' />`
+- Вы можете использовать JavaScript внутри JSX!
 
-## Writing a React component
+## Написание компонента React
 
-A React component is a piece of code that returns a portion of your application. This can include HTML markup, CSS styles, and JavaScript driven functionality.
+Компонент React-это фрагмент кода, который возвращает часть вашего приложения. Это может включать разметку HTML, стили CSS и функциональные возможности, управляемые JavaScript.
 
-Components can be created in two ways. The first is method is to use a [JavaScript class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), which extends (inherits from) the `React.Component` class.
+Компоненты могут быть созданы двумя способами. Первый метод заключается в использовании [класса JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), который расширяет (наследует от) класса `React.Сomponent`.
 
-Classes in JavaScript provide a way to collect methods (functions) and properties (values) in an extensible container. We extend `React.Component` because it provides us with several built-in methods, including `render`.
+Классы в JavaScript предоставляют способ сбора методов (функций) и свойств (значений) в расширяемом контейнере. Мы расширяем " React.Component `, потому что он предоставляет нам несколько встроенных методов, включая `визуализацию`.
 
 ```jsx
 class App extends React.Component {
@@ -35,7 +34,7 @@ class App extends React.Component {
 }
 ```
 
-We could also write this component as a function:
+Мы также могли бы написать этот компонент как функцию:
 
 ```jsx
 const App = props => {
@@ -43,31 +42,29 @@ const App = props => {
 };
 ```
 
-Moving our "Hello World" markup into our App's `render` function, we can now update the `ReactDOM.render()` call to look like this:
-
+Переместив нашу разметку "Hello, World" в функцию "визуализация" вашего приложения, мы теперь можем обновить вызов " ReactDOM.render ()", чтобы он выглядел следующим образом:
 ```jsx
 ReactDOM.render(<App />, document.getElementById('app'));
 ```
 
-> Note that React components can be reused by writing them in the same way you would an HTML tag.
+> Обратите внимание, что компоненты React можно использовать повторно, написав их так же, как и HTML-тег.
 
-### Props
+###  Элементы
 
-Whether you write the component as a class or a function, it can take in additional props using the same syntax as HTML attributes like `id` or `href`.
+Независимо от того, пишете ли вы компонент как класс или функцию, он может принимать дополнительные элементы, используя тот же синтаксис, что и атрибуты HTML, такие как `id` или `href`.
 
 ```jsx
 <App text="Hello World" />
 ```
 
-The `text` prop can be accessed inside your component via `props.text` in a function component or `this.props.text` in a class component.
-
+К реквизиту `text` можно получить доступ внутри вашего компонента через" props.text "в функциональном компоненте или" this.props.text " в компоненте класса.
 ```jsx
 const App = props => {
   return <p>{props.text}</p>;
 };
 ```
 
-`props` allow your component to be more reusable, since you can create multiple instances of the same component with different props.
+`props` позволяет вашему компоненту быть более многоразовым, так как вы можете создавать несколько экземпляров одного и того же компонента с разными реквизитами.
 
 ```jsx
 ReactDOM.render(
@@ -79,7 +76,7 @@ ReactDOM.render(
 );
 ```
 
-> Note that a render function can only return a single element, so our two `App` components need to be wrapped in a `div`.
+> Обратите внимание, что функция рендеринга может возвращать только один элемент, поэтому наши два компонента "Приложения" должны быть завернуты в `div`.
 
 ```jsx
 const App = props => {
@@ -87,9 +84,9 @@ const App = props => {
 };
 ```
 
-### Destructuring props
+### Деструктурирующий элемент
 
-Writing `props.text` over and over in a function (or `this.props.text` in a class) can be quite tedious. Since this is all JavaScript, you could create a new variable for this text using variable assignment.
+Написание `props.text "снова и снова в функции (или" this.props.text " в классе) может быть довольно утомительным. Поскольку все это JavaScript, вы можете создать новую переменную для этого текста, используя назначение переменной.
 
 ```jsx
 const App = props => {
@@ -98,7 +95,7 @@ const App = props => {
 };
 ```
 
-This works fine for a single prop, but as your component starts to become more complex:
+Это прекрасно работает для одного элемента, но по мере того, как ваш компонент начинает усложняться:
 
 ```jsx
 <MyComponent
@@ -114,9 +111,9 @@ This works fine for a single prop, but as your component starts to become more c
 />
 ```
 
-> Note that all non-string values are passed through as JavaScript by wrapping them in `{}`.
+>Обратите внимание, что все нестроковые значения передаются как JavaScript, заключая их в `{}`.
 
-Your code starts to look like this:
+Ваш код начинает выглядеть так:
 
 ```jsx
 const open = props.open;
@@ -127,9 +124,9 @@ const start = props.config.start;
 const end = props.config.end;
 ```
 
-A common approach to simplify this process is to use a syntax called [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring).
+Общий подход к упрощению этого процесса заключается в использовании синтаксиса, называемого [деструктурирование](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring).
 
-Destructuring allows you to pull individual pieces of information out of an object in a single statement.
+Деструктурирование позволяет извлекать отдельные фрагменты информации из объекта в одном операторе.
 
 ```jsx
 const {
@@ -141,13 +138,13 @@ const {
 } = props;
 ```
 
-So while this might be overkill right now, it makes it easier to add props down the road.
+Так что, хотя сейчас это может быть излишним, это облегчает добавление элемента в будущем.
 
-### Cleanup
+### Уборка
 
-Before we move on, we'll modify our `ReactDOM.render` call to just include our App. This render call typically includes just a single component with no props.
+Прежде чем мы продолжим, мы изменим наш вызов "ReactDOM.render", чтобы просто включить наше приложение. Этот вызов рендеринга обычно включает в себя только один компонент без элементов.
 
-Next we'll be creating a `Counter` component. We'll add that to our App now, and then start to write the control.
+Далее мы создадим компонент "Counter`. Мы добавим это в наше приложение сейчас, а затем начнем писать элемент управления.
 
 ```jsx
 const App = props => {
@@ -157,17 +154,17 @@ const App = props => {
 ReactDOM.render(<App />, document.getElementById('app'));
 ```
 
-> Note the capitalization of `Counter`. HTML might not be case-sensitive, but JSX is! A common practice is to use the capitalized names of HTML elements to name corresponding React components: Button, Select, Label, Form, etc.
+> Обратите внимание на заглавную букву "Counter". HTML может быть не чувствителен к регистру, но JSX чувствителен! Общепринятой практикой является использование заглавных имен HTML-элементов для обозначения соответствующих компонентов React: Кнопка, Выбор, Метка, Форма и т.д.
 
-## Writing a stateful Counter component
+## Написание компонента счетчика с отслеживанием состояния
 
-React allows each control to specify its own data store, called **state**. We can reference values in state when we render our UI, and we can also update state over the lifetime of our application.
+React позволяет каждому элементу управления указывать свое собственное хранилище данных, называемое **состояние**. Мы можем ссылаться на значения в состоянии при отображении нашего пользовательского интерфейса, а также обновлять состояние в течение всего срока службы нашего приложения.
 
-> Most stateful components you'll see today will be `class` based. It is just recently possible to add state to function components through the use of [`hooks`](https://reactjs.org/docs/hooks-intro.html)
+> Большинство компонентов с отслеживанием состояния, которые вы увидите сегодня, будут основаны на "классе". Совсем недавно стало возможным добавлять состояние в функциональные компоненты с помощью [`крючков`](https://reactjs.org/docs/hooks-intro.html)
 
-### Adding state
+### Добавление состояния
 
-JavaScript classes use a `constructor` method to instantiate each copy of a class, along with any applicable state. Let's create a new component called `Counter` and give it a state containing a `clicks` property with a default value of `0`;
+Классы JavaScript используют метод "конструктор" для создания экземпляра каждой копии класса вместе с любым применимым состоянием. Давайте создадим новый компонент под названием "Counter` и придадим ему состояние, содержащее свойство ` щелчки` со значением по умолчанию "0";
 
 ```js
 class Counter extends React.Component {
@@ -180,13 +177,13 @@ class Counter extends React.Component {
 }
 ```
 
-- The constructor takes in the component's `props`.
-- The [`super()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) function calls the constructor of the parent class (in this case `React.Component`).
-- Our `clicks` state value can now be accessed via `this.state.clicks`. Later, we can update state by calling `this.setState({ clicks: 1 })`.
+-Конструктор принимает `элемент`компонента.
+- [`super()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) функция вызывает конструктор родительского класса (в данном случае `React.Component`).
+- Наше значение состояния "клики` теперь можно получить с помощью "this.state.clicks". Позже мы сможем обновить состояние, вызвав " this.setState({ щелчки: 1 })`.
 
-### Rendering our Counter
+### Визуализация нашего счетчика
 
-For our `Counter` component, the goal is to be able to track how many times the counter's button is clicked. We'll use the following markup.
+Для нашего компонента "Сounter" цель состоит в том, чтобы иметь возможность отслеживать, сколько раз нажата кнопка счетчика. Мы будем использовать следующую разметку.
 
 ```jsx
 render() {
@@ -201,13 +198,13 @@ render() {
 }
 ```
 
-### Writing our button click handler
+### Написание нашего обработчика нажатия кнопки
 
-Our next step is to wire up the button to increment the `clicks` in our component state.
+Наш следующий шаг-подключить кнопку, чтобы увеличить количество "щелчков" в состоянии нашего компонента.
 
-> By convention we place other methods below `render()`, and private methods (those for internal use only) are prefixed with an underscore.
+> По соглашению мы помещаем другие методы ниже " render ()", а частные методы (только для внутреннего использования) имеют префикс подчеркивания.
 
-This function will update our component's state, incrementing the clicks value by 1. (Note that `setState` only modifies the values of keys listed in the object passed as its parameter.)
+Эта функция обновит состояние вашего компонента, увеличив значение кликов на 1. (Обратите внимание, что `setState` изменяет только значения ключей, перечисленных в объекте, переданном в качестве его параметра.)
 
 ```jsx
 _onButtonClick = () => {
@@ -217,29 +214,29 @@ _onButtonClick = () => {
 };
 ```
 
-> This isn't exactly a method, but a class property that is set to an [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). This mostly works the same as `onButtonClick() { }` but eliminates the need for [extra boilerplate](https://medium.freecodecamp.org/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb) used to avoid potential "gotchas" with [how `this` works in JavaScript](https://codeburst.io/javascript-the-keyword-this-for-beginners-fb5238d99f85).)
+> Это не совсем метод, но свойство класса, которому присвоено значение [ arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). Это в основном работает так же, как " onButtonClick () {}", но устраняет необходимость в [дополнительном boilerplate](https://medium.freecodecamp.org/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb) используется, чтобы избежать потенциальных "ошибок" с [как " это " работает в JavaScript](https://codeburst.io/javascript-the-keyword-this-for-beginners-fb5238d99f85).)
 
-> Note that the `setState` call could also be written as `this.setState(prevState => ({ clicks: prevState.clicks + 1 }));` to ensure that state is not updated until the previous state has been determined.
+> Обратите внимание, что вызов "setState" также может быть записан как `this.setState(prevState => ({ clicks: prevState.clicks + 1}));", чтобы гарантировать, что состояние не обновляется до тех пор, пока не будет определено предыдущее состояние.
 
-Now that we have a function to increment our count, all that's left is to connect it to our button.
+Теперь, когда у нас есть функция для увеличения нашего количества, все, что осталось, - это подключить ее к нашей кнопке.
 
 ```jsx
 <button onClick={this._onButtonClick}>Click</button>
 ```
 
-> Also note that each `Counter` maintains its own state! You can modify the state inside of one counter without affecting the others.
+> Также обратите внимание, что каждый "Counter` поддерживает свое собственное состояние! Вы можете изменить состояние внутри одного счетчика, не влияя на другие.
 
-## Try it all out!
+## Попробуйте все это!
 
-Add a couple `Counter`s to our `App`, each with different text. Notice how they can easy take in different props and maintain their own state.
+Добавьте пару "Сounter" в наше "приложение", каждый с разным текстом. Обратите внимание, как они могут легко принимать различные опоры и поддерживать свое собственное состояние.
 
-## Moving this into our codebase
+## Перенос этого в нашу кодовую базу
 
-To scale our application, we'll need to break up the file into smaller, reusable pieces. In this part of the demo we'll look at the `final` folder and how the JavaScript module system allows us to break up our components into a collection of files exporting their functionality.
+Чтобы масштабировать наше приложение, нам нужно будет разбить файл на более мелкие, повторно используемые части. В этой части демонстрации мы рассмотрим "последнюю" папку и то, как система модулей JavaScript позволяет нам разбивать наши компоненты на набор файлов, экспортирующих их функциональность.
 
-### Module exports and imports
+### Экспорт и импорт модулей
 
-Open up `step1-04/final/components/Counter.tsx` and look at the `Counter` component.
+Откройте `step1-04/final/components/Counter.tsx` и посмотрите на компонент `Counter`.
 
 ```tsx
 export class Counter extends React.Component {
@@ -247,17 +244,17 @@ export class Counter extends React.Component {
 }
 ```
 
-This file exports the Counter component as a **named export**. This means when we import it we do the following:
+Этот файл экспортирует компонент счетчика в виде **с именем экспорт**. Это означает, что при импорте мы делаем следующее:
 
 ```tsx
 import { Counter } from './components/Counter';
 ```
 
-> Note the `{}` wrapped around the import value. This is actually an example of destructuring.
+> Обратите внимание на " {}`, расположенное  вокруг значения импорта. На самом деле это пример деструктурирования.
 
-#### Default exports
+#### Экспорт по умолчанию
 
-We typically use named exports, but it's also possible export a default value like this:
+Обычно мы используем именованный экспорт, но также возможно экспортировать значение по умолчанию, подобное этому:
 
 ```tsx
 export default class Counter extends React.Component {
@@ -265,16 +262,15 @@ export default class Counter extends React.Component {
 }
 ```
 
-When we import the component we can call it whatever we want:
+Когда мы импортируем компонент, мы можем называть его как угодно:
 
 ```tsx
 import SomeCounterComponent from './components/Counter';
 ```
 
-## Writing a Button component
+## Написание компонента кнопки
 
-Buttons are among the most commonly written components. Custom buttons help abstract common styling, add icons or other decorations, and increase functionality (menu buttons etc). Let's take a quick look at a custom button component to see how it comes together.
-
+Кнопки являются одними из наиболее часто пишущихся компонентов. Пользовательские кнопки помогают абстрагироваться от общего стиля, добавлять значки или другие украшения, а также расширять функциональность (кнопки меню и т.д.). Давайте быстро взглянем на пользовательский компонент кнопки, чтобы увидеть, как он сочетается.
 ```jsx
 import React from 'react';
 import './Button.css';
