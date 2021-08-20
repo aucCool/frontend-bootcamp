@@ -1,8 +1,8 @@
-# Step 1.3 - Introduction to JavaScript (Demo)
+# Pasul 1.3 -Introducere în JavaScript (Demonstrație)
 
-It's entirely possible to create a website with nothing but HTML and CSS, but as soon as you want user interaction other than links and forms, you'll need to reach for JavaScript, the scripting language of the web. Fortunately, JavaScript has grown up quite a bit since it was introduced in the '90s, and now runs just about everything: web applications, mobile applications, native applications, servers, robots and rocket ships.
+Este posibil în totalitate să creezi un site web cu nimic altceva decât  HTML și CSS,dar de îndată ce doriți să utilizați instrumente de legătura, altele decât link-uri și formulare, va trebui să înțelegeți JavaScript, limbajul de programare a site-urilor web. Din fericire, JavaScript a fost actualizată destul de puțin de la apariția sa din anii 90’, iar acum este folosită pentru aproape orice: aplicații web, aplicații mobile, aplicații native , servere, roboți și nave robotice.
 
-In this demo we are going to cover a few core basics of the language that will help us when we start writing our todo app. At the end of this demo we will be able to count and display the number of the letter "a"s in our email input. Here's the markup we're working with:
+În această demonstrație vom acoperi câteva nuclee de bază ale limbajului care ne vor ajuta atunci când vom începe sa ne redactăm aplicațiile vizate. La sfârșitul acestei demonstrații veți fi capabili să numărați și să afișați numărul scrisorii"a" în antetul email-lului nostru. Aici sunt prezentate marcajele cu care vom lucra:
 
 ```html
 <div id="contact-form">
@@ -11,18 +11,18 @@ In this demo we are going to cover a few core basics of the language that will h
 </div>
 ```
 
-By the end of the demo we'll have covered the following:
+La sfârșitul acestei demonstrații vor fi acoperite următoarele noțiuni:
 
-- Variables
-- Events
-- Functions
-- Conditionals
-- Loops
-- Interacting with the DOM (Document Object Model)
+- Variabile
+- Evenimente
+- Funcții
+- Condiționalități
+- Bucle
+- Interacțiuni cu ajutorul DOM-ului (Obiectul model al documentului)
 
-## Introduction to variables
+## Introducerea în variabile
 
-We can create a new variable with the keywords `var`, `let`, `const` and use them within our application. These variables can contain one of the following types of values:
+Noi putem crea o nouă variabilă cu cuvintele cheie  `var`, `let`, `const` și să le utilizam în aplicația noastră. Aceste variabile pot conține una din următoarele tipuri de valori:
 
 - **boolean**: `true`, `false`
 - **number**: `1`, `3.14`
@@ -33,9 +33,9 @@ We can create a new variable with the keywords `var`, `let`, `const` and use the
 - **null**
 - **undefined**
 
-> [When to use `var`/`let`/`const`?](https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var-to-declare-a-variable-in-jav) Use `const` for variables you never expect to change, and `let` for anything else. `var` is mostly no longer used. See the link for more details about how each works.
+> [When to use `var`/`let`/`const`?](https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var-to-declare-a-variable-in-jav) Utilizați `const` pentru variabile la care nu vă așteptați să se modifice niciodată, și `let` pentru orice altceva. `var` în cea mai mare parte nu mai este utilizat. Vezi link-ul pentru mai multe detalii despre utilizarea acestora.
 
-### Variable examples
+### Exemple de variabile
 
 ```js
 const myBoolean = true;
@@ -48,21 +48,19 @@ const myFunction = function(myNumberParam) {
 };
 ```
 
-> JavaScript is a dynamically typed language, so if you initially store a number in a variable (`let myVar = 0`), you can change it to contain a string by simply writing `myVar = 'hello'` without any trouble.
+>JavaScript este un limbaj scris dinamic, astfel, dacă inițial  înmagazinați un număr într-o variabilă (`let myVar = 0`), le puteți modifica pentru a conține un șir prin simpla scriere `myVar = 'hello'` fără nicio problemă.
 
-### Adding variables
-
-Let's start off our demo by adding a variable to our [script tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script). This variable will be global and constant.
+### Adăugarea variabilelor
+Să începem demonstrația noastră prin adăugarea de variabile la [script tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script). Această variabilă va fi globală și constantă.
 
 ```js
 const match = 'a';
 ```
 
-## Functions
+## Funcții
 
-Functions are reusable pieces of functionality. Functions can take inputs (parameters) and return values (or neither). Functions can be called from within your program, from within other functions, or invoked from within the DOM itself.
-
-In our example we'll create a function called `displayMatches` (camelCase is typical for functions) and we'll invoke this function every time that our submit button is clicked. For now we'll simply have our function call `alert("I'm Clicked")`, which is a function that displays an alert message box in your browser.
+Funcțiile sunt piese reutilizabile de funcționalitate. Funcțiile pot prelua intrări (parametri) și să returneze valori (sau nimic). Funcțiile pot fi numite din cadrul programului dumneavoastră, din cadrul altelor funcții, sau invocate din cadrul DOM-ului însuși. 
+În exemplele noastre vom crea funcții numite `displayMatches` (camelCase este tipic pentru funcții) și vom accesa aceste funcții ori de câte ori butonul submit este accesat. Pentru moment vom avea doar funcții numite `alert("I'm Clicked")`, aceasta fiind o funcție care afișează o cutie de mesaje de alertă în browserul nostru.
 
 ```js
 function displayMatches() {
@@ -70,15 +68,15 @@ function displayMatches() {
 }
 ```
 
-## Events
+## Evenimente
 
-Functions on their own don't have any effect on the page. When I declare `function displayMatches()` I have only defined the function; I haven't actually executed it.
+Însăși funcțiile nu au nici-un efect asupra paginii. Când declar `function displayMatches()` , eu doar definesc funcția; însă nu am și executat-o.
 
-To execute a function we need to attach it to an event. There are a number of possible events: keyboard strokes, mouse clicks, document loading, and more.
+Pentru a executa o funcție avem nevoie să o atașam la un eveniment. Aici avem câteva numere de evenimente posibile: tastări accidentale, clicuri de mouse, încărcarea documentului, și altele.
 
 ### Add event listeners
 
-To attach a function to an event, we use an [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) like this:
+Pentru a atașa o funcție la un eveniment, noi utilizăm [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) precum acesta:
 
 ```js
 window.addEventListener('load', function() {
@@ -92,9 +90,9 @@ window.addEventListener('click', function() {
 
 > [`window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) is a reference to the entire window containing the HTML document.
 
-### Global event handlers
+### Gestionarea evenimentelor globale
 
-If you think this feels a little verbose, you're not alone. Many of the [most common event types](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers) are available as element properties. This way we can set properties like `onload` or `onclick` like this:
+Dacă aveți impresia impresia ca este un pic prea detaliat, nu sunteți singurul. Multe dintre [most common event types](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers) sunt disponibile ca și proprietăți ale evenimentelor. În acest mod putem seta proprietăți precum `onload`  sau `onclick` astfel:
 
 ```js
 window.onload = function() {
@@ -105,26 +103,24 @@ window.onclick = function() {
 };
 ```
 
-> Note that only a single function can be assigned to `onload`, but many event listeners can be added for `load`.
+> Țineți minte că o singură funcție poate fi atribuită la `onload`, dar multe evenimente de ascultare pot fi adăugate pentru `load`.
 
-In our example, we want to trigger a function when a button is clicked. To do this, we first need to get a reference to the button. We can use the [`querySelector`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) method of the browser-provided [`document`](https://developer.mozilla.org/en-US/docs/Web/API/Document) global variable to get that reference. Then we can set our `displayMatches` function to be the button's `onclick` handler.
+În exemplul nostru, dorim să inițiem o funcție atunci când butonul este accesat. Pentru aceasta, noi trebuie să găsim o referire către acest buton. Putem utiliza [`querySelector`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) metodă prin care browser-ul va furniza [`document`](https://developer.mozilla.org/en-US/docs/Web/API/Document) variabila globală pentru a obține referirea. Atunci vom putea seta funcțiile pentru a fi`onclick`-ul butonului de accesat.
 
 ```js
 const button = document.querySelector('.submit');
 button.onclick = displayMatches;
 ```
 
-You can also combine the two statements together like this:
+De asemenea, puteți combina două declarații precum acestea:
 
 ```js
 document.querySelector('.submit').onclick = displayMatches;
 ```
+Reîncărca pagina și accesează butonul pentru a vedea funcțiile tale!
 
-Reload the page and click the button to see your function in action!
-
-## Iteration
-
-Next we'll update our function to iterate through a string of letters. We loop over each letter using the [`for of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) syntax. We'll use real input later, but for now this verifies that our function is working.
+## Repetare
+Apoi ne vom actualiza funcția noastră pentru a o repeta printr-un șir de litere. Buclăm peste fiecare literă [`for of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) syntax. Vom folosi un antet real mai târziu, însă acum aceasta verifică dacă funcția noastră este în derulare.
 
 ```js
 function displayMatches() {
@@ -135,9 +131,9 @@ function displayMatches() {
 }
 ```
 
-## Conditionals
+## Condiționalități 
 
-Next we want to compare each `letter` with our global `match` value, and if they are the same, we will increment a `matches` variable. Remember that `letter = match` would set the `letter` variable to the value in `match`, so to do comparisons, we use the equality operator `==` or the strict equality operator `===`.
+În continuare dorim să comparăm fiecare `letter` cu valoarea noastră globală `match`, și dacă sunt aceleași, vom crește o variabilă `matches`. Rețineți următorul lucru `letter = match` va seta variabila `letter` către valoarea din`match`, deci pentru a face comparație, vom folosi operatorul egal `==` sau strictul operator egal `===`.
 
 ```js
 function displayMatches() {
@@ -152,13 +148,12 @@ function displayMatches() {
 }
 ```
 
-> In JavaScript, it's safest to use strict `===` for comparisons, because `==` will try to convert the operands to the same type. For example, `"1" == 1` converts `"1"` to a number and returns true. This result makes decent sense, but the behavior in certain other cases is [not what you'd expect](https://www.youtube.com/watch?v=et8xNAc2ic8). (See [this video](https://www.destroyallsoftware.com/talks/wat) for more strange JavaScript behavior.)
+> În JavaScript, este mai sigur să folosiți strict `===` pentru comparații, deoarece `==` va încerca să convertească operanzii către același tip. De exemplu, `"1" == 1` convertește `"1"` către un număr apoi revine adevărat. Acest rezultat oferă un sens decen, dar comportamentul în anumite alte cazuri este [nu cel la care te-ai putea aștepta](https://www.youtube.com/watch?v=et8xNAc2ic8). (Vezi [acest video](https://www.destroyallsoftware.com/talks/wat) pentru mai multe comportamente neobișnuite ale JavaScript-ului.)
 
-## Interacting with the DOM
+## Interacțiuni cu ajutorul DOM-ului
 
-Now that we have a function performing all of our logic, it's time to connect this to our DOM by using some of the browser's built-in functions.
-
-First we need to get a reference to the email field in our app's DOM. To do this, I've added an `id` to the input, and we'll find the element using [`getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) from the `document` global variable. This function will return a reference to that input, and we can store it in the `email` variable.
+Acum că avem o funcție care performează toată logica noastră, este timpul să ne conectăm la DOM-ul nostru folosind câteva funcții de alcatuire ale browser-ului.
+Mai întâi trebuie să obținem o referință la câmpul de e-mail din DOM-ul aplicației noastre. Pentru aceasta, am adăugat un `id` la antet, și vom găsi elementul folosind [`getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) din variabila globală a `document`-ului. Această funcție va returna o referire către acest, și o vom putea stoca în `email`-lului.
 
 ```js
 function displayMatches() {
@@ -168,7 +163,7 @@ function displayMatches() {
 }
 ```
 
-Since what we're actually after is the value of the input field, we can set our `text` variable to the string contained in the email input's `value` key. To see this in action, in Chrome you can right click on the console message created by the code above, choose "save as variable" and then type `variableName.value`.
+Deoarece ceea ce urmărim de fapt este valoarea câmpului de intrare, putem seta variabila noastră „text” la șirul conținut în „valoare”-a cheie a intrării e-mail-lului. Pentru a vedea cum funcționează aceasta, în Chrome puteți da click dreapta pe mesajul consolă creat de către codul de mai sus, alegeți "save as variable" și apoi tastați `variableName.value`.
 
 ```js
 function displayMatches() {
@@ -179,9 +174,8 @@ function displayMatches() {
 }
 ```
 
-### Writing values back to the DOM
-
-Now that we've read values from the DOM and fed that into our matching logic, we are ready to return the number of matches to our app. To do this we first need to grab a reference to our submit button, and since this button has no `id`, we'll use `querySelector` to get it. This function takes any valid CSS selector and returns the first match found.
+### Scrierea valorilor înapoi în DOM
+Acum că am citit valori din DOM și le-am introdus în logica noastră de potrivire, suntem gata să returnăm numărul de potriviri în aplicația noastră. Pentru a face acest lucru, trebuie mai întâi să obținem o referință la butonul nostru de trimitere, și din moment ce acest buton nu are un `id`, vom folosi `querySelector` pentru a îl obține. Această funcție preia orice selector CSS valid și returnează prima potrivire găsită.
 
 ```js
 function displayMatches() {
@@ -190,7 +184,7 @@ function displayMatches() {
 }
 ```
 
-Now that we have a reference to the submit input, we can set its value contain to the number of matches.
+Acum, că avem o referință la intrarea de trimitere, putem seta valoarea acestuia să conțină numărul de potriviri.
 
 ```js
 function displayMatches() {
@@ -200,7 +194,7 @@ function displayMatches() {
 }
 ```
 
-We could also have done this in a single line as follows:
+De asemenea, putem avea aceasta intr-o singura linie, precum următoarea:
 
 ```js
 function displayMatches() {
