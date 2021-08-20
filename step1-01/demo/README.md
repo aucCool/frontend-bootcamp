@@ -7,19 +7,19 @@ O simplă pagină web este afișată pe ecran cu ajutorul următorilor pași.
 > Există o mulțime de sub-pași în acest proces, însă aceștia sunt cei mai importanți.
 
 1. Indicați browserului ce pagină web ați dori să vedeți
-2. Browserul va face o căutare pe site în serverul DNS
-   - Aceasta este precum o carte mare de telefoane pentru serverul de adrese ale site-urilor web
-3. Browserul solicită serverului să trimită pagini mul mai specifice ale site-urilor web, precum `developer.mozilla.org/filename.html` sau `developer.mozilla.org`
+2. Browserul caută site-ul în serverul DNS
+   - Aceasta este precum o carte mare de telefoane, însă pentru server, cu adrese ale site-urilor web
+3. Browserul solicită serverului să trimită pagini mult mai specifice ale site-urilor web, precum `developer.mozilla.org/filename.html` sau `developer.mozilla.org`
    - Dacă solicitați "root"-adresa țintă, cele mai multe servere vă vor afișa`<root>/index.html`
 4. Serverul trimite înapoi file HTML browser-ului 
-5. Browserul începe să citească filele HTML de sus în jos, oprindu-se ori de câte ori sunt necesare resurse adiționale:
+5. Browser-ul începe să citească filele HTML de sus în jos, oprindu-se ori de câte ori sunt necesare resurse adiționale precum:
    - Foi de design CSS 
    - File JavaScript
    - Fonturi
    - Imagini
 6. Browserul solicită resurse adiționale
    - Aceste resurse ar putea solicita și mai multe pagini 
-7.O dată ce browser-ul ajunge în josul paginii, acesta începe să lucreze la redarea și apoi la afișarea paginii
+7. O dată ce browser-ul ajunge în josul paginii, acesta începe să lucreze la redarea și apoi la afișarea paginii
 
 ![MDN Page Load](https://user-images.githubusercontent.com/1434956/53033758-9da8d580-3426-11e9-9ab8-09f42ccab9a8.png)
 
