@@ -13,7 +13,7 @@
 
 1. Добавьте компонент списка задач, как вы сделали с нижним колонтитулом. Это также может быть функция или класс.
 2. Импортируйте TodoListItem и добавьте четыре из них внутрь `<ul>`
-3. Бонусные баллы за использование [`для`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration) цикла или использование [`карта`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) для создания 4 элементов списка на основе массива `[1,2,3,4]`
+3. Бонусные баллы за использование [`for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration) цикла или использование [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) для создания 4 элементов списка на основе массива `[1,2,3,4]`
 
 ## Приложение 
 
