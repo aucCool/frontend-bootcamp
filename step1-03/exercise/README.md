@@ -1,3 +1,3 @@
-# Step 1.3 - Introduction to JavaScript (Exercise)
+# Pasul 1.3 - Introducere în JavaScript (Exerciții)
 
-See index.html from [npm start](http://localhost:8080/step1-03/exercise/) or the [live site](https://microsoft.github.io/frontend-bootcamp/step1-03/exercise/) for the exercise.
+Vezi index.html from [npm start](http://localhost:8080/step1-03/exercise/) sau [live site](https://microsoft.github.io/frontend-bootcamp/step1-03/exercise/) pentru exerciții.
