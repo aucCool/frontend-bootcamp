@@ -1,14 +1,13 @@
-# Step 1.6 - Creating a state-driven UI (Exercise)
+# Шаг 1.6 - Создание пользовательского интерфейса, управляемого состоянием (Упражнение)
+Если у вас еще не запущено приложение, запустите его, нажав "запуск npm" из корневой папки "frontend-bootcamp". Нажмите на ссылку "упражнение" в разделе день 1 шаг 6, чтобы увидеть результаты.
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 1 step 6 to see results.
+### Нижний колонтитул Todo
 
-### TodoFooter
+1. Используйте предоставленное значение "количество товаров" для отображения текущего количества оставшихся товаров.
+2. Используйте [троичный оператор](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) для печати "товар" против "товара**s**" на основе того, является ли "Количество предметов === 1`.
 
-1. Use the provided `itemCount` value to display the current number of items left.
-2. Use a [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to print "item" vs "item**s**" based on whether `itemCount === 1`.
+### Список задач Тodo
 
-### TodoListItem
-
-1. Pull in `label` and `completed` from props using [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring)
-2. Set the todo's text to `label` and the `checked` prop to `completed`
-   > Note that this is only half the work we need to do to make these controlled inputs work. What is the other half?
+1. Извлеките `ярлык` и `завершено` из реквизита с помощью [деструктурирования](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring)ng)
+2. Установите для текста todo значение "метка", а для параметра "проверено" - "завершено".
+> Обратите внимание, что это только половина работы, которую нам нужно сделать, чтобы эти контролируемые входные данные работали. Что такое вторая половина?
