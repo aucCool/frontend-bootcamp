@@ -8,6 +8,6 @@
 
 ### Список задач Тodo
 
-1. Извлеките `ярлык` и `завершено` из реквизита с помощью [деструктурирования](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring)ng)
+1. Извлеките `ярлык` и `завершено` из реквизита с помощью деструктурирования (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring)ng)
 2. Установите для текста todo значение "метка", а для параметра "проверено" - "завершено".
 > Обратите внимание, что это только половина работы, которую нам нужно сделать, чтобы эти контролируемые входные данные работали. Что такое вторая половина?
