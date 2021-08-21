@@ -1,35 +1,33 @@
-# Step 2.4 - React Context (Demo)
-
+# Шаг 2.4 - Контекст реакции (Демонстрация)
 [Lessons](../../) | [Exercise](../exercise/)
 
-In this step, we describe some problems we encounter when creating a more complex application.
+На этом шаге мы опишем некоторые проблемы, с которыми мы сталкиваемся при создании более сложного приложения.
 
-We will solve these problems with the [React Context API](https://reactjs.org/docs/context.html). The Context API consists of Provider and Consumer components. Let's take a look at what is in this step:
+Мы решим эти проблемы с помощью [React Context API](https://reactjs.org/docs/context.html). Контекстный API состоит из компонентов Поставщика и Потребителя. Давайте взглянем на то, что находится на этом шаге:
 
-1. The problem of complex applications
-2. React Context API
-3. Consuming context from a class component
-4. Consuming context from a functional component
+1. Проблема сложных приложений
+2. Прикладной программный интерфейс контекста реакции
+3. Использование контекста из компонента класса
+4. Использование контекста из функционального компонента
 
-## The problem of complex applications
+## Проблема сложных приложений
 
-React represents a single component like this:
-
+React представляет собой один такой компонент:
 ```
 (props) => view;
 ```
 
-In a real application, these functions are composed. It looks more like this:
+В реальном приложении эти функции составлены. Это больше похоже на это:
 
 ![](../../assets/todo-components.png)
 
-Being able to compose components is helpful, but it introduces some complexity:
+Возможность создавать компоненты полезна, но она создает некоторые сложности:
 
-1. Data needs to be passed down from component to component via props--even if some of the intermediate components don't need to know about some of the data. This is a problem called **props drilling**.
+1. Данные должны передаваться от компонента к компоненту с помощью реквизитов-даже если некоторым промежуточным компонентам не нужно знать о некоторых данных. Это проблема, называемая **бурение реквизита**.
 
-2. Shared data can be changed by various actors (user interaction, updates from server), and there is no coordination of these changes. This makes propagating updates between components challenging.
+2. Общие данные могут быть изменены различными участниками (взаимодействие с пользователем, обновления с сервера), и координация этих изменений отсутствует. Это затрудняет распространение обновлений между компонентами.
 
-Even in our simple application, we saw this problem. For example, `<TodoList>` has this props interface:
+Даже в нашем простом приложении мы увидели эту проблему. Например, " <ToDoList>` имеет этот интерфейс реквизитов:
 
 ```ts
 interface TodoListProps {
@@ -41,19 +39,19 @@ interface TodoListProps {
 }
 ```
 
-None of these props are used in the `TodoList` itself; they're only passed down to child `TodoListItem` components:
+Ни один из этих реквизитов не используется в самом "ToDoList"; они передаются только дочерним компонентам "TodoListItem".:
 
 ```js
 <TodoListItem todos="{todos}" complete="{complete}" remove="{remove}" edit="{edit}" />
 ```
 
-## React Context API
+## Прикладной программный интерфейс контекста реакции. 
 
-Let's solve these problems with the [React Context API](https://reactjs.org/docs/context.html). Context is React's way to share data from components with their child components without explicitly passing it down through props at every level of the tree. In simpler terms, it solves the props drilling issue mentioned above!
+Давайте решим эти проблемы с помощью [Прикладного программного интерфейса контекста реакции](https://reactjs.org/docs/context.html). Контекст-это способ обмена данными из компонентов с их дочерними компонентами без явной передачи их через реквизиты на каждом уровне дерева. Проще говоря, это решает проблему разборки задачи, упомянутую выше!
 
-React context is created by calling `createContext()` with some initial data. Use the `<TodoContext.Provider>` component to wrap a part of the component tree that should be handed the context.
-
-### Providing context with `<TodoContext.Provider>`
+Контекст реакции создается вызовом `createContext()`  с некоторыми исходными данными. Используйте компонент `<TodoContext.Provider>` чтобы перенести  часть составляющих компонента, которая должна быть передана контексту.
+  
+### Предоставление контекста с `<TodoContext.Provider>`
 
 ```js
 // To create an empty context
@@ -61,7 +59,7 @@ const TodoContext = React.createContext(undefined);
 
 class TodoApp extends React.Component {
   render() {
-    // Pass in some state and functions to the provider's value prop
+    // Передайте некоторые состояния и функции в ценностное предложение провайдера
     return (
       <TodoContext.Provider
         value={{
@@ -81,10 +79,9 @@ class TodoApp extends React.Component {
 }
 ```
 
-### Consume context from a class component
+### Использование контекста из компонента класса
 
-Inside a class-based child component, such as `<TodoHeader>`, the context created in the parent can be accessed via `this.context`. Note that for this to work, you must also set the component class's `contextType` property to the context type created above.
-
+Внутри дочернего компонента на основе класса, такого как "< ЗаголовокTo do>", контекст, созданный в родительском, может быть доступен через " this.context`. Обратите внимание, что для того, чтобы это сработало, вы также должны задать свойству класса компонента `contextType`, тип контекста, созданный выше.
 ```js
 class TodoHeader extends React.Component {
   render() {
@@ -97,9 +94,9 @@ class TodoHeader extends React.Component {
 TodoHeader.contextType = TodoContext;
 ```
 
-### Consume context from a functional component
+### Использование контекста из функционального компонента
 
-If you're using the functional component syntax, you can access the context with the `useContext()` hook:
+Если вы используете синтаксис функционального компонента, вы можете получить доступ к контексту с помощью крючка `useContext()` :
 
 ```js
 const TodoFooter = props => {
@@ -112,6 +109,6 @@ const TodoFooter = props => {
 };
 ```
 
-> Note that `useContext()` requires a recent release of React (16.8+)
+> Заметьте, что `useContext()` требует недавний выпуск React (16.8+)
 
-There is another legal syntax for accessing context with the `<TodoContext.Consumer>`, but we'll leave that out as an exercise for you!
+Существует другой юридический синтаксис для доступа к контексту с помощью `<TodoContext.Consumer>`, но мы оставим это в качестве упражнения для вас!
