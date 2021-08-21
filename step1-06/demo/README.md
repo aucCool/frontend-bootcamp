@@ -1,15 +1,11 @@
-# Step 1.6 - Creating a state-driven UI (Demo)
+# Шаг 1.6 - Создание пользовательского интерфейса, управляемого состоянием (демонстрация)
+В React, данные перемещаются в одном направлении: сверху вниз в виде состояния, распространяющегося по иерархии компонентов. Только компонент, содержащий состояние, может изменить само состояние. Когда происходит взаимодействие с пользовательским интерфейсом, компонент с отслеживанием состояния должен передать обработчик событий компоненту пользовательского интерфейса, запускающему событие, чтобы сигнализировать об изменении состояния.
+[Шаг №3 "Мышление в реакции"](https://reactjs.org/docs/thinking-in-react.html) предлагает найти "минимальный набор изменяемых состояний", который требуется вашему приложению. Поэтому в этой демонстрации мы собираемся добавить это "минимальное состояние" в наше приложение и удалить наш пользовательский интерфейс из этих данных. После этого следующим шагом будет создание способов изменения этого состояния, которые, в свою очередь, будут каскадно передаваться через наш пользовательский интерфейс. Это [примирение](https://reactjs.org/docs/reconciliation.html) процесс, выясняющий, что в вашем пользовательском интерфейсе должно измениться в зависимости от изменения состояния, - это то, в чем React превосходит.
+## Добавление состояния в приложение TodoApp
 
-In React, the data travels in one direction: top-down in the form of state propagating down the component hierarchy. Only the component containing the state can change the state itself. When a UI interaction occurs, a stateful component must pass down an event handler to the UI component triggering the event in order to signal a state change.
+Внутри нашего класса `TodoApp` мы добавим минимальное состояние для нашего приложения, которое включает в себя всего два ключа: "todos" и "фильтр". Нам не нужно беспокоиться о количестве "оставшихся", потому что его можно рассчитать, подсчитав количество заданий, в которых поле "завершено" имеет значение "ложь".
 
-[Step #3 of "Thinking in React"](https://reactjs.org/docs/thinking-in-react.html) suggests finding the "minimal set of mutable state" that your application requires. So in this demo we are going to add that "minimal state" to our application and drive our UI off of that data. With that done, the next step will be to create ways to modify that state, which will in turn cascade down through our UI. This [reconciliation](https://reactjs.org/docs/reconciliation.html) process, figuring out what in your UI needs to change based on changing state, is what React excels at.
-
-## Adding state to TodoApp
-
-Inside our `TodoApp` class, we will add the minimal state for our application, which includes just two keys: `todos` and `filter`. We don't need to worry about a `remaining` count because it can be calculated by counting the number of todos where the `completed` field is set to `false`.
-
-So here is our full constructor:
-
+Итак, вот наша полная конструкция:
 ```jsx
 constructor(props) {
   super(props);
@@ -37,11 +33,11 @@ constructor(props) {
 }
 ```
 
-> You could also use an array to represent your todos. Array manipulation can be easier in some cases, but this object approach simplifies other functionality and will ultimately be more performant.
+> Вы также можете использовать массив для представления ваших задач. В некоторых случаях манипулирование массивами может быть проще, но этот объектный подход упрощает другие функции и в конечном итоге будет более эффективным.
 
-## Passing state through to UI
+## Передача состояния в пользовательский интерфейс
 
-Now we can pass `filter` and `todos` into our components.
+Теперь мы можем передать " фильтр` и `задачи` в наши компоненты.
 
 ```jsx
 render() {
@@ -56,11 +52,11 @@ render() {
 }
 ```
 
-## State-driven TodoList
+## Список задач, управляемых Todo
 
-I've already pulled out our props into `filter` and `todos` variables, and written a bit of JS that will return an array of filtered todo `id`s. We'll be using that filtered array to render our todo items.
+Я уже вытащил наши реквизиты в переменные "фильтр" и "задачи" и написал немного JS, который вернет массив отфильтрованных идентификаторов задач. Мы будем использовать этот отфильтрованный массив для визуализации наших задач.
 
-> `todos[id]` returns the todo matching the `id` passed in, and the spread operator (...) is the same as saying `label={todos[id].label} completed={todos[id].completed}`
+> `todos[id]` возвращает задание, соответствующее переданному идентификатору, и оператор распространения (...) совпадает со словами `label={todos[id].label} completed={todos[id].completed}`
 
 ```jsx
 return (
@@ -72,14 +68,13 @@ return (
 );
 ```
 
-## State-driven and stateful TodoHeader
+## Заголовок задачи, управляемый состоянием и с учетом состояния
 
-Within the header, we've got a situation where we not only want to pass `filter` state down to it, but we also want to maintain state within the control. Fortunately, this is no problem at all for React. First off let's deal with the incoming state.
+В заголовке у нас есть ситуация, когда мы не только хотим передать ему состояние "фильтр", но также хотим сохранить состояние в элементе управления. К счастью, для React это вообще не проблема. Во-первых, давайте разберемся с входящим состоянием.
 
-### Conditional class names
+### Условные имена классов
 
-In CSS-based styling, visual states are applied by adding and removing classes. We can use the filter value to conditionally add a class, thereby lighting up the correct filter button.
-
+В стиле на основе CSS визуальные состояния применяются путем добавления и удаления классов. Мы можем использовать значение фильтра для условного добавления класса, тем самым освещая правильную кнопку фильтра.
 ```jsx
 <nav className="filter">
   <button className={filter === 'all' ? 'selected' : ''}>all</button>
@@ -88,38 +83,35 @@ In CSS-based styling, visual states are applied by adding and removing classes. 
 </nav>
 ```
 
-> The [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) `condition ? expressionIfTrue : expressionIfFalse` is widely used in React code, as each expression could be a string for a className or even a JSX element.
+> [Троичный operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) `состояние ? expressionIfTrue : expressionIfFalse` широко используется в коде React, так как каждое выражение может быть строкой для имени класса или даже элемента JSX.
 
-### Adding a controlled input
+### Добавление управляемого ввода
 
-In React, form elements such as `<input>`, `<textarea>`, and `<select>` can be used as either **uncontrolled** or **controlled**.
+В React элементы формы, такие как " <ввод>", "<область текста> " и " <выбор>", могут использоваться как **неконтролируемые** или **контролируемые**.
 
-An **uncontrolled input** maintains its current value internally and updates it based on user interactions (entering text, choosing options, etc). The code only pulls the value from the input when it's needed, such as on submit. This is similar to how inputs in a plain HTML form work.
+**Неконтролируемый ввод** сохраняет свое текущее значение внутри и обновляет его на основе взаимодействия с пользователем (ввод текста, выбор параметров и т.д.). Код извлекает значение из входных данных только тогда, когда это необходимо, например, при отправке. Это похоже на то, как работают входные данные в простой HTML-форме.
 
-A **controlled input** takes its current value from a prop and use a callback to notify the parent component of changes made by the user. The input's value doesn't change until the parent component updates the input's props in response to the callback.
+**Управляемый ввод** принимает свое текущее значение из опоры и использует обратный вызов для уведомления родительского компонента об изменениях, внесенных пользователем. Значение ввода не изменится до тех пор, пока родительский компонент не обновит реквизиты ввода в ответ на обратный вызов.
 
-> The distinction between controlled and uncontrolled is important to understand when writing or using form components, and misunderstandings of this concept are a very common source of bugs. See [this article](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) for a more detailed explanation.
+> Различие между контролируемым и неконтролируемым важно понимать при написании или использовании компонентов формы, и неправильное понимание этой концепции является очень распространенным источником ошибок. См. [эту статью](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) для более подробного объяснения.
 
-Let's try changing the text field in our `TodoHeader` component to a controlled input. To add a controlled input, we need two things, which our demo already provides:
-
-1. A state variable to hold the input's value:
-
+Давайте попробуем изменить текстовое поле в нашем компоненте "TodoHeader" на управляемый ввод. Чтобы добавить контролируемый ввод, нам нужны две вещи, которые уже есть в нашей демо-версии:
+1. Переменная состояния для хранения входного значения:
 ```jsx
 this.state = { labelInput: '' };
 ```
 
-2. A callback function to update that value:
-
+2. Функция обратного вызова для обновления этого значения:
 ```jsx
 _onChange = evt => {
   this.setState({ labelInput: evt.target.value });
 };
 ```
 
-With those two pieces in place, we can update our uncontrolled input to being controlled.
+Имея эти две части на месте, мы можем обновить наш неконтролируемый ввод, чтобы его можно было контролировать.
 
 ```jsx
 <input value={this.state.labelInput} onChange={this._onChange} className="textfield" placeholder="add todo" />
 ```
 
-> If you have React Dev Tools installed, open them up and take a look at `labelInput` as we type in the input.
+>Если у вас установлены инструменты разработки React, откройте их и посмотрите на "Ввод метки", когда мы вводим в поле ввода.
