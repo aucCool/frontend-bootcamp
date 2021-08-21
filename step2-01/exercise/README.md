@@ -1,46 +1,45 @@
-# Step 2.1 - Introduction to TypeScript (Exercise)
+#Шаг 2.1 - Введение в TypeScript (Упражнение)
 
 [Lessons](../../) | [Demo](../demo/) | [Final](../final/)
+Если у вас еще не запущено приложение, запустите его, запустив "запуск npm" из корневой папки "frontend-bootcamp".
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder.
+Упражнения будут выполнены в папке "упражнение/src" этого шага, если не указано иное. Вы также захотите открыть страницу [Упражнение Шаг 2-01](http://localhost:8080/step2-01/exercise/) чтобы видеть результаты по мере вашей работы.
 
-Exercises will be completed under this step's `exercise/src` folder unless otherwise noted. You'll also want to open the [Step2-01 exercise page](http://localhost:8080/step2-01/exercise/) to see the results as you work.
+## Модули
 
-## Modules
+1. Откройте файл " упражнение/src/fibonacci.ts` в коде VS
 
-1. Open the file `exercise/src/fibonacci.ts` in VS Code
+2. Внутри этого файла напишите функцию под названием " fib(n)", которая принимает число и возвращает " n "-е число Фибоначчи (обязательно укажите тип " n`).
 
-2. Inside this file, write a function called `fib(n)` that takes in a number and returns the `n`-th Fibonacci number (be sure the specify the type of `n`).
+> ПОДСКАЗКА: `функция fib(n: число) { возвращает n <= 1 ? n : fib(n - 1) + fib(n - 2); }`
 
-> HINT: `function fib(n: number) { return n <= 1 ? n : fib(n - 1) + fib(n - 2); }`
+3. Экспортируйте `fib(n)` как **именованный экспорт**
 
-3. Export `fib(n)` as a **named export**
+4. Экспортируйте переменную const "FibConst" в качестве экспорта **по умолчанию**
 
-4. Export a const variable `FibConst` as a **default export**
+5. Внутри "index.ts" в той же папке импортируйте как "fib", так и "FibConst" и используйте встроенную функцию console.log () для регистрации результата " fib(FibConst)".
 
-5. Inside `index.ts` in the same folder, import both `fib` and `FibConst`, and use the built-in `console.log()` function to log the result of `fib(FibConst)`.
+## Типы и интерфейсы
 
-## Types and interfaces
+Внутри `упражнение/src/index.ts`:
 
-Inside `exercise/src/index.ts`:
+1. Добавьте псевдоним типа для типа объединения строк, описывающего состояния красно-зелено-желтого светофора: `тип светофора = ???`
 
-1. Add a type alias for string union type describing the states of Red-Green-Yellow traffic light: `type TrafficLight = ???`
+2. Опишите тип автомобиля с интерфейсом: `интерфейсный автомобиль { ... }` в комплекте с " колесами`, `цветом`, `маркой`, `моделью`
 
-2. Describe a type of car with an interface: `interface Car { ... }` complete with `wheels`, `color`, `make`, `model`
+3. Создайте допустимый экземпляр car и зарегистрируйте его с помощью `console.log()`: `const myCar: Car = { ??? }`;
 
-3. Create a valid car instance and log it using `console.log()`: `const myCar: Car = { ??? }`;
+## Обобщенные типы
 
-## Generics
+Внутри `упражнение/src/stack.ts` создайте универсальный класс для "Стека<T>" в комплекте с типизированными методами " pop()` и `push ()".
 
-Inside `exercise/src/stack.ts`, create a generic class for a `Stack<T>` complete with a typed `pop()` and `push()` methods.
+> Подсказка: в массиве JavaScript уже реализованы функции "push()` и `pop ()" для вас. Это может быть ваш резервный магазин.
 
-> Hint: the JavaScript array already has `push()` and `pop()` implemented for you. That can be your backing store.
+В "упражнении/src/index.ts "создайте" Стек<номер> "и используйте" console.log ()", чтобы продемонстрировать его функциональность.
 
-In `exercise/src/index.ts`, create a `Stack<number>` and use `console.log()` to demonstrate its functionality.
+## Распространение и разрушение
 
-## Spread and destructuring
-
-1. Note the following code in index.ts:
+1. Обратите внимание на следующий код в index.ts:
 
 ```ts
 const obj1 = {
@@ -57,13 +56,14 @@ const obj2 = {
 };
 ```
 
-2. Now create a one-liner using the spread syntax `{...x, ...y}` to create a new variable `megaObj` that combines these two objects.
 
-3. Use the destructuring syntax to retrieve the values for `{first, second, catcher}` from `megaObj`.
+2. Теперь создайте однострочную строку, используя синтаксис распространения " {...x, ...y}", чтобы создать новую переменную "megaObj", которая объединяет эти два объекта.
 
-## Async / await
+3. Используйте синтаксис деструктурирования для извлечения значений `{первый, второй, ловец}` из `megaObj`.
 
-Note the following code in index.ts:
+## Асинхронность / ожидание
+
+Обратите внимание на следующий код в index.ts:
 
 ```ts
 function makePromise() {
@@ -71,6 +71,6 @@ function makePromise() {
 }
 ```
 
-1. Call `makePromise()` with the `await` syntax and log the results.
+1. Вызовите функцию makePromise () с синтаксисом " ожидание` и зарегистрируйте результаты.
 
-2. Create a new function that uses the `async` keyword. Inside the function, make an `await` call to `makePromise()` and return the results.
+2. Создайте новую функцию, использующую ключевое слово "async". Внутри функции выполните вызов "ожидание` для" makePromise()` и верните результаты.
