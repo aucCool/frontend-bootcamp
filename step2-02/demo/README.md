@@ -1,39 +1,38 @@
-# Step 2.2 - UI Fabric component library (Demo)
+# Шаг 2.2 - Библиотека компонентов структуры пользовательского интерфейса (демонстрационная версия)
 
 [Lessons](../../) | [Exercise](../exercise/)
 
-[UI Fabric](https://developer.microsoft.com/en-us/fabric) is a component library that reflects the latest Microsoft design language. It is used in many Microsoft web applications and is [developed in the open](https://github.com/OfficeDev/office-ui-fabric-react).
+[Структура пользовательского интерфейса](https://developer.microsoft.com/en-us/fabric) - это библиотека компонентов, которая отражает новейший язык проектирования Microsoft. Он используется во многих веб-приложениях Microsoft и [разрабатывается в открытом режиме](https://github.com/OfficeDev/office-ui-fabric-react).
 
-We'll talk about:
+Мы поговорим о:
 
-- [What makes it good](#what-makes-it-good)
-- [How to find it](#how-to-find-it)
-- [How to use it](#how-to-use-it)
-- [Laying out apps with Stack](#layout-with-stack)
+- [Что делает это потребным](#что делает это потребным)
+- [Как его найти](#как его найти)
+- [Как им пользоваться](#как им пользоваться)
+- [Выкладка приложений с абстрактным типом данных](#макет с абстрактным типом данных)
 
-## What makes it good
+## Что делает его потребным
 
-- Fabric has been developed BOTH by developers and design engineers working together as a team
-- Most notable Microsoft web products use it
-- It is documented both with examples and TypeScript API documentation
-- Components are highly customizable and themeable
-- Comprehensive library
-- Works with assistive technologies and conforms to web accessibility standards for focus management
-- Fully funded and well managed - shield rotation and lots of automation work
-- Engineering is done in the open on GitHub
-- Engineering system is shared and re-usable by other teams
+- Материал был разработан как разработчиками, так и инженерами-проектировщиками, работающими вместе как команда
+- Наиболее известные веб-продукты Microsoft используют его
+- Это задокументировано как примерами, так и документацией API сборника
+- Компоненты легко настраиваемы и тематичны
+- Обширная библиотека
+- Работает с вспомогательными технологиями и соответствует стандартам доступности Интернета для управления фокусом
+- Полностью финансируется и хорошо управляется - вращение щита и много работы по автоматизации
+- Проектирование выполняется в открытом режиме на GitHub
+- Инженерная система используется совместно и повторно другими командами
 
-## How to find it
-
-GitHub repo:
+## Как его найти
+GitHub репозиторий:
 https://github.com/officedev/office-ui-fabric-react
 
-Documentation:
+Документация:
 https://developer.microsoft.com/en-us/fabric/#/components
 
-## How to use it
+## Как это использовать 
 
-### Importing a component
+### Импорт компонента
 
 ```jsx
 import { DefaultButton } from 'office-ui-fabric-react';
@@ -47,12 +46,10 @@ const MyComponent = () => {
 };
 ```
 
-### Customizing behavior of individual components
+### Настройка поведения отдельных компонентов
+Обратите внимание на  [Button documentation](https://developer.microsoft.com/en-us/fabric#/components/button).
 
-Take a look at the [Button documentation](https://developer.microsoft.com/en-us/fabric#/components/button).
-
-From the documentation, we can see that if we want to render an icon along with the button's text, we can pass `iconProps` to the button:
-
+Из документации мы видим, что если мы хотим отобразить значок вместе с текстом кнопки, мы можем перейти к кнопке "Реквизит значка":
 ```js
 import { DefaultButton } from 'office-ui-fabric-react';
 
@@ -65,10 +62,9 @@ const MyComponent = () => {
 };
 ```
 
-### Customizing component rendering
+### Настройка визуализации компонентов
 
-Some Fabric components take in a render functions to allow customizing certain parts of the component. An example with TextField:
-
+Некоторые компоненты материала используют функции визуализации, позволяющие настраивать определенные части компонента. Пример с текстовым полем:
 ```js
 import { TextField } from 'office-ui-fabric-react';
 
@@ -82,27 +78,24 @@ const MyComponent = () => {
 };
 ```
 
-## Layout with Stack
+## Расположение в абстрактном типе данных 
 
-Before we start, let's look at flexbox--a modern CSS layout method which is powerful, but really, really complex to use:
+Прежде чем мы начнем, давайте рассмотрим flexbox-современный метод компоновки CSS, который является мощным, но очень, очень сложным в использовании:
+- Гид: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+- Инструмент: http://the-echoplex.net/flexyboxes/
+- Знаете ли вы, что существует три или около того стандарта flexbox? (это означает, что старые статьи могут иметь нерабочий код).
+Ответ материла таков: Абстрактный тип данных. 
+**Абстрактный тип данных ** это компонент контейнерного типа, который абстрагирует использование flexbox для определения компоновки его дочерних компонентов.
 
-- A guide: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-- A tool: http://the-echoplex.net/flexyboxes/
-- Did you know there were three or so flexbox standards? (this means old articles may have non-working code)
+Flexbox использует стили CSS для управления:
 
-Fabric's answer is: Stack.
+- направление 
+- рост
+- уменьшение
+- свернуть
+- обоснование 
+- выравнивание 
 
-**Stack** is a container-type component that abstracts the usage of flexbox to define the layout of its child components.
+Абстрактный тип данных абстрагирует эти стили CSS и предоставляет типизацию, чтобы сделать их более доступными для обнаружения.
 
-Flexbox uses CSS styles to control:
-
-- direction
-- grow
-- shrink
-- wrap
-- justification
-- alignment
-
-Stack abstracts these CSS styles and provides typings to make them more discoverable.
-
-Check out a cookbook of sorts in our [documentation](https://developer.microsoft.com/en-us/fabric#/components/stack).
+Ознакомьтесь со справочной  книгой в нашей [документации](https://developer.microsoft.com/en-us/fabric#/components/stack).
