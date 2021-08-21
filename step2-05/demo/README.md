@@ -1,70 +1,69 @@
-# Step 2.5 - Redux: The Store (Demo)
-
+# Шаг 2.5 - Redux: Магазин (Демонстрация)
 [Lessons](../../) | [Exercise](../exercise/)
 
-In this step, we will look at solving the problems of complex applications (as mentioned in Step 4) with a library called [Redux](https://redux.js.org).
+На этом шаге мы рассмотрим решение проблем сложных приложений (как упоминалось в Шаге 4) с помощью библиотеки под названием [Redux](https://redux.js.org).
 
-1. Introduction to Redux
-2. Why use Redux?
-3. Creating the Redux store
-4. Writing reducers
-5. Dispatching actions
+1. Введение в Redux
+2. Зачем использовать Redux?
+3. Создание магазина Redux
+4. Пишущие редукторы
+5. Диспетчерские действия
 
-## Introduction to Redux
+## Введение в Redux
 
-As a reminder, the problems that we want to address are:
+Напомним, что проблемы, которые мы хотим решить, заключаются в следующем:
 
-1. Data needs to be passed down from component to component via props, even when some intermediate components don't use all of the data.
-2. Shared data can be changed by various actors (user interaction, updates from server), and there is no coordination of these changes.
+1. Данные должны передаваться от компонента к компоненту с помощью реквизитов, даже если некоторые промежуточные компоненты не используют все данные.
+2. Общие данные могут быть изменены различными участниками (взаимодействие с пользователем, обновления с сервера), и координация этих изменений отсутствует.
 
-Redux is an implementation of the Flux architectural pattern:
+Redux-это реализация архитектурного шаблона Flux:
 
 ![Flux Diagram](../../assets/flux.png)
 
-### View
+### Представление 
 
-A view is a React component that consumes the store as its data.
+Представление-это компонент React, который использует хранилище в качестве своих данных.
 
-### Actions
+### Действия
 
-[Actions](https://redux.js.org/basics/actions) are serializable JSON messages that represent some event, such as a user's action or a network request. With the aid of **reducers**, they affect the overall state. At minimum, an action should contain a `type` key. Sometimes it contains additional data as a **payload**.
+[Действия](https://redux.js.org/basics/actions) являются сериализуемыми сообщениями текстового формата обмена данными, которые представляют какое-либо событие, такое как действие пользователя или сетевой запрос. С помощью **редукторов** они влияют на общее состояние. Как минимум, действие должно содержать ключ " тип`. Иногда он содержит дополнительные данные в виде **полезной нагрузки**.
 
-### Store
+### Магазин
 
-The [store](https://redux.js.org/basics/store) consists of a **state tree**, a **dispatcher**, and **reducers**.
+В [магазине](https://redux.js.org/basics/store) состоит из **дерева состояний**, **диспетчера** и **редукторов**.
 
-1. The **state tree** is a _singleton_, _serializable_, _immutable_ nested JSON structure. It is updated from one snapshot to another using reducers.
+1. Дерево состояний *** представляет собой вложенную структуру текстового формата обмена данными _singleton_, _serializable_, _immutable_. Он обновляется от одного снимка к другому с помощью редукторов.
 
-2. The [**dispatcher**](https://redux.js.org/basics/data-flow) accepts actions, passing them to the reducers.
+2. [**диспетчер**](https://redux.js.org/basics/data-flow) принимает действия, передавая их редукторам.
 
-3. [**Reducers**](https://redux.js.org/basics/reducers) are functions that take in the current state tree and an action, producing the next snapshot of the state tree. This is the only way to update the state tree.
+3. [**Редукторы**](https://redux.js.org/basics/reducers) - это функции, которые выполняют текущее дерево состояний и действие, создающее следующий снимок дерева состояний. Это единственный способ обновить дерево состояний.
 
-## Why use Redux?
+## Зачем использовать Redux?
 
-There are lots of alternatives available, but here are some really good reasons to go with Redux:
+Существует множество доступных альтернатив, но вот несколько действительно веских причин, чтобы пойти с Redux:
 
-1. For more complex applications, Flux pattern forces code to be written in a way that is easy to reason about
-2. There may be a need to serialize the application state to be transmitted across the network somehow
-3. Dev tooling is really amazing
-4. Popularity of the framework means the ecosystem is mature at this point
+1. Для более сложных приложений шаблон потока заставляет код быть написанным таким образом, чтобы о нем было легко рассуждать
+2. Может возникнуть необходимость в сериализации состояния приложения, которое каким-либо образом будет передаваться по сети
+3. Инструменты для разработки действительно потрясающие
+4. Популярность фреймворка означает, что на данный момент экосистема является зрелой
 
-## Using Redux
+## Использование Redux
 
-### Creating the Redux store
+### Создание магазина Redux
 
-The [`createStore()`](https://redux.js.org/api/createstore) function is provided by Redux to create a store. In general, an application has a single store. The function typically takes in the main reducer and an initial snapshot of the state tree.
+[`создать хранилище()`](https://redux.js.org/api/createstore) функция предоставляется Redux для создания магазина. Как правило, приложение имеет один магазин. Функция обычно использует основной редуктор и начальный снимок дерева состояний.
 
 ```ts
 const store = createStore(reducer, initialState);
 ```
 
-### Writing reducers
+### Редукторы записи
 
-We'll write our reducers with the help of some utilities from the official [`redux-starter-kit`](https://redux-starter-kit.js.org/), which greatly decreases the amount of boilerplate needed. The process for designing and implementing reducers is as follows:
+Мы напишем наши редукторы с помощью некоторых утилит из официального [`redux-starter-kit`](https://redux-starter-kit.js.org/), что значительно уменьшает количество необходимых шаблонов. Процесс проектирования и внедрения редукторов заключается в следующем:
 
-#### 1. Organize reducers according to the keys of the state tree object
+#### 1. Организуйте редукторы в соответствии с ключами объекта дерева состояний
 
-Given a state tree shaped like this:
+Учитывая дерево состояний, имеющее такую форму:
 
 ```ts
 {
@@ -75,8 +74,7 @@ Given a state tree shaped like this:
   filter: 'all' | 'complete' | 'active'
 }
 ```
-
-We would organize our reducers matching the keys of the state tree and combine them with [`combineReducers()`](https://redux.js.org/recipes/structuring-reducers/using-combinereducers):
+Мы  организовали наши редукторы, соответствующие ключам дерева состояний, и объединили их с [`combineReducers()`](https://redux.js.org/recipes/structuring-reducers/using-combinereducers):
 
 ```ts
 import { createReducer } from 'redux-starter-kit';
@@ -92,9 +90,9 @@ const reducer = combineReducers({
 })
 ```
 
-#### 2. Write the reducers with mutables
+#### 2. Напишите редукторы с изменяемыми параметрами
 
-In plain Redux, reducers must make a copy of the state before making modifications, but [`createReducer()`](https://redux-starter-kit.js.org/api/createreducer) will automatically translate all the mutations to the state into immutable snapshots (!!!!!):
+В обычном редакторе редукторы должны сделать копию состояния перед внесением изменений, но [`createReducer()`](https://redux-starter-kit.js.org/api/createreducer) автоматически переведет все мутации в состояние в неизменяемые моментальные снимки (!!!!!):
 
 ```ts
 // first argument: initial state
@@ -109,9 +107,9 @@ const todosReducer = createReducer(
 );
 ```
 
-### Dispatching actions
+### Диспетчерские действия
 
-Dispatching an action will pass the action and the current state to the reducers. The root reducer will produce a new snapshot of the entire state tree. We can inspect the affected snapshot with the help of `getState()`.
+Отправка действия передаст действие и текущее состояние редукторам. Корневой редуктор создаст новый снимок всего дерева состояний. Мы можем проверить затронутый снимок с помощью `getState()`.
 
 ```ts
 const store = createStore(reducer, initialState);
@@ -119,8 +117,7 @@ store.dispatch({ type: 'addTodo', label: 'hello' });
 store.dispatch({ type: 'addTodo', label: 'world' });
 console.log(store.getState());
 ```
-
-Creating these action messages by hand is tedious, so we use action creators to do that:
+Создавать эти сообщения о действиях вручную утомительно, поэтому мы используем для этого создателей действий:
 
 ```ts
 const actions = {
