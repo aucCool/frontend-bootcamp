@@ -1,31 +1,31 @@
-# Step 1.7 - Types and creating a UI-driven state (Exercise)
+# Шаг 1.7 - Типы и создание состояния, управляемого пользовательским интерфейсом (Упражнение)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 1 step 7 to see results.
+Если у вас еще не запущено приложение, запустите его, запустив "запуск npm" из корневой папки "frontend-bootcamp". Нажмите на ссылку "упражнение" в разделе день 1 шаг 7, чтобы увидеть результаты.
 
-## TodoFooter
+## Нижний колонтитул задачи
 
-1. Open TodoFooter and write a `TodoFooterProps` interface. It should include two values, a `clear` and `todos`. Use this interface in the function props like this: `(props: TodoFooterProps)`
+1. Откройте нижний колонтитул задачи и напишите интерфейс "TodoFooterProps". Он должен включать два значения: `ясно` и `задачи`. Используйте этот интерфейс в реквизите функции следующим образом: `(реквизит: TodoFooterProps)`
 
-2. Write an `_onClick` function that calls `props.clear`.
+2. Напишите функцию _onClick, которая вызывает "props.clear".
 
-  - Since TodoFooter is not a class, the `_onClick` function needs to be stored in a const placed before the `return`.
-  - Remember to use an arrow function to define this click handler.
+- Поскольку TodoFooter не является классом, функция "_onClick" должна храниться в константе, помещенной перед `возвращением`.
+- Не забудьте использовать функцию со стрелкой для определения этого обработчика щелчков.
 
-3. Assign `_onClick` to the button's `onClick` prop. You won't need to use `this` since the component isn't a class.
+3. Назначьте "_onClick` реквизиту кнопки" onClick`. Вам не нужно будет использовать "это", так как компонент не является классом.
 
-4. Test out this functionality. Check a few todos complete and click the `Clear Completed` button.
+4. Протестируйте эту функциональность. Проверьте выполнение нескольких заданий и нажмите кнопку "Очистить выполненные".
 
-## TodoHeader
+## Заголовок задачи
 
-1. Open TodoHeader and write `TodoHeaderProps` which will include `addTodo`, `setFilter` and `filter`. Replace the first `any` in the class declaration with this interface.
+1. Откройте TodoHeader и напишите `TodoHeaderProps", которые будут включать "addTodo", `setFilter` и "фильтр". Замените первое `любое` в объявлении класса этим интерфейсом.
 
-2. This component also has state. Write `TodoHeaderState` (there's just one value), and add this where the second `any` was.
+2. Этот компонент также имеет состояние. Напишите `TodoHeaderState "(есть только одно значение) и добавьте это туда, где было второе " любое`.
 
-3. Add `_onFilter` to each of the filter buttons
+3. Добавьте " _onFilter` к каждой из кнопок фильтра
 
-  - Note that we can't add new parameters to onClick, but we can pull information from the event target!
-  - Remember to use an arrow function for this one too
+- Обратите внимание, что мы не можем добавлять новые параметры в onClick, но мы можем извлекать информацию из цели события!
+- Не забудьте использовать функцию стрелки и для этого
 
-4. Call `_onAdd` from the submit button
+4. Вызовите "_onAdd" с помощью кнопки "Отправить".
 
-5. Check out this new functionality! We can now add and filter todos!
+5. Ознакомьтесь с этой новой функциональностью! Теперь мы можем добавлять и фильтровать задачи!
