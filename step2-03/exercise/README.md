@@ -1,12 +1,11 @@
-# Step 2.3 - Theming and styling with UI Fabric (Exercise)
+# Шаг 2.3 - Тематизация и стилизация с помощью структуры пользовательского интерфейса (Упражнение)
 
 [Lessons](../../) | [Demo](../demo/)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 2 step 3 to see results.
+Если у вас еще не запущено приложение, запустите его, запустив "запуск npm" из корневой папки "front end-bootcamp". Нажмите на ссылку "упражнение" в разделе день 2 шаг 3, чтобы увидеть результаты.
 
-## Applying Fabric themes
-
-Try applying some predefined themes from UI Fabric packages inside the TodoApp under `exercise/src/components/TodoApp.tsx`. Do this by replacing:
+## Применение структурных тем
+Попробуйте применить некоторые предопределенные темы из пакетов пользовательского структурного интерфейса внутри приложения TodoApp в разделе `exercise/src/components/TodoApp.tsx`. Сделайте это, заменив:
 
 ```ts
 import { FluentCustomizations } from '@uifabric/fluent-theme';
@@ -18,31 +17,31 @@ with:
 import { TeamsCustomizations } from '@uifabric/theme-samples';
 ```
 
-## Applying customized themes
+## Применение настраиваемых тем
 
-1. Create your own theme using the [theme generator](https://developer.microsoft.com/en-us/fabric#/styles/themegenerator) and copy the generated code.
+1. Создайте свою собственную тему, используя [генератор тем](https://developer.microsoft.com/en-us/fabric#/styles/themegenerator) и скопируйте сгенерированный код.
 
-2. In `exercise/src/components/TodoApp.tsx`, delete the `Customizer` component.
+2. В `exercise/src/components/TodoApp.tsx`, удалите компонент " Настройщик`.
 
-3. Paste in the generated theme code before the `TodoApp` component definition.
+3.Вставьте сгенерированный код темы перед определением компонента "TodoApp".
 
-4. Play around with the values and use VS Code's intellisense to discover more properties of the `ITheme` type.
+4.  Поиграйте со значениями и используйте фунцкию VS Code intellisense чтобы узнать больше свойств типа "Элемент".
 
-## Customizing one Fabric control instance
+## Настройка одного экземпляра элемента управления структурой.
 
-1. Open `exercise/src/components/TodoFooter.tsx`
+1. Откройте `exercise/src/components/TodoFooter.tsx`
 
-2. Find the `<DefaultButton>` and insert a `styles` prop
+2. Найдите `<DefaultButton>` и вставьте поддержку `styles` 
 
-3. Try to customize this with a styles object (let the Intellisense of VS Code guide you on what you can use to customize)
+3. Попробуйте настроить это с помощью объекта стилей (пусть функция VS Code подскажет вам, что вы можете использовать для настройки).
 
-4. Try to customize this with a styles function
+4. Попробуйте настроить это с помощью функции стилей.
 
-## CSS-in-JS with `mergeStyles`
+## CSS-в-JS с `mergeStyles`
 
-As mentioned in the demo, this is an advanced approach which also works outside of Fabric. You wouldn't typically use this approach within a Fabric-based app.
+Как упоминалось в демо-версии, это продвинутый подход, который также работает за пределами структуры. Обычно вы не используете этот подход в приложении на основе структуры.
 
-1. Try generating a class name using `mergeStyles` and use it as a `className` prop inside `TodoApp`
+1. Попробуйте создать имя класса с помощью `mergeStyles` и использовать его в качестве `className` опоры внутри `TodoApp`. 
 
 ```jsx
 import { mergeStyles } from 'office-ui-fabric-react';
@@ -57,4 +56,4 @@ const className = mergeStyles({
 });
 ```
 
-2. Try to give a few components extra padding
+2. Попробуйте придать нескольким компонентам дополнительное заполнение.
