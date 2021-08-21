@@ -1,25 +1,25 @@
-# Step 2.3 - Theming and styling with UI Fabric (Demo)
-
+# Шаг 2.3 - Тематизация и стилизация с помощью материла пользовательского интерфейса (демонстрация)
 [Lessons](../../) | [Exercise](../exercise/)
 
-In this section, we will illustrate how to use some of the built-in theming and styling features of the UI Fabric component library.
+В этом разделе мы проиллюстрируем, как использовать некоторые встроенные функции тематизации и стиля библиотеки компонентов структуры пользовательского интерфейса.
 
-These are the theming and styling methods that we will focus on in this step:
+Это методы тематизации и стилизации, на которых мы сосредоточимся на этом шаге:
 
-1. Theming using the `<Customizer>` component
-2. Customizing themes and loading with `loadTheme()`
-3. Customizing Fabric components via the `styles` prop
-4. CSS-in-JS with `mergeStyles`
+1. Тематизация с помощью компонента " <Настройщик>"
+2. Настройка тем и загрузка с помощью " loadTheme()`
+3. Настройка компонентов ткани с помощью реквизита " стили`
+4. CSS-в-JS с `слиянием стилей"
 
-The first three methods only work with Fabric components, but the fourth, `mergeStyles`, can be used in other projects as well (and is typically not used within Fabric-based projects).
+Первые три метода работают только с компонентами материалов, но четвертый, "Стили слияния", также может использоваться в других проектах (и обычно не используется в проектах на основе материалов).
 
-## 1. Applying Fabric themes using `<Customizer>`
+## 1. Применение тем материлала с помощью `<Настройщик>`
 
-One way to apply a theme is by wrapping the components to be themed with a `<Customizer>` component. `Customizer` propagates the theme down to children through the [React Context](https://reactjs.org/docs/context.html) mechanism.
 
-There are some predefined themes within Fabric already, like Fluent (which will become the default in the next major release), MDL2, Azure, and some other sample themes like Teams.
+Один из способов применения темы-обернуть компоненты, подлежащие тематизации, компонентом " <Настройщик>". `Настройщик` распространяет дочернюю тему через [Контекст реакции](https://reactjs.org/docs/context.html) механизм.
 
-The following code (simplified from `demo/src/components/TodoApp.tsx`) shows an example of applying the Fluent theme to our todo app using `Customizer`.
+В материале  уже есть некоторые предопределенные темы, такие как Fluent (которые станут по умолчанию в следующем крупном выпуске), MDL2, Azure и некоторые другие примеры тем, таких как команды.
+
+Cледущий код  (simplified from `demo/src/components/TodoApp.tsx`) показывает пример применения темы Fluent к нашему приложению todo с помощью " Настройщик`.
 
 ```jsx
 import { Customizer } from 'office-ui-fabric-react';
@@ -38,12 +38,11 @@ function render() {
 }
 ```
 
-## 2. Applying customized themes using `loadTheme()`
+## 2. Применение настраиваемых тем с помощью `загрузить тему()`
 
-Another way to apply a theme is using the `loadTheme()` function. Themes loaded this way apply to the entire application.
+Другой способ применить тему-использовать функцию " loadTheme ()". Темы, загруженные таким образом, применяются ко всему приложению.
 
-To try out `loadTheme()` in our todo app, remove the `<Customizer>` tag from `TodoApp.tsx` and place this code in the module scope.
-
+Чтобы опробовать "loadTheme ()" в нашем приложении для задач, удалите тег "<Настройщик> " из "TodoApp.tsx" и поместите этот код в область модуля.
 ```ts
 import { loadTheme } from 'office-ui-fabric-react';
 
@@ -75,17 +74,15 @@ loadTheme({
 });
 ```
 
-> If you'd like to create your own theme, the Fabric website has a [handy theme generator](https://aka.ms/themedesigner) to help get you started.
+## 3. Настройка одного экземпляра элемента управления структурой
 
-## 3. Customizing one Fabric control instance
+Если вы просто хотите настроить стиль экземпляра одного компонента, компоненты материала предоставляют опору "стили" (не путать со встроенной функцией React, называемой "стиль").
 
-If you just want to customize a single component instance's styling, Fabric components expose a `styles` prop (not to be confused with the React built-in one called `style`).
+Вы можете использовать технологию автодополнения Microsoft, чтобы определить, какие части компонента можно настроить.
 
-You can use intellisense to discover which parts of the component you can to customize.
+Реквизит "стили" может принимать либо объект, либо функцию, которая возвращает объект стиля на основе значений реквизита компонента.
 
-The `styles` prop can take either an object, or a function which returns a style object based on the component's prop values.
-
-The following code (simplified from `demo/src/components/TodoHeader.tsx`) demonstrates using `styles` to customize individual components. The TextField uses a style function and the PrimaryButton uses a style object.
+Следующий код (упрощенный из "demo/src/components/To do Header.tsx") демонстрирует использование  `стилей` для настройки отдельных компонентов. Текстовое поле использует функцию стиля, а oсновная кнопка использует объект стиля.
 
 ```js
 function render() {
@@ -113,21 +110,20 @@ function render() {
 }
 ```
 
-## 4. CSS-in-JS with `mergeStyles`
+## 4. CSS-в-JS с `mergeStyles`
 
-`mergeStyles` is a styling library that creates CSS class names from styles that are expressed as JavaScript objects. These classes can be used as the `className` prop of any component or element, such as `<div>`.
+`mergeStyles`это библиотека стилей, которая создает имена классов CSS из стилей, выраженных в виде объектов JavaScript. Эти классы могут использоваться в качестве реквизита "Имя класса" любого компонента или элемента, например `<div>`.
 
-This is an advanced approach which also works outside of Fabric. Within Fabric-based apps, you would typically only use `mergeStyles` in certain niche scenarios. (Fabric itself uses `mergeStyles` under the hood to power some of its styling.)
+Это продвинутый подход, который также работает за пределами материала. В приложениях на основе материала вы, как правило, используете "Стили слияния" только в определенных нишевых сценариях. ((Сам материал использует `Стили слияния` под низом, чтобы придать некоторый стиль.)
 
-Benefits of `mergeStyles` include:
+Преимущества `mergeStyles` включают:
 
-- Works in any app
-- Eliminates the need to import or bundle CSS stylesheets (all styles are bundled as normal JS code)
-- Provides type checking for styles (like Sass) when used with TypeScript
-- Very performant compared with other similar libraries
+- Работает в любом приложении
+- Устраняет необходимость импорта или объединения таблиц стилей CSS (все стили поставляются в комплекте как обычный код JS)
+- Обеспечивает проверку типов стилей (например, Sass) при использовании TypeScript
+- Очень эффективен по сравнению с другими подобными библиотеками.
 
-The following is a basic example using mergeStyles. ([This CodePen](https://codepen.io/dzearing/pen/jGdgrE?editors=1011) illustrates in more detail what `mergeStyles` does and includes some advanced examples.)
-
+Ниже приведен базовый пример использования стилей слияния. ([[Этот код](http://codepen.io/dzearing/pen/jGdgrE?editors=1011) более подробно иллюстрирует, что делает "mergeStyles", и включает некоторые расширенные примеры.)
 ```jsx
 // can also import from office-ui-fabric-react in Fabric-based apps
 import { mergeStyles } from '@uifabric/merge-styles';

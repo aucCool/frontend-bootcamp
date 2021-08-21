@@ -1,35 +1,33 @@
-# Step 1.2 - Introduction to CSS (Demo)
+# Шаг 1.2 - Введение в каскадные таблицы стилей CSS (демонстрация)
+## Свойства CSS
 
-## CSS properties
+Теперь, когда мы рассмотрели добавление HTML-тегов на страницу, давайте рассмотрим добавление стилей к этим тегам. Мы можем многое сделать со стилями! Мы можем изменить:
 
-Now that we've gone over adding HTML tags to the page, let's cover adding styles to those tags. We can do quite a lot with styles! We can change:
+- Типография
+- Цвета
+- Внешний вид (углы, границы, украшения)
+- Планировка
+- Позиция
+- Формат отображения: встроенный против блока
+- Анимация
+- и [многое другое](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 
-- Typography
-- Colors
-- Appearance (corners, borders, decorations)
-- Layout
-- Position
-- Display format: inline vs block
-- Animations
-- and [many more](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+Стили CSS всегда записываются в парах "свойство: значение" (например, " фон: синий;") и заканчиваются точкой с запятой.
 
-CSS styles are always written in `property: value` pairs (like `background: blue;`) and terminated with a semicolon.
+## Применение CSS к HTML-файлу
 
-## Applying CSS to an HTML file
-
-CSS can be applied to HTML tags in three different ways.
-
-1. Inline using an HTML tag's `style` attribute
+CSS может быть применен к HTML-тегам тремя различными способами.
+1. Встроенное использование атрибута "стиль" HTML-тега
    - `<div style="background: blue; color: white;">Hello </div>`
-2. Via a `<style>` tag in the HTML page
-3. Through an external CSS file
+2. С помощью тега " <стиль>` на HTML - странице
+3. Через внешний CSS-файл
    - `<link rel="stylesheet" href="./css-demo-finished.css" />`
 
-## Targeting specific elements
+## Направление  на конкретные элементы
 
-Inline styles are always applied directly to the element you place them on, but `<style>` tags and external CSS files need a way to match elements with their respective style sets. This is done with **[CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)**. When selectors are combined with CSS styles, we call this a **ruleset**.
+Встроенные стили всегда применяются непосредственно к элементу, на котором вы их размещаете, но тегам "<стиль> " и внешним CSS-файлам требуется способ сопоставления элементов с их соответствующими наборами стилей. Это делается с помощью "[селекторов CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)". Когда селекторы объединяются со стилями CSS, мы называем это "набором правил".
 
-CSS rulesets take on the following form:
+Наборы правил CSS принимают следующую форму:
 
 ```css
 selector1,
@@ -39,8 +37,8 @@ selector2 {
 }
 ```
 
-Here's a more detailed view from [Chris Eppstein](https://twitter.com/chriseppstein/status/1100115119437111296):
+Здесь больше делатей от [Chris Eppstein](https://twitter.com/chriseppstein/status/1100115119437111296):
 
 <img src="https://raw.githubusercontent.com/Microsoft/frontend-bootcamp/master/assets/css-syntax.png"/>
 
-A selector can be a single tag, class, ID, or attribute. It can also be a [combination](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors) of those elements.
+Селектором может быть один тег, класс, идентификатор или атрибут. Это также может быть комбинация (https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors) из этих элементов.

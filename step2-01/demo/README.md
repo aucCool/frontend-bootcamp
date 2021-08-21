@@ -1,58 +1,58 @@
-# Step 2.1 - Introduction to TypeScript (Demo)
+# Шаг 2.1 - Введение в TypeScript (демонстрация)
 
 [Lessons](../../) | [Exercise](../exercise/) | [Final](../final/)
 
-In this step, we'll cover enough TypeScript concepts to be productive with the React & Redux frameworks.
+На этом шаге мы рассмотрим достаточно концепций машинописи, чтобы быть продуктивными с помощью интегрированных систем React и Redux.
 
-Topics in this step will include:
+Темы на этом этапе будут включать:
 
-- [ES modules](#modules)
-- [Types](#typescript-types)
-- [Spread](#spread-operator) and [Destructuring](#destructuring)
-- [Promise](#promise) and [Async / Await](#async--await)
+- [Модули ES](#модули)
+- [Типы](#типографские типы)
+- [Распространение](#оператор распространения) и [Деструктурирование](#деструктурирование)
+- [Промисы](#промисы) и [Асинхронное / ожидание](#асинхронное--ожидание)
 
-> To try out TypeScript concepts and see the corresponding JavaScript, you can use the [TypeScript playground](http://www.typescriptlang.org/play/index.html). We won't be using it in this training, but it's very handy in general!
+> Чтобы опробовать концепции  TypeScript и увидеть соответствующий JavaScript, вы можете воспользоваться [игровой площадкой TypeScript](http://www.typescriptlang.org/play/index.html Мы не будем использовать его на этом тренинге, но в целом он очень удобен!
 
-## Modules
+## Модули
 
-Historically, JS was only executed in-browser. The code all had to be loaded using `<script>` tags. With the introduction of node.js, the JS community needed a way to scale beyond just single script files. Other languages support the notion of modules, so various groups started developing modularity standards for JS.
+Исторически сложилось так, что JS выполнялся только в браузере. Весь код должен был быть загружен с использованием тегов<script>. С введением node.js, сообществу JS требовался способ масштабирования, выходящий за рамки только отдельных файлов сценариев. Другие языки поддерживают понятие модулей, поэтому различные группы начали разрабатывать стандарты модульности для JS.
 
-The most important ones to know about are:
+Наиболее важными из них, о которых следует знать, являются:
 
-- **commonjs** - Node.js's standard to support modules
-  - synchronous loading using `require()` function
-  - `require()` can be dynamically called in the course of a program
-- **ESM (ECMAScript module)** - language-level support
-  - statically analyzable and synchronous
-  - dynamic and asynchronous support via `import()` that returns a promise
+- **commonjs** - Node.js стандарт для поддержки модулей
+- синхронная загрузка с использованием функции " require ()"
+- `require()` может быть динамически вызван в ходе выполнения программы
+- **ESM (модуль ECMAScript)** - поддержка на уровне языка
+- статически анализируемый и синхронный
+- динамическая и асинхронная поддержка с помощью функции " импорт ()", которая возвращает промис.
 
-> For more information about the _many_ modularity patterns and standards developed over time, see [this article](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc). You may still encounter some of the older patterns in legacy code.
+> Для получения дополнительной информации о моделях модульности и стандартах, разработанных с течением времени, см. [эту статью](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc). Вы все еще можете столкнуться с некоторыми более старыми шаблонами в устаревшем коде.
 
-## TypeScript types
+## Типы TypeScript
 
-Refer to [`demo/src/types`](./src/types/index.ts) for examples of some of the types available in TS that benefit a React developer.
+Ссылайтесь на [`demo/src/types`](./src/types/index.ts) для примеров некоторых типов, доступных в TS, которые приносят пользу разработчику React.
 
-## Spread operator
+## Оператор распространения
 
-The spread operator `...` provides a quick way to clone and concatenate objects and arrays. This syntax is seen a lot inside React props and Redux reducers.
+Оператор распространения ` ... " обеспечивает быстрый способ клонирования и объединения объектов и массивов. Этот синтаксис часто встречается в реквизитах React и редукторах Redux.
 
-With **objects**:
+С помощью **объектов**:
 
 ```ts
-// Shallow copy an object
+// Поверхностное копирование объекта
 const cloned1 = { ...obj };
 
-// Shallow copy and add/overwrite a key
+// Поверхностное копирование и добавление/перезапись ключа
 const overridden1 = { ...obj, key: value };
 
-// Shallow copy multiple objects and add a key
+// Поверхностное копирование нескольких объектов и добавление ключа
 const cloned2 = { ...obj1, ...obj2, key: value };
 
-// Use an expression to calculate a key dynamically
+// Используйте выражение для динамического вычисления ключа
 const overridden = { ...object, [key + '-suffix']: value };
 ```
 
-With **arrays**:
+С **массивами**:
 
 ```ts
 const copy1 = [...arr];
@@ -60,7 +60,7 @@ const copy2 = [...arr1, ...arr2];
 const copyWithExtras = [123, ...arr, 'hello'];
 ```
 
-Spreading an array into positional arguments to a function:
+Разбиение массива на позиционные аргументы функции:
 
 ```ts
 function myFunc(a: number, b: number, c: number) {
@@ -79,10 +79,9 @@ const obj = { a: 1, b: 2, c: 3 };
 const rendered = <MyComponent {...obj} />;
 ```
 
-## Destructuring
+## Деструктурирование
 
-Destructuring is a concise way to take properties out of an object or array:
-
+Деструктурирование-это краткий способ извлечения свойств из объекта или массива:
 ```ts
 const obj = { foo: 1, bar: 2 };
 const { foo, bar } = obj;
@@ -93,7 +92,7 @@ const [foo, bar] = arr;
 // foo = 1, bar = 2
 ```
 
-You can separate an item from the rest of the object with destructuring:
+Вы можете отделить элемент от остальной части объекта с помощью деструктурирования:
 
 ```ts
 const obj = { a: 1, b: 2, c: 3, d: 4 };
@@ -105,9 +104,9 @@ const [foo, ...bar] = arr;
 // foo = 1, bar = [2, 3]
 ```
 
-## Promise
+## Промис
 
-A promise is an object representing work that will be completed later, asynchronously. Promises are chainable, which helps with writing maintainable async code. (Typically, legacy async code uses callbacks to let the caller have control over what to do after the task has been completed, which becomes [very hard to read](http://callbackhell.com/).)
+Промис-это объект, представляющий работу, которая будет выполнена позже, асинхронно. Промисы могут быть связаны по цепочке, что помогает при написании поддерживаемого асинхронного кода. (Как правило, устаревший асинхронный код использует обратные вызовы, чтобы позволить вызывающему абоненту контролировать, что делать после завершения задачи, что становится [очень трудным для чтения](http://callbackhell.com/).)
 
 ```ts
 const aPromise = new Promise((resolve, reject) => {
@@ -119,7 +118,7 @@ const aPromise = new Promise((resolve, reject) => {
 });
 ```
 
-Each promise instance exposes a `then()` function that is chainable. It also provides `catch()`, which catches all exceptions or `reject()` calls:
+Каждый экземпляр промиса предоставляет функцию " then ()`, которая может быть связана по цепочке. Он также предоставляет функцию " catch ()", которая перехватывает все исключения или вызовы " отклонить ()".:
 
 ```ts
 // Promise.resolve() creates an already-resolved promise instance
@@ -137,11 +136,11 @@ aPromise
   });
 ```
 
-> For more information, see [this overview of promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) or [this deep dive](https://developers.google.com/web/fundamentals/primers/promises).
+> Для получения дополнительной информации см. [этот обзор промисов](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) или [это глубокое погружение](https://developers.google.com/web/fundamentals/primers/promises).
+  
+## Асинхронность / ожидание
 
-## Async / await
-
-**Async / Await** is a language-level feature for writing asynchronous functions as if they are ordinary, synchronous code. JS support for this is built on top of `Promise`s and is inspired heavily by [C#'s async / await syntax](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/). An async function is written like this:
+**Асинхронность / Ожидание**-это функция на уровне языка для написания асинхронных функций, как если бы они были обычным синхронным кодом. Поддержка JS для этого построена поверх "Промиса" и в значительной степени вдохновлена синтаксисом асинхронности / ожидания [C#] (https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/). Асинхронная функция записывается следующим образом:
 
 ```ts
 async function someFunctionAsync() {
@@ -151,12 +150,11 @@ async function someFunctionAsync() {
 }
 ```
 
-All functions that are marked `async` return a `Promise` automatically. The previous example returned a `Promise<string>`, and can be used like this:
-
+Все функции, помеченные как "асинхронные", автоматически возвращают `Промис`. В предыдущем примере возвращалось " Промис<строка>", и его можно использовать следующим образом:
 ```ts
 someFunctionAsync().then(result => {
   console.log(result);
 });
 ```
 
-> For more information, see [this article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function).
+> Для большей информации, смотреть [эту статью ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function).

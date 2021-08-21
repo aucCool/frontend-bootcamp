@@ -1,27 +1,21 @@
-# Step 2.2 - UI Fabric component library (Exercise)
+# Шаг 2.2 - Библиотека компонентов структуры пользовательского интерфейса (Упражнение)
+## Уроки | Демонстрация
 
-[Lessons](../../) | [Demo](../demo/)
+Упражнение 1. Знакомство с сайтом документации по структуре:
+Откройте документацию для кнопки по умолчанию. Используйте боковую панель для изучения других доступных компонентов.
 
-# Exercise 1: Getting familiar with the Fabric documentation site:
+Упражнение 2: "Материал"из TodoFooter.tsx
+Если у вас еще не запущено приложение, запустите его, запустив npm start из корневой папки frontend-bootcamp. Нажмите на ссылку "упражнение" в разделе день 2 шаг 2, чтобы увидеть результаты.
 
-Open the [documentation for DefaultButton](https://developer.microsoft.com/en-us/fabric/#/components/button). Use the sidebar to explore other available components.
+Откройте файл TSX в упражнении/src/компоненты/TodoFooter.tsx
+Следуйте верхнему комментарию к задаче, чтобы импортировать компоненты стека, текста и кнопки по умолчанию из материала
+Следуйте комментарию к заданию, чтобы:
+замените <нижний колонтитул> на <абстрактный тип данных>
+заменить <интервал> на <Текст>
+замените <кнопку> на <кнопку по умолчанию>
+### Бонусное Упражнение
+СХОДИ С УМА! В библиотеке материала  так много компонентов! Попробуйте поместить некоторые компоненты в файлы компонентов упражнений. Попробуйте эти концепции, упомянутые ранее:
 
-# Exercise 2: "Fabric"ize the TodoFooter.tsx
-
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 2 step 2 to see results.
-
-1. Open TSX file inside `exercise/src/components/TodoFooter.tsx`
-2. Follow the top TODO comment to import Stack, Text and DefaultButton components from Fabric
-3. Follow the TODO comment to:
-
-- replace `<footer>` with a `<Stack>`
-- replace `<span>` with a `<Text>`
-- replace `<button>` with a `<DefaultButton>`
-
-## Bonus Exercise
-
-GO WILD! There are so many components in the Fabric library! Try to put some components in the exercise component files. Try out these concepts mentioned earlier:
-
-- Importing components from `office-ui-fabric-react`
-- Customizing component with props found on the documentation site
-- Customize component with render props (these will be called onRender\_\_\_ or similar)
+Импорт компонентов из  office-ui-fabric-react
+Настройка компонента с помощью реквизитов, найденных на сайте документации
+Настройте компонент с помощью реквизитов рендеринга (они будут называться OnRender___ или аналогично)

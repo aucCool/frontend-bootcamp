@@ -1,9 +1,8 @@
-# Step 1.3 - Introduction to JavaScript (Demo)
+# Step 1.3 - Введение в JavaScript (Демонстрация)
 
-It's entirely possible to create a website with nothing but HTML and CSS, but as soon as you want user interaction other than links and forms, you'll need to reach for JavaScript, the scripting language of the web. Fortunately, JavaScript has grown up quite a bit since it was introduced in the '90s, and now runs just about everything: web applications, mobile applications, native applications, servers, robots and rocket ships.
+Вполне возможно создать веб-сайт, используя только HTML и CSS, но как только вам потребуется взаимодействие с пользователем, отличное от ссылок и форм, вам понадобится JavaScript, язык сценариев в Интернете. К счастью, JavaScript немного развился с тех пор, как он был представлен в 90-х годах, и теперь работает практически со всем: веб-приложениями, мобильными приложениями, собственными приложениями, серверами, роботами и ракетными кораблями.
 
-In this demo we are going to cover a few core basics of the language that will help us when we start writing our todo app. At the end of this demo we will be able to count and display the number of the letter "a"s in our email input. Here's the markup we're working with:
-
+В этой демонстрации мы собираемся охватить несколько основных основ языка, которые помогут нам, когда мы начнем писать наше приложение todo. В конце этой демонстрации мы сможем подсчитать и отобразить номер буквы «а» во входных данных электронной почты. Вот с какой разметкой мы работаем:
 ```html
 <div id="contact-form">
   <label for="email">Email</label><input id="email" type="email"/>
@@ -11,18 +10,16 @@ In this demo we are going to cover a few core basics of the language that will h
 </div>
 ```
 
-By the end of the demo we'll have covered the following:
+К концу демонстрации мы рассмотрим следующее:
+- Переменные
+- События
+- Функции
+- Условные выражения
+- Циклы
+- Взаимодействие с DOM (объектная модель документа)
 
-- Variables
-- Events
-- Functions
-- Conditionals
-- Loops
-- Interacting with the DOM (Document Object Model)
-
-## Introduction to variables
-
-We can create a new variable with the keywords `var`, `let`, `const` and use them within our application. These variables can contain one of the following types of values:
+## Введение в переменные
+Мы можем создать новую переменную с ключевыми словами "var", "let", "const" и использовать их в нашем приложении. Эти переменные могут содержать один из следующих типов значений:
 
 - **boolean**: `true`, `false`
 - **number**: `1`, `3.14`
@@ -33,9 +30,9 @@ We can create a new variable with the keywords `var`, `let`, `const` and use the
 - **null**
 - **undefined**
 
-> [When to use `var`/`let`/`const`?](https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var-to-declare-a-variable-in-jav) Use `const` for variables you never expect to change, and `let` for anything else. `var` is mostly no longer used. See the link for more details about how each works.
+> [Когда использовать  `var`/`let`/`const`?](https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var-to-declare-a-variable-in-jav) Используйте `const` для переменных, которые вы никогда не ожидаете изменить, и` let` для чего-либо еще. "Var" в основном больше не используется. См. Ссылку для получения более подробной информации о том, как каждый из них работает.
 
-### Variable examples
+### Примеры переменных
 
 ```js
 const myBoolean = true;
@@ -48,21 +45,21 @@ const myFunction = function(myNumberParam) {
 };
 ```
 
-> JavaScript is a dynamically typed language, so if you initially store a number in a variable (`let myVar = 0`), you can change it to contain a string by simply writing `myVar = 'hello'` without any trouble.
+> 206 / 5000
+JavaScript - это язык с динамической типизацией, поэтому, если вы изначально сохраняете число в переменной (`let myVar = 0`), вы можете без проблем изменить его, чтобы он содержал строку, просто написав `myVar = 'hello'`. 
 
-### Adding variables
+### Добавление переменных 
 
-Let's start off our demo by adding a variable to our [script tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script). This variable will be global and constant.
-
+Давайте начнем нашу демонстрацию с добавления переменной в наш [тег скрипта] (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script). Эта переменная будет глобальной и постоянной.
 ```js
 const match = 'a';
 ```
 
-## Functions
+## Функции 
 
-Functions are reusable pieces of functionality. Functions can take inputs (parameters) and return values (or neither). Functions can be called from within your program, from within other functions, or invoked from within the DOM itself.
+Функции - это многоразовые части функциональности. Функции могут принимать входные данные (параметры) и возвращать значения (или ни то, ни другое). Функции можно вызывать из вашей программы, из других функций или из DOM.
 
-In our example we'll create a function called `displayMatches` (camelCase is typical for functions) and we'll invoke this function every time that our submit button is clicked. For now we'll simply have our function call `alert("I'm Clicked")`, which is a function that displays an alert message box in your browser.
+В нашем примере мы создадим функцию под названием `displayMatches` (camelCase типичен для функций), и мы будем вызывать эту функцию каждый раз, когда нажимается наша кнопка отправки. На данный момент у нас будет просто вызов нашей функции `alert("I'm Clicked")`, которая представляет собой функцию, которая отображает окно сообщения с предупреждением в вашем браузере.
 
 ```js
 function displayMatches() {
@@ -70,15 +67,14 @@ function displayMatches() {
 }
 ```
 
-## Events
+## События 
 
-Functions on their own don't have any effect on the page. When I declare `function displayMatches()` I have only defined the function; I haven't actually executed it.
+Сами по себе функции не влияют на страницу. Когда я объявляю функцию "displayMatches" (), я определяю только функцию; На самом деле я его не выполнял.
 
-To execute a function we need to attach it to an event. There are a number of possible events: keyboard strokes, mouse clicks, document loading, and more.
+Чтобы выполнить функцию, нам нужно привязать ее к событию. Существует ряд возможных событий: нажатие клавиатуры, щелчок мышью, загрузка документа и т. д.
 
-### Add event listeners
-
-To attach a function to an event, we use an [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) like this:
+### Добавление  слушателей событий
+Чтобы прикрепить функцию к событию, мы используем [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) вроде такого:
 
 ```js
 window.addEventListener('load', function() {
@@ -90,11 +86,11 @@ window.addEventListener('click', function() {
 });
 ```
 
-> [`window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) is a reference to the entire window containing the HTML document.
+> [`window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) ссылка на все окно, содержащее HTML-документ.
 
-### Global event handlers
+### Обработчики глобальных событий
 
-If you think this feels a little verbose, you're not alone. Many of the [most common event types](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers) are available as element properties. This way we can set properties like `onload` or `onclick` like this:
+Если вам кажется, что это немного многословно, вы не одини. Многие из [наиболее распространенных типов событий] (https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers) доступны как свойства элементов. Таким образом, мы можем установить такие свойства, как "onload" или "onclick", следующим образом:
 
 ```js
 window.onload = function() {
@@ -105,26 +101,23 @@ window.onclick = function() {
 };
 ```
 
-> Note that only a single function can be assigned to `onload`, but many event listeners can be added for `load`.
+> Обратите внимание, что для onload может быть назначена только одна функция, но для "load" может быть добавлено множество прослушивателей событий.
 
-In our example, we want to trigger a function when a button is clicked. To do this, we first need to get a reference to the button. We can use the [`querySelector`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) method of the browser-provided [`document`](https://developer.mozilla.org/en-US/docs/Web/API/Document) global variable to get that reference. Then we can set our `displayMatches` function to be the button's `onclick` handler.
-
+В нашем примере мы хотим запускать функцию при нажатии кнопки. Для этого нам сначала нужно получить ссылку на кнопку. Мы можем использовать метод [`querySelector`] (https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) предоставленного браузером [` document`] (https: // developer.mozilla.org/en-US/docs/Web/API/Document), чтобы получить эту ссылку. Затем мы можем сделать нашу функцию "displayMatches" обработчиком onclick кнопки.
 ```js
 const button = document.querySelector('.submit');
 button.onclick = displayMatches;
 ```
 
-You can also combine the two statements together like this:
-
+Вы также можете объединить эти два утверждения следующим образом:
 ```js
 document.querySelector('.submit').onclick = displayMatches;
 ```
 
-Reload the page and click the button to see your function in action!
+Перезагрузите страницу и нажмите кнопку, чтобы увидеть, как работает ваша функция!
+## Итерация
 
-## Iteration
-
-Next we'll update our function to iterate through a string of letters. We loop over each letter using the [`for of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) syntax. We'll use real input later, but for now this verifies that our function is working.
+Затем мы обновим нашу функцию, чтобы перебирать строку букв. Мы перебираем каждую букву, используя синтаксис [`for of`] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of). Позже мы будем использовать реальный ввод, но пока это подтверждает, что наша функция работает.
 
 ```js
 function displayMatches() {
@@ -135,9 +128,9 @@ function displayMatches() {
 }
 ```
 
-## Conditionals
+## Условные 
 
-Next we want to compare each `letter` with our global `match` value, and if they are the same, we will increment a `matches` variable. Remember that `letter = match` would set the `letter` variable to the value in `match`, so to do comparisons, we use the equality operator `==` or the strict equality operator `===`.
+Затем мы хотим сравнить каждую «букву» с нашим глобальным значением «match», и если они совпадают, мы увеличим переменную «matches». Помните, что `letter = match` установит для переменной` letter` значение в `match`, поэтому для сравнения мы используем оператор равенства` == `или оператор строгого равенства` === `.
 
 ```js
 function displayMatches() {
@@ -152,14 +145,13 @@ function displayMatches() {
 }
 ```
 
-> In JavaScript, it's safest to use strict `===` for comparisons, because `==` will try to convert the operands to the same type. For example, `"1" == 1` converts `"1"` to a number and returns true. This result makes decent sense, but the behavior in certain other cases is [not what you'd expect](https://www.youtube.com/watch?v=et8xNAc2ic8). (See [this video](https://www.destroyallsoftware.com/talks/wat) for more strange JavaScript behavior.)
+> В JavaScript безопаснее всего использовать для сравнений строгий `===`, потому что `==` попытается преобразовать операнды в один и тот же тип. Например, `«1» == 1` преобразует «1» в число и возвращает истину. Этот результат имеет смысл, но в некоторых других случаях поведение [не то, что вы ожидали] (https://www.youtube.com/watch?v=et8xNAc2ic8). (См. [Это видео] (https://www.destroyallsoftware.com/talks/wat) для более странного поведения JavaScript.)
 
-## Interacting with the DOM
+## Взаимодействие с DOM
 
-Now that we have a function performing all of our logic, it's time to connect this to our DOM by using some of the browser's built-in functions.
+Теперь, когда у нас есть функция, выполняющая всю нашу логику, пришло время подключить ее к нашей DOM с помощью некоторых встроенных функций браузера.
 
-First we need to get a reference to the email field in our app's DOM. To do this, I've added an `id` to the input, and we'll find the element using [`getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) from the `document` global variable. This function will return a reference to that input, and we can store it in the `email` variable.
-
+Сначала нам нужно получить ссылку на поле электронной почты в DOM нашего приложения. Для этого я добавил на вход `id`, и мы найдем этот элемент, используя [` getElementById`] (https://developer.mozilla.org/en-US/docs/Web/API/ Document / getElementById) из глобальной переменной document. Эта функция вернет ссылку на этот ввод, и мы можем сохранить ее в переменной `email`.
 ```js
 function displayMatches() {
   const email = document.getElementById('email');
@@ -168,7 +160,7 @@ function displayMatches() {
 }
 ```
 
-Since what we're actually after is the value of the input field, we can set our `text` variable to the string contained in the email input's `value` key. To see this in action, in Chrome you can right click on the console message created by the code above, choose "save as variable" and then type `variableName.value`.
+Поскольку на самом деле нам нужно значение поля ввода, мы можем установить нашу переменную `text` в строку, содержащуюся в ключе` value` ввода электронной почты. Чтобы увидеть это в действии, в Chrome вы можете щелкнуть правой кнопкой мыши сообщение консоли, созданное приведенным выше кодом, выбрать «сохранить как переменную» и затем ввести  `variableName.value`.
 
 ```js
 function displayMatches() {
@@ -179,9 +171,9 @@ function displayMatches() {
 }
 ```
 
-### Writing values back to the DOM
+### Обратная запись значения в DOM
 
-Now that we've read values from the DOM and fed that into our matching logic, we are ready to return the number of matches to our app. To do this we first need to grab a reference to our submit button, and since this button has no `id`, we'll use `querySelector` to get it. This function takes any valid CSS selector and returns the first match found.
+Теперь, когда мы прочитали значения из модели DOM и загрузили их в нашу логику сопоставления, мы готовы вернуть количество совпадений в наше приложение. Для этого нам сначала нужно получить ссылку на нашу кнопку отправки, и, поскольку эта кнопка не имеет идентификатора, мы будем использовать querySelector для ее получения. Эта функция принимает любой допустимый селектор CSS и возвращает первое найденное совпадение.
 
 ```js
 function displayMatches() {
@@ -190,8 +182,7 @@ function displayMatches() {
 }
 ```
 
-Now that we have a reference to the submit input, we can set its value contain to the number of matches.
-
+Теперь, когда у нас есть ссылка на ввод для отправки, мы можем установить его значение, содержащее количество совпадений.
 ```js
 function displayMatches() {
   // ...
@@ -200,7 +191,7 @@ function displayMatches() {
 }
 ```
 
-We could also have done this in a single line as follows:
+Мы также могли бы сделать это в одной строке следующим образом:
 
 ```js
 function displayMatches() {

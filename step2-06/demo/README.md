@@ -1,19 +1,19 @@
-# Step 2.6 - Redux: React binding (Demo)
+# Step 2.6 - Redux: Привязка реакции (демонстрация)
 
 [Lessons](../../) | [Exercise](../exercise/)
 
-Redux is currently the most popular Flux implementation, and the ecosystem of related libraries has grown as a result. This is one of the reasons why it is a very popular library within Microsoft products.
+Redux в настоящее время является самой популярной реализацией потока, и в результате экосистема связанных библиотек выросла. Это одна из причин, по которой она является очень популярной библиотекой в продуктах Microsoft.
 
-Various GitHub users have collected "awesome lists" of tech and articles related to Redux. Here is [one such list](https://github.com/xgrommx/awesome-redux#react---a-javascript-library-for-building-user-interfaces), but it is literally impossible to list out all the related tech.
+Различные пользователи GitHub собрали "потрясающие списки" технологий и статей, связанных с Redux. Вот [один такой список](https://github.com/xgrommx/awesome-redux#react---a-javascript-library-for-building-user-interfaces), но перечислить все связанные с этим технологии буквально невозможно.
 
-In this step, we introduce one useful library that works with Redux: [`react-redux`](https://react-redux.js.org/). Whereas the Step 2.5 code could be used with any web UI framework, we'll now use `react-redux` to connect the store to our React app. There are two steps in this process:
+На этом шаге мы представляем одну полезную библиотеку, которая работает с Redux: [`react-redux`](https://react-redux.js.org/). В то время как код шага 2.5 может использоваться с любой платформой веб-интерфейса, теперь мы будем использовать "react-redux" для подключения магазина к нашему приложению React. В этом процессе есть два этапа:
 
-1. Providing the store to the views
-2. Mapping the store to props
+1. Предоставление магазина для просмотра
+2. Сопоставление магазина с реквизитом
 
-## Provide the store context to the views
+## Предоставьте контекст магазина для представлений
 
-Class components will access the Redux store via the [`<Provider>`](https://react-redux.js.org/api/provider) from `react-redux`. Under the hood, `react-redux` uses the context API to pass the store to the descendant components.
+Компоненты класса получат доступ к хранилищу Redux через [`<Поставщика>`](https://react-redux.js.org/api/provider) из `react-redux`. Внизу`react-redux " использует контекстный программный интерфейс приложения для передачи хранилища компонентам-потомкам.
 
 ```jsx
 const store = createStore(reducers);
@@ -27,10 +27,9 @@ const App = () => {
 };
 ```
 
-## Mapping the store to props
+## Сопоставление магазина с реквизитом
 
-`react-redux` also provides the [`connect()`](https://react-redux.js.org/api/connect) function, which maps portions of the state tree and dispatch functions into props for the child React component. Let's look at how that is done.
-
+`react-redux` также обеспечивает[`connect()`](https://react-redux.js.org/api/connect) функцию, которая отображает части дерева состояний и отправляет функции в реквизиты для дочернего компонента React. Давайте посмотрим, как это делается.
 ```jsx
 import { connect } from 'react-redux';
 
@@ -53,21 +52,21 @@ const ConnectedComponent = connect(
 )(MyComponent);
 ```
 
-So, that's a lot to digest. We'll go through the different parts:
+Так что это еще предстоит переварить. Мы пройдемся по разным частям:
 
-1. `<MyComponent>` is simple component that expects to have props, without any knowledge of Redux. It is just a plain React component.
+1. `<MyComponent>` это простой компонент, который ожидает наличия реквизита, без каких-либо знаний о Redux. Это просто обычный компонент реакции.
 
-2. The `connect()` function takes in several arguments.
+3. `connect()` функция принимает несколько аргументов.
 
-   - The first argument maps portions of the Redux _state tree_ into `<MyComponent>` _props_
-   - The second arguments maps dispatch functions into `<MyComponent>` _props_ (typically used as callbacks to respond to user interaction)
+   - Первый аргумент отображает части Redux _state tree_ в `<MyComponent>` _props_
+   - Вторые аргументы отображают функции отправки в `<MyComponent>` _props_ (обычно используется в качестве обратных вызовов для ответа на взаимодействие с пользователем). 
+   
+3. Окончательно, `connect()` на самом деле возвращает функцию, которую мы немедленно вызываем, чтобы **украсить** `<MyComponent>` в `<ConnectedComponent>` - это странный синтаксис, поэтому изучите его более внимательно здесь.
 
-3. Finally, `connect()` actually returns a function, which we immediately call to **decorate** `<MyComponent>` into `<ConnectedComponent>` - it is a strange syntax, so do study it more closely here.
+> Да, `connect()` это функция, которая принимает функции в качестве аргументов и возвращает функцию, которая принимает компонент и возвращает компонент. Попробуйте сказать это быстро 10 раз. :)
+>
+## Примечание о производительности
 
-> Yes, `connect()` is a function that takes in functions as arguments and returns a function that takes in a component and returns a component. Try to say this fast 10 times. :)
-
-## A note on performance
-
-Some folks going through this bootcamp cannot wait to start making screaming fast apps with Redux. Performance isn't free, and it certainly isn't with Redux. Try going through these links to get started on that topic:
+Некоторые люди, проходящие этот буткемпинг, не могут дождаться, когда начнут создавать быстрые приложения с помощью Redux. Производительность не бесплатна, и уж точно не с Redux. Попробуйте перейти по этим ссылкам, чтобы начать работу по этой теме:
 
 https://github.com/markerikson/react-redux-links/blob/master/react-performance.md#redux-performance

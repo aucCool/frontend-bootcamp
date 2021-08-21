@@ -1,5 +1,5 @@
-# Step 2.1 - Introduction to TypeScript (Final)
+# Шаг 2.1 - Введение в TypeScript (Окончательный)
 
 [Lessons](../../) | [Demo](../demo/) | [Exercise](../exercise/)
 
-Look at the src folder for exercise solutions.
+Посмотрите в папке src решения для упражнений.

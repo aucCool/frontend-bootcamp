@@ -1,27 +1,26 @@
-# Step 2.4 - React Context (Exercise)
+# Шаг 2.4 - Контекст реагирования (Упражнение)
 
 [Lessons](../../) | [Demo](../demo/)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 2 step 4 to see results.
+Если у вас еще не запущено приложение, запустите его, запустив "запуск npm" из корневой папки "front end-bootcamp". Нажмите на ссылку "упражнение" в разделе день 2 шаг 4, чтобы увидеть результаты.
 
-## TodoContext.Provider component
+##   Контекст задачи . Компонент ` Provider`
 
-1. Open `exercise/src/components/TodoApp.tsx`
+1. Откройте  `exercise/src/components/TodoApp.tsx`
 
-2. Uncomment the missing functions inside the value prop
+2. Раскомментируйте отсутствующие функции внутри ценностного предложения
 
-## TodoFooter: context inside functional component
+## Нижний колонтитул задачи: контекст внутри функционального компонента
+1. Откройте `exercise/src/components/TodoFooter.tsx`
 
-1. Open `exercise/src/components/TodoFooter.tsx`
+2. Используйте `useContext` чтобы получить доступ к `TodoContext` и замените две константы значениями из контекста
 
-2. Use `useContext` to access the `TodoContext` and replace the two constants with values from the context
+## Контекст заголовка задачи внутри компонента класса
 
-## TodoHeader: context inside class component
+1. Откройте `exercise/src/components/TodoHeader.tsx`
 
-1. Open `exercise/src/components/TodoHeader.tsx`
+2. Замените `onAdd` с реальной реализацией с использованием предмета `this.context`
 
-2. Replace `onAdd` with a real implementation using the `this.context` object
+3. Замените `onFilter` с реальной реализацией с использованием объекта`this.context` 
 
-3. Replace `onFilter` with a real implementation using the `this.context` object
-
-4. Be sure to set the `contextType` of the TodoHeader component
+4. Обязательно установите `contextType`компонента заголовка задачи.

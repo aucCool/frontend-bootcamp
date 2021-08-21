@@ -1,20 +1,18 @@
-# Step 1.5 - Building a static page in React (Demo)
+# Шаг 1.5 - Создание статической страницы в React (демо)
+Чтобы начать создание нашего приложения todo, мы выполним действия, описанные в [Мышление в React](https://reactjs.org/docs/thinking-in-react.html). Первый шаг этого процесса-разбить ваше приложение на иерархию компонентов. Для этого приложения мы собираемся сделать его простым и использовать только четыре части.
 
-To start building our todo application, we'll follow the steps outlined in [Thinking in React](https://reactjs.org/docs/thinking-in-react.html). The first step of the process is to break our application into a component hierarchy. For this app, we're going to keep it simple and just use four parts.
+- Todo Заголовок
+- Тodo Cписок
+- Список задач Todo
+- Нижний колонтитул Todo
 
-- TodoHeader
-- TodoList
-- TodoListItem
-- TodoFooter
+Вы можете найти HTML-код для нашего приложения в: `step1-05/TodoApp.html`.
 
-You can find the HTML for our application in `step1-05/TodoApp.html`.
+## Todo Заголовок
 
-## TodoHeader
+Мы будем хранить все наши компоненты в папке "компоненты" в разделе "src". Давайте создадим это сейчас. Затем мы начнем писать "Заголовок для выполнения" в "src/components/TodoHeader.tsx". Расширение файла `tsx` сообщает нашему редактору, что этот файл включает в себя код реакции, написанный TypeScript.
 
-We'll store all of our components inside a `components` folder under `src`. Let's create that now. We'll then start writing the `TodoHeader` in `src/components/TodoHeader.tsx`. The `tsx` file extension tells our editor that this file includes React code written in TypeScript.
-
-> We'll talk about TypeScript soon, but for now, know that all valid JavaScript is valid TypeScript.
-
+>Мы скоро поговорим о TypeScript, но пока знайте, что весь допустимый JavaScript-это допустимый TypeScript.
 ```jsx
 import React from 'react';
 
@@ -38,12 +36,11 @@ export class TodoHeader extends React.Component<any, any> {
 }
 ```
 
-> Note that since this is React, we had to change `class` to `className`, but nothing else changes.
+> Обратите внимание, что, поскольку это React, нам пришлось изменить "класс" на "имя класса", но больше ничего не меняется.
 
-## TodoListItem
+## Список задач Todo
 
-Any time you see repeated complex elements, that is usually a sign that you should create a new component. With a few props you can typically abstract all of those elements into a single component. This is certainly the case with todo items.
-
+Каждый раз, когда вы видите повторяющиеся сложные элементы, это обычно является признаком того, что вам следует создать новый компонент. С помощью нескольких реквизитов вы обычно можете абстрагировать все эти элементы в один компонент. Это, безусловно, относится к предметам todo.
 ```jsx
 import React from 'react';
 
@@ -60,7 +57,7 @@ export class TodolistItem extends React.Component<any, any> {
 }
 ```
 
-> Note that this control could also be created as a function instead of a class:
+>Обратите внимание, что этот элемент управления также может быть создан как функция вместо класса:
 > ```jsx
 > export const TodoListItem = (props) => {
 >   return (

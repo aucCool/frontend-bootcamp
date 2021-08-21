@@ -1,20 +1,20 @@
-# Step 1.5 - Building a static page in React (Exercise)
+# Шаг 1.5 - Создание статической страницы в React (Упражнение)
 
-From this exercise on, we'll be working in VS Code instead of CodePen. If you don't already have the bootcamp folder open in a VS Code window, see the [main readme](https://github.com/Microsoft/frontend-bootcamp/blob/master/README.md) for instructions.
+Начиная с этого упражнения, мы будем работать в VS Code вместо CodePen. Если у вас еще нет открытой папки bootcamp в окне VS Code, см. [основной файл чтения](https://github.com/Microsoft/frontend-bootcamp/blob/master/README.md) для получения инструкций.
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 1 step 5 to see results.
+Если у вас еще не запущено приложение, запустите его, запустив "запуск npm" из корневой папки "front end-bootcamp". Нажмите на ссылку "упражнение" в разделе день 1 шаг 5, чтобы увидеть результаты.
 
-## TodoFooter
+## Cделать нижний колонтитул
 
-1. Add a TodoFooter component in the `components` folder, copying over the `<footer>` tag and all of its children from `TodoApp.html` in the `step1-05` folder. This component could be a function or class.
-2. Remove any `onclick` properties, and change `class` to `className`
+1. Добавьте компонент TodoFooter в папку "компоненты", скопировав тег `<нижний колонтитул> `и все его дочерние элементы из` TodoApp.html` в папке ` шаг 1-05`. Этот компонент может быть функцией или классом.
+2. Удалите все свойства "onclick" и измените "класс" на "имя класса".
 
-## TodoList
+## Список Todo
 
-1. Add a TodoList component like you did with the footer. This could also be function or class.
-2. Import TodoListItem and add four of them inside of the `<ul>`
-3. Bonus points for using a [`for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration) loop or using [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to create 4 list items based on the array `[1,2,3,4]`
+1. Добавьте компонент списка задач, как вы сделали с нижним колонтитулом. Это также может быть функция или класс.
+2. Импортируйте TodoListItem и добавьте четыре из них внутрь `<ul>`
+3. Бонусные баллы за использование [для](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration) цикла или использование [`карты`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) для создания 4 элементов списка на основе массива `[1,2,3,4]`
 
-## App
+## Приложение 
 
-1. Import both of these components into `App.tsx` and place their tags below the `TodoHeader`.
+1. Импортируйте оба этих компонента в "App.tsx" и поместите их теги под заголовком "Сделать".

@@ -29,32 +29,32 @@ button {
       </pre>
       <pre data-lang="js">
 /*
-1. Create a function named `getFavs`. Inside, run:
-    alert('clicked')
+1. Создайте функцию с именем "getFavs". Внутрь, беги:
+предупреждение("нажал")
 
-2. Create a variable `button` and set it to a reference to our button using:
-    document.querySelector('button')
+2. Создайте переменную "button" и установите для нее ссылку на нашу кнопку с помощью:
+документ.Селектор запросов("button")
 
-3. Add a click event listener to the button that calls `getFavs`.
-   Click the button and make sure the alert is displayed.
+3. Добавьте прослушиватель событий щелчка на кнопку, которая вызывает " getFavs`.
+Нажмите кнопку и убедитесь, что предупреждение отображается.
 
-4. Replace the `alert` call with a new `favList` variable set to an empty array: []
+4. Замените вызов "alert` новой переменной "favList", установленной в пустой массив: []
 
-5. Create a const variable `inputs` set to all of the inputs on the page.
-   `querySelectorAll` will help here.
+5. Создайте переменную const "входы", установленную для всех входов на странице.
+Здесь поможет "querySelectorAll".
 
-6. Iterate over all of the inputs using:
-    for (const input of inputs) {}
+6. Повторите все входные данные, используя:
+для (постоянный ввод входных данных) {}
 
-7. In each iteration, use an `if` statement to check if `input.checked` is equal to true
+7. На каждой итерации используйте оператор "if", чтобы проверить, равен ли " input.checked` истине
 
-8. If the above tests passes, push the `input.parentNode.textContent` into the `favList`
-   array by passing the text as a parameter to `favList.push()`
-  - `push` is a built-in array method: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+8. Если вышеуказанные тесты пройдены, вставьте "input.parentNode.textContent" в "Список избранных".
+массив, передав текст в качестве параметра в `favList.push()`
+- `push`-это встроенный метод массива: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
 
-9. Outside of the for loop, use `document.querySelector('.favorites')` to target the
-   div at the bottom of the page. Set the div's `textContent` to `favList.join(' ')`.
-   This will join each of the foods together into a string separated by a space.
+9. Вне цикла " для " используйте `документ.querySelector(".избранное")`, чтобы настроить таргетинг на
+div в нижней части страницы. Установите для div `textContent` значение `favList.join(' ')`.
+Это объединит каждый из продуктов в строку, разделенную пробелом.
 */
 
       </pre>

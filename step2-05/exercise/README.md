@@ -1,17 +1,17 @@
-# Step 2.5 - Redux: The Store (Exercise)
+# Step 2.5 - Redux: Магазин (Упражнение)
 
 [Lessons](../../) | [Demo](../demo/)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 2 step 5 to see results.
+Если у вас еще не запущено приложение, запустите его, запустив "запуск npm" из корневой папки "front end-bootcamp". Нажмите на ссылку "упражнение" в разделе день 2 шаг 5, чтобы увидеть результаты.
 
-1. First, take a look at the store interface in `exercise/src/store/index.ts`. Note that the `Store` interface has two keys: `todos` and `filter`. We'll concentrate on `todos`, which is an object where the keys are string IDs and the values are of type `TodoItem`.
+1. Сначала взгляните на интерфейс магазина в `exercise/src/store/index.ts`. Заметьте, что  `Магазин` интерфейс имеет два ключа: `todos` и `filter`. Мы сконцентрируемся на `todos`, который представляет собой объект, в котором ключи являются строковыми идентификаторами, а значения имеют тип `TodoItem`.
 
-2. Open `exercise/src/reducers/index.ts` and fill in the missing reducer implementations.
+2. Откройте `exercise/src/reducers/index.ts` и заполните недостающие реализации редуктора.
 
-3. Open `exercise/src/index.tsx` and write some `dispatch` calls.
+3. Откройте `exercise/src/index.tsx` и напишите несколько  вызовов `dispatch`. 
 
-4. Take a look what is written in the console (F12 on PC, `cmd-option-I` on Mac).
+4. Посмотрите, что написано в консоли (F12 на ПК, "cmd-опция-I" на Mac).
 
-5. Install the Redux DevTools [Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/) extension
+6. Установите Redux DevTools [Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) или [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/) расширение. 
 
-6. Observe the state changes and try doing "time travel"
+6. Понаблюдайте за изменениями состояния и попробуйте совершить "путешествие во времени".
