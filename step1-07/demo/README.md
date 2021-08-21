@@ -1,35 +1,33 @@
-# Step 1.7 - Types and creating a UI-driven state (Demo)
+# Шаг 1.7 - Типы и создание состояния, управляемого пользовательским интерфейсом (демонстрация)
 
-Now that we have a UI that is purely driven by the state of our app, we need to add functionality to allow the UI to drive the state. This is often done by creating functions that call `setState` like we saw in the `TodoHeader`. Values from the state are then passed down child components as props.
+Теперь, когда у нас есть пользовательский интерфейс, который зависит исключительно от состояния нашего приложения, нам нужно добавить функциональность, позволяющую пользовательскому интерфейсу управлять состоянием. Это часто делается путем создания функций, вызывающих "setState", как мы видели в "TodoHeader". Значения из состояния затем передаются дочерним компонентам в качестве реквизитов.
 
-> We'll be learning in part 2 of this workshop how we can expose these functions without explicitly passing them down via props.
+> В части 2 этого семинара мы узнаем, как мы можем раскрывать эти функции, не передавая их явно через реквизит.
 
-This is our core "business logic" and handles our basic "CRUD" operations: Create, Read, Update, Delete. We don't have time to walk through writing all of those functions, but you can see that they are already provided in the demo's `TodoApp` and passed into our components.
+Это наша основная "бизнес-логика", которая обрабатывает наши основные операции "CRUD": Создание, Чтение, Обновление, Удаление. У нас нет времени на написание всех этих функций, но вы можете видеть, что они уже включены в демонстрационное приложение " TodoApp` и переданы в наши компоненты.
 
-## Intro to TypeScript
+## Вступление к TypeScript
 
-Taking a look at our components in `TodoApp`, you can see that our list of props is getting not just longer, but much more complex! We're passing through functions with various signatures, complex `todos` objects, and filter strings which are always one of three values.
+Взглянув на наши компоненты в "TodoApp", вы можете увидеть, что наш список реквизитов становится не просто длиннее, но и намного сложнее! Мы проходим через функции с различными сигнатурами, сложными объектами "todos" и строками фильтров, которые всегда имеют одно из трех значений.
 
-As applications grow, it becomes difficult to remember what each function does or what each todo contains. Also, as JavaScript is a dynamically typed language, if I wanted to change the value of `todos` to an array inside my `TodoList`, JavaScript wouldn't care. But if `TodoListItems` was expecting an object, our application would break.
+По мере роста приложений становится трудно запомнить, что делает каждая функция или что содержит каждое задание. Кроме того, поскольку JavaScript является динамически типизированным языком, если бы я хотел изменить значение "todos" на массив внутри моего "ToDoList", JavaScript было бы все равно. Но если бы "TodoListItems" ожидал объект, наше приложение сломалось бы.
 
-For these two reasons, the industry is shifting to writing applications that are strongly typed, and many are using TypeScript to accomplish that.
+По этим двум причинам отрасль переходит к написанию приложений с жесткой типизацией, и многие для этого используют TypeScript.
 
-As [TypeScript's website](https://www.typescriptlang.org/) states:
+Как  [TypeScript's website](https://www.typescriptlang.org/) утверждает:
 
-> TypeScript is a superset of JavaScript that compiles to plain JavaScript.
+> TypeScript-это надмножество JavaScript, которое компилируется в обычный JavaScript.
 
-If you've used [Sass](https://sass-lang.com/), you're familiar with this concept. In the same way that all valid CSS is valid Sass, all valid JavaScript is valid TypeScript. That's why our exercises have been written in `ts` and `tsx` files instead of `js` and `jsx`.
+Если вы использовали [Sass](http://sass-lang.com/), вы знакомы с этой концепцией. Точно так же, как весь допустимый CSS является допустимым Sass, весь допустимый JavaScript является допустимым TypeScript текстом. Вот почему наши упражнения были написаны в файлах " ts "и `tsx` вместо `js` и `jsx`.
 
-Let's dive in and see how TypeScript can help clarify our component props and guard against future regressions.
+Давайте погрузимся в это и посмотрим, как TypeScript может помочь прояснить наши компоненты и защитить от будущих регрессий.
 
-# Demo
+# Демонстрация
+Давайте начнем с ToDoList, так как в нем больше всего потоков данных вверх и вниз. В этом компоненте нет никакого интерактивного пользовательского интерфейса, так как мы просто передаем "завершено" каждому "Списку задач Todo", но мы можем написать интерфейс реквизита, чтобы убедиться, что все передается правильно.
 
-Let's start off in the TodoList, as that has the most data flow up and down. There isn't any interactive UI in this component, as we're simply passing `completed` down to each `TodoListItem`, but we can write a props interface to make sure that everything gets passed down properly.
+## ## Написание Реквизита Для Списка Задач
 
-## Writing TodoListProps
-
-Looking at our `TodoApp` we know that `TodoList` has three props: `filter`, `todos`, and `complete`. We'll start by creating an interface called `TodoListProps` that represents this component's props.
-
+Глядя на наше приложение "TodoApp", мы знаем, что "ToDoList" имеет три реквизита: "фильтр", "задачи" и "полный". Мы начнем с создания интерфейса под названием "Реквизиты списка дел", который представляет реквизиты этого компонента.
 ```ts
 interface TodoListProps {
   filter: any;
@@ -38,25 +36,25 @@ interface TodoListProps {
 }
 ```
 
-> Note that we're using the `any` keyword for now. This won't give us any type safety, but it does let us specify valid prop names we can pass to this component.
+> Обратите внимание, что сейчас мы используем ключевое слово " любой`. Это не даст нам никакой безопасности типов, но позволит нам указать допустимые имена, которые мы можем передать этому компоненту.
 
-With that interface written, we'll add it to our component class.
+Написав этот интерфейс, мы добавим его в наш класс компонентов.
 
 ```ts
 export class TodoList extends React.Component<TodoListProps, any>
 ```
 
-> Note that the first value in `<>` is for a props interface, and the second is for state.
+> Обратите внимание, что первое значение в `<>` предназначено для интерфейса реквизита, а второе-для состояния.
 
-Now that we have a typed component, let's go back to our `TodoApp` and see what happens if we try to change the name of a prop.
+Теперь, когда у нас есть типизированный компонент, давайте вернемся к нашему "TodoApp" и посмотрим, что произойдет, если мы попытаемся изменить имя реквизита.
 
-## Adding type safety
+## Добавление безопасности типов
 
-So far we've only established what our prop names are, not the type of values inside of them. Let's first look at `filter` and see how we can improve that prop's type safety.
+До сих пор мы только установили, каковы наши имена реквизитов, а не тип значений внутри них. Давайте сначала рассмотрим "фильтр" и посмотрим, как мы можем улучшить типовую безопасность этой опоры.
 
-### Filter Type
+### Тип фильтра
 
-We know that `filter` shouldn't be an object, array or function, so we can specify it should always be a string like this:
+Мы знаем, что "фильтр" не должен быть объектом, массивом или функцией, поэтому мы можем указать, что он всегда должен быть такой строкой:
 
 ```ts
 interface TodoListProps {
@@ -66,7 +64,7 @@ interface TodoListProps {
 }
 ```
 
-But since we know that the filter can be only one of three values, we can make that explicit with a [union type](https://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types):
+Но поскольку мы знаем, что фильтр может быть только одним из трех значений, мы можем сделать это явным с помощью [union type](https://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types):
 
 ```ts
 interface TodoListProps {
@@ -76,11 +74,11 @@ interface TodoListProps {
 }
 ```
 
-Now try going back to `TodoApp` and changing the `filter` attribute in `TodoList` to something else. You'll see an error in the editor (if using VS Code) and on the command line when you save the file.
+Теперь попробуйте вернуться к "TodoApp" и изменить атрибут "фильтр" в "Списке дел" на что-то другое. Вы увидите ошибку в редакторе (при использовании VS-кода) и в командной строке при сохранении файла.
 
-### Complete Type
+### Полный Тип
 
-The `complete` prop isn't data, but a function. Fortunately, TypeScript can handle function types just as well as data.
+`Полная " опора-это не данные, а функция. К счастью, TypeScript может обрабатывать типы функций так же хорошо, как и данные.
 
 ```ts
 interface TodoListProps {
@@ -90,13 +88,13 @@ interface TodoListProps {
 }
 ```
 
-For functions we are only concerned with the parameters passed in and the return value. You can see in the example above that the function takes in an `id` of type string and returns `void`, which means it has no returned value.
+Для функций нас интересуют только переданные параметры и возвращаемое значение. В приведенном выше примере вы можете видеть, что функция принимает "идентификатор" типа string и возвращает "void", что означает, что она не имеет возвращаемого значения.
 
-> Technically, all functions in JavaScript return `undefined` if no other return value is specified, but declaring a return type of `void` causes TypeScript to error if you try to return a value from the function (or use its default returned value of `undefined`).
+> Технически, все функции в JavaScript возвращают "неопределенное", если не указано другое возвращаемое значение, но объявление возвращаемого типа "void" приводит к ошибке TypeScript, если вы пытаетесь вернуть значение из функции (или используете возвращаемое по умолчанию значение " неопределенное`).
 
-## Todos Type
+## Тип Todos
 
-The `todos` prop is interesting in that `todos` is an object with a bunch of unknown keys. So here's what that interface would look like.
+Реквизит "todos` интересен тем, что" todos` - это объект с кучей неизвестных ключей. Итак, вот как будет выглядеть этот интерфейс.
 
 ```ts
 interface TodoListProps {
@@ -111,13 +109,13 @@ interface TodoListProps {
 }
 ```
 
-> Note that `[id: string]` does not indicate an array; it is an object [index signature](https://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types).
+> Заметьте что  `[id: string]` не указывает массив; это  объект [index signature](https://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types).
 
-Now that our interface is complete, try changing the word "all" in `filter === all` and see that VS Code will tell you this condition will always be false. Compare this to plain JavaScript: if you had a typo in that line, you wouldn't understand why your filter wasn't working.
+Теперь, когда наш интерфейс завершен, попробуйте изменить слово "все" в "фильтр === все" и убедитесь, что VS-код сообщит вам, что это условие всегда будет ложным. Сравните это с обычным JavaScript: если бы в этой строке была опечатка, вы бы не поняли, почему ваш фильтр не работал.
 
-## Sharing types
+## Типы общего доступа
 
-Most of our components will need to specify types for `todos` and `filter`, so it's a good thing that TypeScript allows us to share types between files. I've already written up and exported those shared types in the file `TodoApp.types.ts`, so we just need to import them and use them in our interface.
+Большинству наших компонентов потребуется указать типы для "задач" и "фильтра", поэтому хорошо, что TypeScript позволяет нам обмениваться типами между файлами. Я уже написал и экспортировал эти общие типы в файл "TodoApp.types.ts", поэтому нам просто нужно импортировать их и использовать в нашем интерфейсе.
 
 ```ts
 import { FilterTypes, Todos, CompleteTodo } from '../TodoApp.types';
@@ -129,9 +127,9 @@ interface TodoListProps {
 }
 ```
 
-## Writing TodoListItemProps
+## Написание Реквизита элемента списка дел Todo
 
-Jumping down to the TodoListItem, as we start to write the `TodoListItemProps` we realize that two of the props, `label` and `completed`, have already been defined in the `TodoItem` interface. So we can make `TodoListItemProps` reuse the `TodoItem` interface by extending it.
+Переходя к TodoListItem, когда мы начинаем писать реквизит "Список дел", мы понимаем, что два из предложенных, "метка" и "завершено", уже определены в интерфейсе "TodoItem". Таким образом, мы можем заставить "Реквизит элемента списка дел" повторно использовать интерфейс "TodoItem", расширив его.
 
 ```ts
 import { CompleteTodo } from '../TodoApp.types';
@@ -142,22 +140,20 @@ interface TodoListItemProps extends TodoItem {
 }
 ```
 
-The end result of this is an interface with all four properties: `id`, `complete`, `completed` and `label`.
+Конечным результатом этого является интерфейс со всеми четырьмя свойствами: "идентификатор", "завершенный", "завершено" и "метка".
 
-Next we can pull in the remaining props in the render function:
-
+Затем мы можем использовать оставшиеся реквизиты в функции рендеринга:
 ```jsx
 const { label, completed, complete, id } = this.props;
 ```
 
-And then use the input's `onChange` event to fire our `complete` callback. We can see in the signature that `complete` expects an `id` of type string, so we'll pass our `id` prop in.
+А затем используйте событие ввода "onChange`, чтобы запустить наш "полный" обратный вызов. Мы видим в подписи, что "полный" ожидает "идентификатор" типа string, поэтому мы передадим ваш реквизит "идентификатор".
 
-> A [callback function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function) is a function passed into a component as a prop.
-
+>  [callback function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function) это функция, переданная в компонент в качестве реквизита.
 ```jsx
 <input type="checkbox" checked={completed} onChange={() => complete(id)} />
 ```
 
-> Note that the function param and prop name just happen to be the same. This isn't required.
+> Обатите внимание, что параметр функции и имя реквизита просто совпадают. Этого не требуется.
 
-Now that our todos are firing the `onChange` callback, give them a click and take look at how the app responds. Since our footer text is based on the number of unchecked todos, the footer will automatically update to reflect the new state.
+Теперь, когда наши реквизиты запускают обратный вызов "onChange", нажмите на них и посмотрите, как реагирует приложение. Поскольку наш текст нижнего колонтитула основан на количестве непроверенных заданий, нижний колонтитул автоматически обновится, чтобы отразить новое состояние.
