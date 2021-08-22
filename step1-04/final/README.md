@@ -1,3 +1,3 @@
-# Step 1.4 - Introduction to React (Final)
+# Pasul 1.4 - Introducere în modificări (Final)
 
-Take a look at the contents of the `src` folder to see final versions of the `App`, `Button`, and `Counter` components from this lesson.
+Vedeți conținuturile folderului `src pentru a vedea versiunea finală a componentelor `App`-ei, `Button`-ului, și `Counter`-ului din această lecție.
