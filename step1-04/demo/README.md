@@ -1,32 +1,31 @@
-# Step 1.4 - Introduction to React (Demo)
+# Pasul 1.4 – Introducere în modificări  (Demonstrație)
 
-In this demo we'll be creating a simple counter that will display a count and increment on click.
+În această demonstrație vom crea o simplă numărare  care ne va afișa un număr și o creștere a acestuia în momentul accesării.
 
-Let's start this demo in [CodePen](https://codepen.io/micahgodbolt/pen/wOWeVb?editors=0010).
+Să începem această demonstrație în [CodePen](https://codepen.io/micahgodbolt/pen/wOWeVb?editors=0010).
 
-## React Hello World
+## Modifică Hello World
 
 ```js
 ReactDOM.render(<p>Hello World</p>, document.getElementById('app'));
 ```
 
-Calling `ReactDOM.render()` is how our code gets on the page. The function takes two parameters: the content to place on the page, and the element in which you want it placed.
+Apelând  „ReactDOM.render ()” reprezintă modul în care codul nostru ajunge pe pagină.  Funcția ia doi parametri: conținutul de plasat pe pagină și elementul în care doriți să fie plasat.
 
-The first parameter to `render()` looks a lot like HTML, but actually, it's [JSX](https://reactjs.org/docs/introducing-jsx.html). There are a few key differences between JSX and HTML:
+Primul parametru `render()` seamănă în mare parte cu  HTML, dar de fapt, nu este așa [JSX](https://reactjs.org/docs/introducing-jsx.html). Aici sunt câteva diferențe majore între  JSX și HTML:
 
-- Since `class` is a [reserved word](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords) in JavaScript, you will need to use `className` on your HTML tags: `<div className="foo">`
-- We can use custom HTML tags corresponding to the React components we create: `<div><MyControl>hi</MyControl></div>`
-- Controls can be self-closing: `<MyControl text='hi' />`
-- You can use JavaScript inside of JSX!
+- Din moment ce `class` este o [reserved word](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords) în  JavaScript, veți avea nevoie sa folosiți `className` asupra etichetelor dumneavoastră HTML: `<div className="foo">`
+- Putem folosi etichete HTML personalizate corespunzător componentelor React pe care le creăm: `<div><MyControl>hi</MyControl></div>`
+- Comenzile pot fi închise automat: „<MyControl text = 'hi' />“
+ - Puteți utiliza JavaScript în JSX!
 
-## Writing a React component
+## Scrierea unei componente de modificat
 
-A React component is a piece of code that returns a portion of your application. This can include HTML markup, CSS styles, and JavaScript driven functionality.
+O componentă React reprezintă o bucată de cod ce returnează o parte din aplicația dumneavoastră.  Aceasta poate include marcaje HTML, stiluri CSS și funcționalități bazate pe JavaScript.
 
-Components can be created in two ways. The first is method is to use a [JavaScript class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), which extends (inherits from) the `React.Component` class.
+Componentele pot fi create în doua moduri. Primul este o metodă de a utiliza [JavaScript class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), în care se extind (inherits from) clasele de `React.Component`.
 
-Classes in JavaScript provide a way to collect methods (functions) and properties (values) in an extensible container. We extend `React.Component` because it provides us with several built-in methods, including `render`.
-
+Clasele în JavaScript oferă o modalitate de a colecta metode (funcții) și proprietăți (valori) într-un container extensibil.  Extindem „React.Component” deoarece acesta ne oferă mai multe metode încorporate, inclusiv „render”.
 ```jsx
 class App extends React.Component {
   render() {
@@ -35,7 +34,7 @@ class App extends React.Component {
 }
 ```
 
-We could also write this component as a function:
+De asemenea, putem să scriem această componentă precum ofuncție:
 
 ```jsx
 const App = props => {
@@ -43,23 +42,23 @@ const App = props => {
 };
 ```
 
-Moving our "Hello World" markup into our App's `render` function, we can now update the `ReactDOM.render()` call to look like this:
+Mutând marcajul „Hello World” în funcția „render” a aplicației noastre, după, putem actualiza apelul `ReactDOM.render ()` să arate astfel:
 
 ```jsx
 ReactDOM.render(<App />, document.getElementById('app'));
 ```
 
-> Note that React components can be reused by writing them in the same way you would an HTML tag.
+> Rețineți că componentele React pot fi refolosite scriindu-le în același mod precum o etichetă HTML.
 
 ### Props
 
-Whether you write the component as a class or a function, it can take in additional props using the same syntax as HTML attributes like `id` or `href`.
+Indiferent dacă scrieți componenta ca o clasă sau o funcție, aceasta poate primi  elemente de recuzită suplimentare folosind aceeași sintaxă ca și pentru atributele HTML, precum ‘id` sau` href`.
 
 ```jsx
 <App text="Hello World" />
 ```
 
-The `text` prop can be accessed inside your component via `props.text` in a function component or `this.props.text` in a class component.
+Suportul `text`-ului poate fi accesat în interiorul componentei dumneavoastră prin intermediul ` props.text` într-o componentă funcțională sau `this.props.text` într-o componentă de clasă.
 
 ```jsx
 const App = props => {
@@ -67,7 +66,7 @@ const App = props => {
 };
 ```
 
-`props` allow your component to be more reusable, since you can create multiple instances of the same component with different props.
+`props` permite componentei dumneavoastră să fie mult mai reutilizabilă, din moment ce puteți crea mai multe instanțe ale aceleiași componente cu suporturi diferite.
 
 ```jsx
 ReactDOM.render(
@@ -79,7 +78,7 @@ ReactDOM.render(
 );
 ```
 
-> Note that a render function can only return a single element, so our two `App` components need to be wrapped in a `div`.
+> Rețineți că o funcție de redare poate returna doar un singur element, astfel încât cele două componente ale „App”-ției noastre trebuie să fie împachetate într-un „div”.
 
 ```jsx
 const App = props => {
@@ -87,9 +86,9 @@ const App = props => {
 };
 ```
 
-### Destructuring props
-
-Writing `props.text` over and over in a function (or `this.props.text` in a class) can be quite tedious. Since this is all JavaScript, you could create a new variable for this text using variable assignment.
+### Destructurarea suportului
+ 
+Scrierea în repetate rânduri a  „props.text”  într-o funcție (sau a  „this.props.text” într-o clasă) poate fi destul de obositoare. Deoarece acesta este de ademenea  JavaScript, ați putea crea o nouă variabilă pentru acest text folosind atribuirea variabilelor.
 
 ```jsx
 const App = props => {
@@ -98,7 +97,7 @@ const App = props => {
 };
 ```
 
-This works fine for a single prop, but as your component starts to become more complex:
+Acest lucru funcționează bine pentru un singur suport, însă componenta dumneavoastră începe să devină mai complexă:
 
 ```jsx
 <MyComponent
@@ -114,9 +113,9 @@ This works fine for a single prop, but as your component starts to become more c
 />
 ```
 
-> Note that all non-string values are passed through as JavaScript by wrapping them in `{}`.
+> Rețineți că toate valorile care nu sunt șir sunt trecute prin JavaScript ca o  împachetarea a acestora în `{}`.
 
-Your code starts to look like this:
+Codul dumneavoastră începe să arate astfel:
 
 ```jsx
 const open = props.open;
@@ -127,9 +126,9 @@ const start = props.config.start;
 const end = props.config.end;
 ```
 
-A common approach to simplify this process is to use a syntax called [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring).
+O abordare comună pentru simplificarea acestui proces este utilizarea unei sintaxe numită [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring).
 
-Destructuring allows you to pull individual pieces of information out of an object in a single statement.
+Destructurarea vă permite să extrageți individual părți informaționale dintr-un obiect printr-o  singură formulare.
 
 ```jsx
 const {
@@ -141,13 +140,13 @@ const {
 } = props;
 ```
 
-So while this might be overkill right now, it makes it easier to add props down the road.
+Deci, în timp ce acest lucru ar putea fi exagerat chiar acum, va fi mai ușor să adăugați suporturi treptat.
 
-### Cleanup
+### Curățarea
 
-Before we move on, we'll modify our `ReactDOM.render` call to just include our App. This render call typically includes just a single component with no props.
+Înainte de a trece mai departe, vom modifica apelul nostru „ReactDOM.render” doar pentru a include aplicația noastră.  Acest apel de redare include de obicei doar o singură componentă fără elemente de recuzită.
 
-Next we'll be creating a `Counter` component. We'll add that to our App now, and then start to write the control.
+ În continuare vom crea o componentă „Counter”.  Vom adăuga acum acest lucru în aplicația noastră, apoi vom începe să scriem controlul.
 
 ```jsx
 const App = props => {
@@ -156,18 +155,18 @@ const App = props => {
 
 ReactDOM.render(<App />, document.getElementById('app'));
 ```
+> Rețineți valorificarea `Counter`-ului. Este posibil ca HTML să nu fie un caz prea senzitiv, însă  JSX este!  O metodă obișnuită este de a folosi numele cu majusculă a elementelor HTML pentru a denumi componentele React corespunzătoare: Buton, Selectare, Etichetă, Formă etc.
 
-> Note the capitalization of `Counter`. HTML might not be case-sensitive, but JSX is! A common practice is to use the capitalized names of HTML elements to name corresponding React components: Button, Select, Label, Form, etc.
+## Scrierea unei componente de stare Counter 
 
-## Writing a stateful Counter component
+ React permite fiecărui control să-și specifice propriul bagaj de date, numit ** stare **.  Putem oferi referință valorilor actuale atunci când redăm UI-ul nostru, și, de asemenea, putem actualiza starea pe parcursul derulării aplicației noastre.
 
-React allows each control to specify its own data store, called **state**. We can reference values in state when we render our UI, and we can also update state over the lifetime of our application.
+> Cele mai multe componente de stare pe care le veți vedea astăzi vor fi bazate pe „class”.  Recent, este posibil să adăugați starea componentelor funcționale prin utilizarea [`hooks`](https://reactjs.org/docs/hooks-intro.html)
 
-> Most stateful components you'll see today will be `class` based. It is just recently possible to add state to function components through the use of [`hooks`](https://reactjs.org/docs/hooks-intro.html)
+### Adăugarea stării 
 
-### Adding state
+Clasele JavaScript folosesc o metodă `constructor` pentru a instanția fiecare copie a unei clase, împreună cu orice stare aplicabilă.  Să creăm o nouă componentă numită „Contor” și să îi oferim o stare care conține o proprietate `clicks` cu o valoare implicită de `0`;
 
-JavaScript classes use a `constructor` method to instantiate each copy of a class, along with any applicable state. Let's create a new component called `Counter` and give it a state containing a `clicks` property with a default value of `0`;
 
 ```js
 class Counter extends React.Component {
@@ -180,14 +179,13 @@ class Counter extends React.Component {
 }
 ```
 
-- The constructor takes in the component's `props`.
-- The [`super()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) function calls the constructor of the parent class (in this case `React.Component`).
-- Our `clicks` state value can now be accessed via `this.state.clicks`. Later, we can update state by calling `this.setState({ clicks: 1 })`.
+- Constructorul preia componentele `props`-ului.
+-  [`super()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) funcția numește constructorul din clasa sursă (în acest caz `React.Component`).
+-  `clicks`-urile noastre din valoarea de stare pot fi acum accesate prin `this.state.clicks`. Mai târziu, noi putem actualiza starea accesând `this.setState({ clicks: 1 })`.
 
-### Rendering our Counter
+### Redarea numărării noastre
 
-For our `Counter` component, the goal is to be able to track how many times the counter's button is clicked. We'll use the following markup.
-
+Pentru componenta noastră `Counter`, scopul este de a fi capabili să urmărim de câte ori este accesat butonul de numărare. Vom folosi următorul marcaj.
 ```jsx
 render() {
   const {text} = this.props;
@@ -201,13 +199,13 @@ render() {
 }
 ```
 
-### Writing our button click handler
+### Scrierea accesării butonului nostru 
 
-Our next step is to wire up the button to increment the `clicks` in our component state.
+Următorul nostru pas este să conectăm butonul pentru a crește numărul de `clicks`-uri în componenta noastră de stare.
 
-> By convention we place other methods below `render()`, and private methods (those for internal use only) are prefixed with an underscore.
+> Prin convenție, plasarea altor metode mai jos de `render()`, și metode private (acestea sunt doar pentru uz intern) vor fi precizate cu un subliniat.
 
-This function will update our component's state, incrementing the clicks value by 1. (Note that `setState` only modifies the values of keys listed in the object passed as its parameter.)
+Această funcție va actualiza starea componentei noastre, incrementând valoarea clicurilor cu 1. (Rețineți că `setState` modifică doar valorile tastelor listate în obiectul trecut ca parametru al acestuia.)
 
 ```jsx
 _onButtonClick = () => {
@@ -217,29 +215,28 @@ _onButtonClick = () => {
 };
 ```
 
-> This isn't exactly a method, but a class property that is set to an [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). This mostly works the same as `onButtonClick() { }` but eliminates the need for [extra boilerplate](https://medium.freecodecamp.org/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb) used to avoid potential "gotchas" with [how `this` works in JavaScript](https://codeburst.io/javascript-the-keyword-this-for-beginners-fb5238d99f85).)
+> Aceasta nu este o metodă exactă, doar o proprietate de clasă care este setată la un [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). Acest lucru funcționează în cea mai mare parte ca `onButtonClick() { }` însă elimina decizia de [extra boilerplate](https://medium.freecodecamp.org/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb) folosită pentru a evita potențialul "gotchas" cu [how `this` works in JavaScript](https://codeburst.io/javascript-the-keyword-this-for-beginners-fb5238d99f85).)
 
-> Note that the `setState` call could also be written as `this.setState(prevState => ({ clicks: prevState.clicks + 1 }));` to ensure that state is not updated until the previous state has been determined.
-
-Now that we have a function to increment our count, all that's left is to connect it to our button.
+> Rețineți că apelarea `setState`-ului ar mai putea fi scrisă ca `this.setState(prevState => ({ clicks: prevState.clicks + 1 }));` pentru a se asigura că starea nu este actualizată până când starea anterioară nu a fost determinată.
+Acum, că avem o funcție de creștere a numărării, nu mai rămâne decât să o conectăm la butonul nostru.
 
 ```jsx
 <button onClick={this._onButtonClick}>Click</button>
 ```
 
-> Also note that each `Counter` maintains its own state! You can modify the state inside of one counter without affecting the others.
+> Rețineți, de asemenea, că fiecare „Contor” își păstrează propria stare!  Puteți modifica starea din interiorul unui contor fără a-i afecta pe ceilalți.
 
-## Try it all out!
+## Încercați totul!
 
-Add a couple `Counter`s to our `App`, each with different text. Notice how they can easy take in different props and maintain their own state.
+Adăugați câteva `Counter`-uri în a noastră `App`,fiecare cu text diferit. Observați cum pot lua cu ușurință diferite suporturi și însă își menținpropria stare.
 
-## Moving this into our codebase
+## Implimentarea acestuia în codul nostru
 
-To scale our application, we'll need to break up the file into smaller, reusable pieces. In this part of the demo we'll look at the `final` folder and how the JavaScript module system allows us to break up our components into a collection of files exporting their functionality.
+Pentru a încarca aplicația noastră, va trebui să împărțim fișierul în bucăți mai mici, ce pot fi refolosite.  În această parte a demonstrației vom analiza folderul `final` și modul în care sistemul modulului JavaScript ne permite să împărțim componentele noastre într-o colecție de fișiere care le exportă funcționalitatea.
 
-### Module exports and imports
+### Exportările și importările modulului
 
-Open up `step1-04/final/components/Counter.tsx` and look at the `Counter` component.
+Deschide `step1-04/final/components/Counter.tsx` și analizează componenta `Counter` .
 
 ```tsx
 export class Counter extends React.Component {
@@ -247,33 +244,30 @@ export class Counter extends React.Component {
 }
 ```
 
-This file exports the Counter component as a **named export**. This means when we import it we do the following:
-
+Acest File exportă componenta Counter component ca o **named export**. Asta  înseamnă că atunci când îl importăm,  facem următoarele:
 ```tsx
 import { Counter } from './components/Counter';
 ```
 
-> Note the `{}` wrapped around the import value. This is actually an example of destructuring.
+> Rețineți că tastați  `{}` în jurul valorii import. De fapt, acesta este un exemplu de destructurare.
 
-#### Default exports
+#### Exporturi implicite
 
-We typically use named exports, but it's also possible export a default value like this:
-
+De obicei folosim exporturi denumite, dar este posibilă și exportarea unei valori implicite precum:
 ```tsx
 export default class Counter extends React.Component {
   // ...
 }
 ```
-
-When we import the component we can call it whatever we want:
+Când importăm componenta, o putem numi oricum dorim:
 
 ```tsx
 import SomeCounterComponent from './components/Counter';
 ```
 
-## Writing a Button component
+## Scrierea unei componente a Button-ului
 
-Buttons are among the most commonly written components. Custom buttons help abstract common styling, add icons or other decorations, and increase functionality (menu buttons etc). Let's take a quick look at a custom button component to see how it comes together.
+Butoanele se numără printre cele mai frecvente componente scrise. Butoanele personalizate vă ajută să abstrați stilul comun, să adăugați pictograme sau alte decorațiuni și să măriți funcționalitatea (butoane de meniu etc.).  Să aruncăm o privire rapidă asupra unei componente de buton personalizate pentru a vedea cum se îmbină împreună.
 
 ```jsx
 import React from 'react';
@@ -287,3 +281,6 @@ export const Button = props => {
   );
 };
 ```
+
+
+
