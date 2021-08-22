@@ -1,34 +1,34 @@
-/* 1. Text Color: Red */
+/* 1. Culoarea textului: Roșu */
 h2 {
   color: red;
 }
 
-/* 2. Color Green (hint: Sibling Selector) */
+/* 2. Culoarea Verde (hint: Sibling Sector) */
 h2 + div {
   color: green;
 }
 
-/* 3. Border Green*/
+/* 3. Margine Verde*/
 .myList li {
   border: 1px solid green;
 }
 
-/* 4. Background Green */
+/* 4. Fundal Verde */
 .myClass {
   background: green;
 }
 
-/* 5. Background Green & Color White (Hint Qualified Selector) */
+/* 5. Fundal Verde & Culoare Alb (Sector Calificat Posterior) */
 .myClass.otherClass {
   color: white;
 }
 
-/* 6. Background Yellow */
+/* 6. Fundal Galben */
 #myId {
   background: yellow;
 }
 
-/* Bonus: Border Pink*/
+/* Bonus: Margine Roz*/
 section > div:last-child {
   border: 1px solid pink;
 }
