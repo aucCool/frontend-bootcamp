@@ -29,32 +29,33 @@ button {
       </pre>
       <pre data-lang="js">
 /*
-1. Create a function named `getFavs`. Inside, run:
+1. Creați o funcție numită `getFavs`. În interior, derularea:
     alert('clicked')
 
-2. Create a variable `button` and set it to a reference to our button using:
+2. Creați o variabilă `button` și setați-o la o referință către butonul nostru folosindand:
     document.querySelector('button')
 
-3. Add a click event listener to the button that calls `getFavs`.
-   Click the button and make sure the alert is displayed.
+3. Adăugați un click evenimentului audio către butonul cu numele`getFavs`.
+    Faceți clic pe buton și asigurați-vă că este afișată alerta.
 
-4. Replace the `alert` call with a new `favList` variable set to an empty array: []
+4. Înlocuiți apelul `alert` cu o nouă variabilă `favList` setată la o matrice goală: []
 
-5. Create a const variable `inputs` set to all of the inputs on the page.
-   `querySelectorAll` will help here.
+5. Creați o variabilă constantă `inputs` setată către toate intrările de pe pagină.
+   `querySelectorAll` vă va ajuta aici.
 
-6. Iterate over all of the inputs using:
-    for (const input of inputs) {}
+6. Iterați toate intrările folosind:
+    pentru (const intrarea la intrări) {}
 
-7. In each iteration, use an `if` statement to check if `input.checked` is equal to true
+7. În fiecare iterațiune, folosiți afirmația `if` pentru a verifica dacă `input.checked` este adevărat
 
-8. If the above tests passes, push the `input.parentNode.textContent` into the `favList`
-   array by passing the text as a parameter to `favList.push()`
-  - `push` is a built-in array method: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+8. Dacă testele de mai sus trec, apăsați `input.parentNode.textContent` în `favList`
+   matrice prin trecerea textului ca parametru către `favList.push()`
+  - `push` este o metodă de a încorpora matricea: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
 
-9. Outside of the for loop, use `document.querySelector('.favorites')` to target the
-   div at the bottom of the page. Set the div's `textContent` to `favList.join(' ')`.
-   This will join each of the foods together into a string separated by a space.
+9. În afara buclei for, utilizați `document.querySelector ('.favorites')` pentru a viza
+    div în partea de jos a paginii. Setați div-ul "textContent" la "favList.join (") ".
+    Aceasta va uni fiecare dintre alimente într-un șir separat de un spațiu.
+
 */
 
       </pre>
