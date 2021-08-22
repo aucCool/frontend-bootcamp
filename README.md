@@ -1,4 +1,4 @@
-# Frontend Bootcamp / Web'deki günler
+# Frontend Bootcamp / Web'deki günler 
 
 > 🚨🚨 Bu proje devam eden bir çalışmadır! Sorunlar ve çekme istekleri teşvik edilir. 🚨🚨
 
