@@ -10,85 +10,85 @@
       data-default-tab="html,result"
     >
       <pre data-lang="css">
-/* Targeting the entire page */
+/* Vizarea întregii pagini */
 //body {
   font: 1.2em sans-serif;
 }
 
-/* Targeting an HTML tag */
+/* Vizarea unei Etichete HTML */
 //h1 {
-  /* Color name */
+  /* Numele culorii */
   color: black;
 
   /* 6-digit hex  */
   background: #ababab;
 
-  /* Margin: specified separately for each side */
-  margin-bottom: 15px;
-  margin-top: 15px;
+  /* Margini:Separare specifică pentru fiecare parte */
+  margine-jos: 15px;
+  margine-sus: 15px;
 
-  /* Shorthand: Padding applies to all sides  */
-  padding: 10px;
+  /* Stenografie: Căptușeala se aplică pe toate părțile  */
+  căptușeala: 10px;
 
-  /* Border shorthand and 3-digit hex */
-  border: 1px solid #ddd;
+  /* Stenografia marginii și 3-digit hex */
+  margină: 1px solid #ddd;
 }
 
-/* Overriding inherited styles */
+/* Stiluri primordiale moștenire */
 //span {
   color: #004578;
 }
 
-/* Sibling selector */
+/* Selector înfrățit */
 //a + a {
-  /* Changing elements from inline to block */
+  /* Schimbarea elementelor din linie in bloc */
   display: block;
 }
 
-/* Targeting a class name  */
+/* Vizarea unui nume de clasă  */
 //.tiles {
   display: flex;
 }
 
-/* Descendant selector */
+/* Selector descendent */
 //.tiles img {
   width: 100%;
 }
 
-/* Direct descendant selector */
+/* Selector descendent direct */
 //.tiles > div {
   /* rgb color */
   background: rgb(10, 10, 10);
   color: white;
   flex-basis: 100%;
-  /* Padding/margin shorthand. Goes clockwise from top.
+  /* Padding/margin shorthand. Derulează în sensul acelor de ceasornic începând de sus.
   10px - all
   10px 20px - top/bottom left/right
   10px 20px 15px - top left/right bottom
   */
   padding: 10px 20px 15px;
-  margin: 10px 20px 10px 0;
-  border: 1px solid white;
+  border: 10px 20px 10px 0;
+  margin: 1px solid white;
 }
 
-/* Qualified selector */
+/* Selector calificat */
 //div.important-links {
   background: #004578;
 }
 
-/* Style inheritance only works for unstyled elements */
+/* Moștenirea stilului funcționează numai pentru elementele nestilate */
 //a {
   color: white;
 }
 
-/* Hover pseudo-selector */
-//a:hover {
+/* Menținerea pseudo-selector-ului */
+//suprascrie marginea-dreapta, dar lasă alte margini în pace a:hover {
   color: #ccc;
 }
 
-/* Positional pseudo-selector  */
+/* Poziționarea pseudo-selector-ului */
 //.tiles > div:last-child {
-  /* overrides margin-right but leaves other margins alone */
+  /* Suprascrie marginea-dreapta, dar lasă alte margini neschimbate */
   margin-right: 0;
 }
 
@@ -98,7 +98,7 @@
   flex-direction: column;
 }
 
-/* Attribute selector */
+/* Atriubuirea selector-ului */
 //input[type='submit'] {
   margin-top: 10px;
 }   
