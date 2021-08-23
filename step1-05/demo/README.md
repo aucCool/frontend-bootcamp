@@ -1,19 +1,19 @@
-# Step 1.5 - Building a static page in React (Demo)
+# Pasul 1.5 - Construiți o pagină statică în React (Demonstrație)
 
-To start building our todo application, we'll follow the steps outlined in [Thinking in React](https://reactjs.org/docs/thinking-in-react.html). The first step of the process is to break our application into a component hierarchy. For this app, we're going to keep it simple and just use four parts.
+Pentru a începe construcția aplicației noastre vizate, vom urmări pașii descriși în [Thinking in React](https://reactjs.org/docs/thinking-in-react.html). Primul pas al acestui proces este divizarea aplicației noastre într-o ierarhie de componente. Pentru această aplicație, o vom simplifica și vom folosi doar patru părți.
 
 - TodoHeader
 - TodoList
 - TodoListItem
 - TodoFooter
 
-You can find the HTML for our application in `step1-05/TodoApp.html`.
+Puteți găsi HTML-lul pentru aplicația noastră în`step1-05/TodoApp.html`.
 
 ## TodoHeader
 
-We'll store all of our components inside a `components` folder under `src`. Let's create that now. We'll then start writing the `TodoHeader` in `src/components/TodoHeader.tsx`. The `tsx` file extension tells our editor that this file includes React code written in TypeScript.
+Vom stoca toate componentele noastre în interiorul folderului `components` sub `src`. Iar acum să îl creăm. Vom începe scrierea `TodoHeader`-lui în `src/components/TodoHeader.tsx`. Extensia fișierului `tsx` amintește editorului nostru că acest fișier include codul React scris în TypeScript.
 
-> We'll talk about TypeScript soon, but for now, know that all valid JavaScript is valid TypeScript.
+> În curând vom vorbi despre TypeScript, însă pentru acum, știm că tot ce este valid în JavaScript este valid și în TypeScript.
 
 ```jsx
 import React from 'react';
@@ -38,11 +38,11 @@ export class TodoHeader extends React.Component<any, any> {
 }
 ```
 
-> Note that since this is React, we had to change `class` to `className`, but nothing else changes.
+> Rețineți că din moment ce acesta este React, noi trebuie să schimbăm `class` cu `className`, însă nimic altceva nu se modifică.
 
 ## TodoListItem
 
-Any time you see repeated complex elements, that is usually a sign that you should create a new component. With a few props you can typically abstract all of those elements into a single component. This is certainly the case with todo items.
+Ori de câte ori vedeți că complexul de elemente se modifică, trebuie să știți ca acesta este de obicei un semn că trebuie să creați o componentă nouă. Cu câteva elemente de recuzită puteți abstractiza, de obicei, toate aceste elemente într-o singură componentă. Acesta este, cu siguranță, cazul cu sarcinile de făcut.
 
 ```jsx
 import React from 'react';
@@ -60,7 +60,7 @@ export class TodolistItem extends React.Component<any, any> {
 }
 ```
 
-> Note that this control could also be created as a function instead of a class:
+> Rețineți că acest control ar putea fi, de asemenea, creat ca o funcție în loc de clasă:
 > ```jsx
 > export const TodoListItem = (props) => {
 >   return (
