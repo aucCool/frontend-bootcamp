@@ -1,20 +1,20 @@
-# Step 1.5 - Building a static page in React (Exercise)
+# Pasul 1.5 – Construiți o pagină statică în React (Exercițiu)
 
-From this exercise on, we'll be working in VS Code instead of CodePen. If you don't already have the bootcamp folder open in a VS Code window, see the [main readme](https://github.com/Microsoft/frontend-bootcamp/blob/master/README.md) for instructions.
-
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 1 step 5 to see results.
+Începând cu acest exercițiu, vom lucra în VS Code în loc de CodePen. Dacă nu aveți deja folderul bootcamp deschis într-o fereastră VS Code, vedeți [main readme](https://github.com/Microsoft/frontend-bootcamp/blob/master/README.md) pentru instrucțiuni.
+Dacă încă nu aveți aplicația rulată, porniți-o accesând `npm start` din rădăcina folderului` frontend-bootcamp`. Accesați link-ul „exercițiu” din ziua 1 subpasul 5 pentru a vedea rezultatele.
 
 ## TodoFooter
 
-1. Add a TodoFooter component in the `components` folder, copying over the `<footer>` tag and all of its children from `TodoApp.html` in the `step1-05` folder. This component could be a function or class.
-2. Remove any `onclick` properties, and change `class` to `className`
+1. Adăugați o  componentă TodoFooter în folderul `components`, copiind eticheta`<footer>` și toate subpunctele acesteia din `TodoApp.html` în folderul `step1-05`. Această componentă ar putea fi o funcție sau o clasă.
+2. Eliminați  orice proprietăți `onclick`, și schimbați  `class` cu `className`
 
 ## TodoList
 
-1. Add a TodoList component like you did with the footer. This could also be function or class.
-2. Import TodoListItem and add four of them inside of the `<ul>`
-3. Bonus points for using a [`for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration) loop or using [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to create 4 list items based on the array `[1,2,3,4]`
+1. Adăugați o componentă TodoList așa cum ați făcut cu rădăcina. De asemenea, aceasta poate să fie o funcție sau o clasă.
+2. Importați TodoListItem și adăugați patru din acestea în interiorul la `<ul>`
+3. Puncte Bonus pentru utilizarea  [`for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration) buclei sau utilizarea [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) pentru a crea 4 liste de itemi bazate pe matricea `[1,2,3,4]`
 
 ## App
 
-1. Import both of these components into `App.tsx` and place their tags below the `TodoHeader`.
+1. Importați ambele componente în `App.tsx` și plasați etichetele acestora sub `TodoHeader`.
+
