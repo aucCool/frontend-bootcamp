@@ -1,34 +1,34 @@
-# Step 1.7 - Types and creating a UI-driven state (Demo)
+# Pasul 1.7 – Scrierea și crearea unei stări de derulare UI (Demonstrație)
 
-Now that we have a UI that is purely driven by the state of our app, we need to add functionality to allow the UI to drive the state. This is often done by creating functions that call `setState` like we saw in the `TodoHeader`. Values from the state are then passed down child components as props.
+Acum că avem un UI care este pur și simplu condus de starea aplicației noastre, trebuie să adăugăm funcționalități pentru a permite UI-ului să conducă starea. Acest lucru se face adesea prin crearea de funcții care numesc „setState” așa cum am văzut în „TodoHeader”. Valorile din stat sunt apoi transmise componentelor subsidiare precum props.
 
-> We'll be learning in part 2 of this workshop how we can expose these functions without explicitly passing them down via props.
+> În a doua parte a acestui atelier vom învață cum putem să expunem aceste funcții fără a le trece explicit în jos prin props.
 
-This is our core "business logic" and handles our basic "CRUD" operations: Create, Read, Update, Delete. We don't have time to walk through writing all of those functions, but you can see that they are already provided in the demo's `TodoApp` and passed into our components.
+Aceasta este baza „logicii noastre de afaceri”  și gestionează operațiunile noastre fundamentale „CRUD”: Creare, Citire, Actualizare, Ștergere. Nu avem timp să parcurgem scrierea tuturor acelor funcții, dar puteți vedea că acestea sunt deja expuse în demonstrația „TodoApp” și trecute în componentele noastre.
 
-## Intro to TypeScript
+## Introducere în TypeScript
 
-Taking a look at our components in `TodoApp`, you can see that our list of props is getting not just longer, but much more complex! We're passing through functions with various signatures, complex `todos` objects, and filter strings which are always one of three values.
+Aruncând o privire asupra componentelor noastre din `TodoApp`, puteți vedea că lista noastră de props-uri devine nu doar mai lungă, ci mult mai complexă! Trecem prin funcții diferite semnături, obiecte complexe `todos` și șiruri de filtrare care reprezintă întotdeauna una dintre cele trei valori.
 
-As applications grow, it becomes difficult to remember what each function does or what each todo contains. Also, as JavaScript is a dynamically typed language, if I wanted to change the value of `todos` to an array inside my `TodoList`, JavaScript wouldn't care. But if `TodoListItems` was expecting an object, our application would break.
+Pe măsură ce aplicațiile cresc, devine dificil să reținem ce face fiecare funcție sau ce conține fiecare todo. De asemenea, deoarece JavaScript este un limbaj tastat dinamic, dacă aș vrea să schimb valoarea lui `todos` într-o matrice din` TodoList`,  în JavaScript întâlnesc nici-o problemă. Dar dacă `TodoListItems` se așteaptă la un obiect, aplicația noastră s-ar opri.
 
-For these two reasons, the industry is shifting to writing applications that are strongly typed, and many are using TypeScript to accomplish that.
+Din aceste două motive, industria trece la scrierea aplicațiilor care sunt tastate strict și mulți folosesc TypeScript pentru a realiza acest lucru.
 
-As [TypeScript's website](https://www.typescriptlang.org/) states:
+Precum și stările [TypeScript's website](https://www.typescriptlang.org/) :
 
-> TypeScript is a superset of JavaScript that compiles to plain JavaScript.
+> TypeScript este un superset de JavaScript care se compilează în JavaScript simplu.
 
-If you've used [Sass](https://sass-lang.com/), you're familiar with this concept. In the same way that all valid CSS is valid Sass, all valid JavaScript is valid TypeScript. That's why our exercises have been written in `ts` and `tsx` files instead of `js` and `jsx`.
+Dacă am folosit deja [Sass](https://sass-lang.com/), sunteți familiarizați cu acest concept. În același mod în care tot ce este valid CSS este valid Sass, tot ce este valid JavaScript este valid TypeScript. De aceea exercițiile noastre au fost scrise în fișierele `ts` și `tsx` în loc de `js` și `jsx`.
 
-Let's dive in and see how TypeScript can help clarify our component props and guard against future regressions.
+Să aprofundăm și să vedem cum TypeScript ne poate ajuta să ne clarificăm componentele props și să ne ferim de viitoarele regresii.
 
-# Demo
+# Demonstrație 
 
-Let's start off in the TodoList, as that has the most data flow up and down. There isn't any interactive UI in this component, as we're simply passing `completed` down to each `TodoListItem`, but we can write a props interface to make sure that everything gets passed down properly.
+Să începem în TodoList deoarece acesta are cel mai mare flux de date în sus și în jos. Nu există nici-o interactivă UI în această componentă, deoarece pur și simplu trecem „completat” la fiecare „TodoListItem”, dar putem scrie o interfață props pentru a ne asigura că totul este transmis corect.
 
-## Writing TodoListProps
+## Scrierea TodoListProps-urilor
 
-Looking at our `TodoApp` we know that `TodoList` has three props: `filter`, `todos`, and `complete`. We'll start by creating an interface called `TodoListProps` that represents this component's props.
+Uitându-ne la `TodoApp` noastră știm că `TodoList` are 3 prop-uri: `filter`, `todos`, și `complete`. Vom începe crearea unei interfețe numite `TodoListProps` care reprezintă ocomponentă a props-ului.
 
 ```ts
 interface TodoListProps {
@@ -38,25 +38,25 @@ interface TodoListProps {
 }
 ```
 
-> Note that we're using the `any` keyword for now. This won't give us any type safety, but it does let us specify valid prop names we can pass to this component.
+> Rețineți că pentru moment folosim cuvantul cheie `any`. Însă acest lucru nu ne oferă nici-o siguranță, ne permite doar să specificăm nume valide prop pe care le putem trece la această componentă.
 
-With that interface written, we'll add it to our component class.
+Având această interfață scrisă, o vom adăuga acum la clasa noastră de componente.
 
 ```ts
 export class TodoList extends React.Component<TodoListProps, any>
 ```
 
-> Note that the first value in `<>` is for a props interface, and the second is for state.
+> Rețineți că prima valoare în `<>` este pentru interfața prop-urilor, iar a doua, este pentru stare.
 
-Now that we have a typed component, let's go back to our `TodoApp` and see what happens if we try to change the name of a prop.
+Acum că avem o componentă tastată, să ne întoarcem la a noastră `TodoApp` și să vedem ce se întâmpla dacă încercăm să schimbăm numele prop-ului.
 
-## Adding type safety
+## Adăugarea tipului în siguranță
 
-So far we've only established what our prop names are, not the type of values inside of them. Let's first look at `filter` and see how we can improve that prop's type safety.
+Până acum am stabilit doar care sunt numele noastre prop, nu și tipul de valori din interiorul acestora. Să ne uităm mai întâi la `filter` și  să vedem cum putem îmbunătăți siguranța acestui tip de prop.
 
-### Filter Type
+### Tipul filtrului
 
-We know that `filter` shouldn't be an object, array or function, so we can specify it should always be a string like this:
+Știm că `filter`-ul nu ar trebui să fie un obiect, o matrice sau o funcție, așa că putem specifica că acesta ar putea fi mereu un șir precum acesta:
 
 ```ts
 interface TodoListProps {
@@ -65,8 +65,7 @@ interface TodoListProps {
   complete: any;
 }
 ```
-
-But since we know that the filter can be only one of three values, we can make that explicit with a [union type](https://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types):
+Dar, din moment ce știm că filtrul poate lua doar una din cele trei valori, putem face acest lucru explicit cu un [union type](https://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types):
 
 ```ts
 interface TodoListProps {
@@ -76,11 +75,11 @@ interface TodoListProps {
 }
 ```
 
-Now try going back to `TodoApp` and changing the `filter` attribute in `TodoList` to something else. You'll see an error in the editor (if using VS Code) and on the command line when you save the file.
+Acum încercați să reveniți la `TodoApp` și să schimbați atributul `filter` în  `TodoList` la altceva. Veți vedea o eroare în editor (dacă folosiți VS Code) și pe linia de comandă când veți salva fișierul.
 
 ### Complete Type
 
-The `complete` prop isn't data, but a function. Fortunately, TypeScript can handle function types just as well as data.
+Prop-ul `complete` nu este o dată, ci o funcție. Din fericire, TypeScript poate gestiona funcția type la fel de bine ca pe o dată.
 
 ```ts
 interface TodoListProps {
@@ -90,13 +89,13 @@ interface TodoListProps {
 }
 ```
 
-For functions we are only concerned with the parameters passed in and the return value. You can see in the example above that the function takes in an `id` of type string and returns `void`, which means it has no returned value.
+Pentru funcții ne preocupă doar parametrii trecuți și valoarea returnată. Puteți vedea în exemplul de mai sus că funcția preia un `id` de tip șir și returnează `void`, ceea ce înseamnă că aceasta nu are valoare returnată.
 
-> Technically, all functions in JavaScript return `undefined` if no other return value is specified, but declaring a return type of `void` causes TypeScript to error if you try to return a value from the function (or use its default returned value of `undefined`).
+> Tehnic, toate funcțiile în JavaScript returnează `undefined` dacă altă valoare returnată nu este specificată, dar declarând un tip de returnare al `void`-ului vom cauza o eroare TypeScript dacă nu încercați să returnați valoarea din funcție (sau folosiți implicit valoarea sa returnată din `undefined`).
 
 ## Todos Type
 
-The `todos` prop is interesting in that `todos` is an object with a bunch of unknown keys. So here's what that interface would look like.
+Prop-ul `todos` este interesant prin faptul că `todo`-ul este un obiect cu o grămadă de chei necunoscute. Deci iată că avem aici modul în care interfața ar putea arăta.
 
 ```ts
 interface TodoListProps {
@@ -111,13 +110,13 @@ interface TodoListProps {
 }
 ```
 
-> Note that `[id: string]` does not indicate an array; it is an object [index signature](https://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types).
+> Rețineți că `[id: string]` nu indică o matrice; ci este un obiect [index signature](https://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types).
 
-Now that our interface is complete, try changing the word "all" in `filter === all` and see that VS Code will tell you this condition will always be false. Compare this to plain JavaScript: if you had a typo in that line, you wouldn't understand why your filter wasn't working.
+Acum că interfața noastră este completă, încercați să schimbați cuvântul "all" în `filter === all` și observați că VS Code vă va anunța că aceasta condiție va fi mereu falsă. Comparați-l cu simplu JavaScript: dacă aveți o greșeala de scriere în acea linie, nu veți înțelege de ce filtrul dumneavoastră nu funcționează.
 
-## Sharing types
+## Partajarea type-urilor
 
-Most of our components will need to specify types for `todos` and `filter`, so it's a good thing that TypeScript allows us to share types between files. I've already written up and exported those shared types in the file `TodoApp.types.ts`, so we just need to import them and use them in our interface.
+Cele mai multe din componentele noastre vor trebui să specifice type-uri pentru `todos` și `filter`, deci este foarte bine faptul că TypeScript-ul ne permite să partajăm type-urile printre fișiere. Am scris deja și am exportat acele type-uri partajate în fișierul `TodoApp.types.ts`, deci trebuie doar să le importăm și să le folosim în interfața noastră.
 
 ```ts
 import { FilterTypes, Todos, CompleteTodo } from '../TodoApp.types';
@@ -129,9 +128,9 @@ interface TodoListProps {
 }
 ```
 
-## Writing TodoListItemProps
+## Scrierea TodoListItemProps-urilor
 
-Jumping down to the TodoListItem, as we start to write the `TodoListItemProps` we realize that two of the props, `label` and `completed`, have already been defined in the `TodoItem` interface. So we can make `TodoListItemProps` reuse the `TodoItem` interface by extending it.
+Sărind în jos către TodoListItem, așa cum am început să scriem `TodoListItemProps`-ul, noi realizam faptul că două din prop-uri, `label` și `completed`, au fost deja definite în interfața `TodoItem`. Astfel, putem să facem un `TodoListItemProps` reutilizând interfața `TodoItem` prin extinderea ei.
 
 ```ts
 import { CompleteTodo } from '../TodoApp.types';
@@ -142,22 +141,23 @@ interface TodoListItemProps extends TodoItem {
 }
 ```
 
-The end result of this is an interface with all four properties: `id`, `complete`, `completed` and `label`.
+Rezultatul final al acesteia este o interfață cu toate cele patru proprietăți: `id`, `complete`, `completed` și `label`.
 
-Next we can pull in the remaining props in the render function:
+În continuare vom putea trage prop-urile rămase în funcția de redare:
 
 ```jsx
 const { label, completed, complete, id } = this.props;
 ```
 
-And then use the input's `onChange` event to fire our `complete` callback. We can see in the signature that `complete` expects an `id` of type string, so we'll pass our `id` prop in.
+Apoi vom folosi evenimentul începutului `onChange` pentru a porni apelul nostru invers `complete`. Putem vedea în semnătură că `complet` se așteaptă la un „id” de tip șir, așa că vom trece în prop `id`-ul nostru.
 
-> A [callback function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function) is a function passed into a component as a prop.
+> O funcție [callback function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function) trece într-o componentă precum prop.
 
 ```jsx
 <input type="checkbox" checked={completed} onChange={() => complete(id)} />
 ```
 
-> Note that the function param and prop name just happen to be the same. This isn't required.
+> Rețineți că numele funcției param și prop se întâmpla să fie la fel, însă acest lucru nu este neapărat necesar.
 
-Now that our todos are firing the `onChange` callback, give them a click and take look at how the app responds. Since our footer text is based on the number of unchecked todos, the footer will automatically update to reflect the new state.
+Acum, când toate todo-urile noastre lansează apelul invers `onChange`, dați-le un click și aruncați o privire asupra modului în care aplicația răspunde. Deoarece textul subsolului nostru se bazează pe numărul de todo-uri neverificate,  subsolul se va actualiza automat pentru a analiza noua stare.
+
