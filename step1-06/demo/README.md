@@ -1,14 +1,14 @@
-# Step 1.6 - Creating a state-driven UI (Demo)
+# Pasul 1.6 – Crearea unei stări de derulare UI (Demonstrație)
 
-In React, the data travels in one direction: top-down in the form of state propagating down the component hierarchy. Only the component containing the state can change the state itself. When a UI interaction occurs, a stateful component must pass down an event handler to the UI component triggering the event in order to signal a state change.
+În React, datele se deplasează într-o singură direcție: de sus în jos sub, formă de stare care propagă în jos ierarhia componentelor. Numai componenta care conține starea poate schimba starea în sine. Când apare o interacțiune UI, o componentă de stare trebuie să transmită un eveniment de manipulat către componenta UI care va declanșa evenimentul pentru a semnaliza o schimbare de stare.
 
-[Step #3 of "Thinking in React"](https://reactjs.org/docs/thinking-in-react.html) suggests finding the "minimal set of mutable state" that your application requires. So in this demo we are going to add that "minimal state" to our application and drive our UI off of that data. With that done, the next step will be to create ways to modify that state, which will in turn cascade down through our UI. This [reconciliation](https://reactjs.org/docs/reconciliation.html) process, figuring out what in your UI needs to change based on changing state, is what React excels at.
+[Step #3 of "Thinking in React"](https://reactjs.org/docs/thinking-in-react.html) sugerează găsirea „setului minim de stări modificabile” de care are nevoie aplicația dumneavoastră. Deci, în aceasta demonstrație vom adăuga acea "stare minimă"  aplicației noastre și vom elimina UI-ul nostru  din acea dată. Având făcute acestea, următorul pas va fi crearea unei căi prin care să modificăm acea stare, care va derula la rândul său în jos prin UI-ul nostru. Acest [reconciliation](https://reactjs.org/docs/reconciliation.html) proces, descoperă ceea ce trebuie să se schimbe în UI-ul nostru, în funcție de starea de schimbare, în acest mod React excelează.
 
-## Adding state to TodoApp
+## Adăugarea stării la TodoApp
 
-Inside our `TodoApp` class, we will add the minimal state for our application, which includes just two keys: `todos` and `filter`. We don't need to worry about a `remaining` count because it can be calculated by counting the number of todos where the `completed` field is set to `false`.
+În interiorul clasei noastre `TodoApp`, vom adăuga o stare generală aplicației noastre,aceasta include doar două chei: `todos` și `filter`. Nu trebuie să ne îngrijoram despre numărarea `remaining`-ului deoarece acesta poate fi calculat prin socotirea numărului todos unde câmpul `completed` este setat la `false`.
 
-So here is our full constructor:
+Deci, avem aici întreaga construcție:
 
 ```jsx
 constructor(props) {
@@ -37,11 +37,11 @@ constructor(props) {
 }
 ```
 
-> You could also use an array to represent your todos. Array manipulation can be easier in some cases, but this object approach simplifies other functionality and will ultimately be more performant.
+> De asemenea, puteți utiliza o matrice pentru a vă reprezenta todos-urile. Manipularea matricei poate fi mai ușoară în unele cazuri, dar această abordare obiectivă simplifică alte funcționalități și va fi în cele din urmă mai performantă.
 
-## Passing state through to UI
+## Trecerea stării prin UI
 
-Now we can pass `filter` and `todos` into our components.
+Acum putem trece `filter`-ul și `todos`-urile în componentele noastre.
 
 ```jsx
 render() {
@@ -56,9 +56,9 @@ render() {
 }
 ```
 
-## State-driven TodoList
+## Starea de derulare TodoList
 
-I've already pulled out our props into `filter` and `todos` variables, and written a bit of JS that will return an array of filtered todo `id`s. We'll be using that filtered array to render our todo items.
+Am trecut deja props-ul nostru în variabilele `filter` și` todos` și am scris un pic de JS care va returna o matrice de `id`-uri filtrate necesare. Vom folosi acea matrice filtrată pentru a ne reda elementele de făcut.
 
 > `todos[id]` returns the todo matching the `id` passed in, and the spread operator (...) is the same as saying `label={todos[id].label} completed={todos[id].completed}`
 
@@ -72,13 +72,13 @@ return (
 );
 ```
 
-## State-driven and stateful TodoHeader
+## Starea de derulare și stateful TodoHeader-ului
 
-Within the header, we've got a situation where we not only want to pass `filter` state down to it, but we also want to maintain state within the control. Fortunately, this is no problem at all for React. First off let's deal with the incoming state.
+În cadrul antetului, avem o situație în care nu numai că nu dorim să trecem starea `filter` la aceasta, dar de asemenea, vrem să menținem starea în cadrul controlului. Din fericire, aceasta nu este deloc o problemă pentru React. În primul rând, să ne ocupăm de starea de intrare.
 
-### Conditional class names
+### Numele Condițional al Clasei
 
-In CSS-based styling, visual states are applied by adding and removing classes. We can use the filter value to conditionally add a class, thereby lighting up the correct filter button.
+În stilul bazat pe CSS, stările vizuale sunt aplicate prin adăugarea și eliminarea de clase. Putem folosi valoarea filtrului pentru a adăuga condiționat o clasă, iluminând astfel butonul de filtrare corect.
 
 ```jsx
 <nav className="filter">
@@ -88,27 +88,27 @@ In CSS-based styling, visual states are applied by adding and removing classes. 
 </nav>
 ```
 
-> The [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) `condition ? expressionIfTrue : expressionIfFalse` is widely used in React code, as each expression could be a string for a className or even a JSX element.
+>  [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) `condition ? expressionIfTrue : expressionIfFalse`-ul este utilizat pe scară largă în codul React, astfel fiecare expresie poate fi un șir pentru className sau chiar un element JSX.
 
-### Adding a controlled input
+### Adăugarea unei intrări controlate
 
-In React, form elements such as `<input>`, `<textarea>`, and `<select>` can be used as either **uncontrolled** or **controlled**.
+În React, forma elementelor precum `<input>`, `<textarea>`, și `<select>` pot fi folosite ca oricare **uncontrolled** sau **controlled**.
 
-An **uncontrolled input** maintains its current value internally and updates it based on user interactions (entering text, choosing options, etc). The code only pulls the value from the input when it's needed, such as on submit. This is similar to how inputs in a plain HTML form work.
+O  **uncontrolled input** își menține valoarea curentă intern și o actualizează pe baza interacțiunilor utilizatorilor (introducerea textului, alegerea opțiunilor etc.). Codul extrage valoarea din intrare numai atunci când este necesar, cum ar fi la trimitere. Acest lucru este similar cu modul în care funcționează intrările într-un formular HTML simplu.
 
-A **controlled input** takes its current value from a prop and use a callback to notify the parent component of changes made by the user. The input's value doesn't change until the parent component updates the input's props in response to the callback.
+O **controlled input** preia valoarea sa curentă de la un prop și folosește un apel invers pentru a notifica componenta părinte despre modificările făcute de către utilizator. Valoarea intrării nu se modifică până când componenta părinte nu actualizează elementele de intrare ca răspuns la apelul invers.
 
-> The distinction between controlled and uncontrolled is important to understand when writing or using form components, and misunderstandings of this concept are a very common source of bugs. See [this article](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) for a more detailed explanation.
+> Este important să înțelegem distincția dintre controlat și necontrolat atunci când scriem sau folosim componente form, neînțelegerile acestui concept sunt o sursă foarte comună de bug-uri. Vedeți [this article](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) pentru mai multe explicații detaliate.
 
-Let's try changing the text field in our `TodoHeader` component to a controlled input. To add a controlled input, we need two things, which our demo already provides:
+Să încercam schimbarea textului din câmp în componenta noastră `TodoHeader` pentru a controla intrarea. Pentru a adăuga intrarea controlată, avem nevoie de două lucruri, acestea au fost deja explicate în demonstrația noastră:
 
-1. A state variable to hold the input's value:
+1. O variabilă de stare pentru a păstra valoarea intrării:
 
 ```jsx
 this.state = { labelInput: '' };
 ```
 
-2. A callback function to update that value:
+2. O funcție de apel invers pentru a actualiza acea valoare:
 
 ```jsx
 _onChange = evt => {
@@ -116,10 +116,10 @@ _onChange = evt => {
 };
 ```
 
-With those two pieces in place, we can update our uncontrolled input to being controlled.
+Cu aceste două piese la locul lor, putem actualiza intrarea noastră necontrolată pentru a fi  controlată.
 
 ```jsx
 <input value={this.state.labelInput} onChange={this._onChange} className="textfield" placeholder="add todo" />
 ```
 
-> If you have React Dev Tools installed, open them up and take a look at `labelInput` as we type in the input.
+> Dacă aveți instalate React Dev Tools, deschideți-le și aruncați o privire asupra `labelInput`-ului așa cum l-am scris în introducere.
