@@ -1,31 +1,31 @@
-# Step 1.7 - Types and creating a UI-driven state (Exercise)
+# Pasul 1.7 - Scrierea și crearea unei stări de derulare UI (Exercițiu)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 1 step 7 to see results.
+Dacă încă nu aveți derulată aplicația, începeți derularea cu `npm start` din rădăcina fișierului `frontend-bootcamp`. Accesați link-ul "exercise" din ziua 1 pasul 7 pentru a vedea rezultatele.
 
 ## TodoFooter
 
-1. Open TodoFooter and write a `TodoFooterProps` interface. It should include two values, a `clear` and `todos`. Use this interface in the function props like this: `(props: TodoFooterProps)`
+1. Deschideți TodoFooter și scrieți o interfață `TodoFooterProps`. Aceasta ar putea să includă doua valori,`clear` și `todos`. Folosiți această interfață în funcția props în felul următor: `(props: TodoFooterProps)`
 
-2. Write an `_onClick` function that calls `props.clear`.
+2. Scrieți o funcție `_onClick` care numește `props.clear`.
 
-  - Since TodoFooter is not a class, the `_onClick` function needs to be stored in a const placed before the `return`.
-  - Remember to use an arrow function to define this click handler.
+  - Din moment ce TodoFooter nu este o clasă, funcția `_onClick` trebuie să fie stocată într-o construcție înainte de `return`.
+  - Amintiți-vă cum se utilizează o funcție matrice pentru a defini această manipulare a click-ului.
 
-3. Assign `_onClick` to the button's `onClick` prop. You won't need to use `this` since the component isn't a class.
+3. Atribuiți `_onClick` butonului `onClick` prop. Nu veți avea nevoie să folosiți `this` din moment ce componenta nu este o clasă.
 
-4. Test out this functionality. Check a few todos complete and click the `Clear Completed` button.
+4. Testați funcționalitatea acesteia. Verificați câteva todo-uri complete și accesați butonul `Clear Completed`.
 
 ## TodoHeader
 
-1. Open TodoHeader and write `TodoHeaderProps` which will include `addTodo`, `setFilter` and `filter`. Replace the first `any` in the class declaration with this interface.
+1. Deschideți TodoHeader și scrieți `TodoHeaderProps` care va include `addTodo`, `setFilter` și `filter`. Înlocuiți primul `any` în clasa declarației cu această interfață.
 
-2. This component also has state. Write `TodoHeaderState` (there's just one value), and add this where the second `any` was.
+2. Această componentă are, de asemenea, stare. Scrieți `TodoHeaderState` (este o singură valoare), și adăugați-o acolo unde a fost a doua `any`.
 
-3. Add `_onFilter` to each of the filter buttons
+3. Adăugați `_onFilter` la fiecare buton de filtrare
 
-  - Note that we can't add new parameters to onClick, but we can pull information from the event target!
-  - Remember to use an arrow function for this one too
+  - Rețineți că putem adăuga noi parametri la onClick, dar putem extrage informații din ținta evenimentului!
+  - Amintiți-vă să utilizați și pentru aceasta o funcție matrice
 
-4. Call `_onAdd` from the submit button
+4. Apelați `_onAdd` din butonul submit
 
-5. Check out this new functionality! We can now add and filter todos!
+5. Verificați această nouă funcționalitate! Acum putem să adăugăm un filtru todos!
