@@ -1,17 +1,17 @@
-# Bonus: Testing TypeScript code with Jest (Exercise)
+# Bonus: TypeScript Kodunu Jest ile Test Etme (Egzersiz)
 
 [Lessons](../../) | [Demo](../demo/)
 
-Start the test runner by running `npm test` in the root of the `frontend-bootcamp` folder.
+`frontend-bootcamp` klasörünün kökünde `npm test`i çalıştırarak test çalıştırıcısını başlatın.
 
-## Basic testing
+## Temel Testler
 
-1. Look at `exercise/src/stack.ts` for a sample implementation of a stack
+1. Bir yığının örnek uygulaması için `exercise/src/stack.ts` ye bakın.
 
-2. Follow the instructions inside `stack.spec.ts` file to complete the two tests
+2. İki testi tamamlamak için `stack.spec.ts` dosyasındaki talimatları izleyin.
 
-## Enzyme Testing
+## Enzim Testi
 
-1. Open up `exercise/src/TestMe.spec.tsx`
+1. `exercise/src/TestMe.spec.tsx` dosyasını açın.
 
-2. Fill in the test using Enzyme concepts introduced in the demo
+2. Demoda tanıtılan Enzim kavramlarını kullanarak testi doldurun.
