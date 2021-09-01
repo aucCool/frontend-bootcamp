@@ -1,3 +1,3 @@
-# Step 1.3 - Introduction to JavaScript (Exercise)
+# Шаг 1.3 - Введение в JavaScript (Упражнение)
 
 Смотрите  index.html с начала npm или с действующего  сайта для выполнения упражнения.
