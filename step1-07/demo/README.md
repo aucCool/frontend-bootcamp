@@ -14,7 +14,7 @@
 
 По этим двум причинам отрасль переходит к написанию приложений с жесткой типизацией, и многие для этого используют TypeScript.
 
-Как  [TypeScript's website](https://www.typescriptlang.org/) утверждает:
+Как  [ веб-сайт TypeScript ](https://www.typescriptlang.org/) утверждает:
 
 > TypeScript-это надмножество JavaScript, которое компилируется в обычный JavaScript.
 
