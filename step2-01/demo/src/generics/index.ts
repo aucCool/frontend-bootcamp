@@ -1,4 +1,4 @@
-// Generics for classes
+// Generice pentru clase
 class Stack<T = number> {
   private data: T[] = [];
 
@@ -13,11 +13,11 @@ class Stack<T = number> {
 const numberStack = new Stack();
 const stringStack = new Stack<string>();
 
-// Generics for functions
+// Generice pentru funcții
 function reverse<T>(arg: T[]): T[] {
   // TODO: implement the logic to reverse the array
   return arg;
 }
 
-// adding an export turns this into a "module"
+// adăugând un export o va transforma într-un "module"
 export default {};
