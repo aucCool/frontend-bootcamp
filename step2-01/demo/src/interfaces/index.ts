@@ -1,4 +1,4 @@
-// Interface for an object or class
+// Interfață pentru un obiect sau o clasă
 interface Car {
   make: string;
   model: string;
@@ -20,7 +20,7 @@ const myCar2: Car = {
   model: 'Accord'
 };
 
-// Interface for a function
+// Interfață pentru o funcție 
 interface InterestingFn {
   (someArgs: string): number;
 }
@@ -28,5 +28,5 @@ const interesting: InterestingFn = (someArgs: string): number => {
   return Number(someArgs);
 };
 
-// adding an export to turn this into a "module"
+// adăugând un export pentru a o transforma într-un "module"
 export default {};
