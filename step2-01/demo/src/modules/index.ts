@@ -1,29 +1,29 @@
-// These are named imports from a file relative to this file
+// Acestea sunt numite importuri dintr-un fișier relativ cu acest fișier 
 import { namedConst, namedFn, namedObj, namedConstBracket } from './named';
 
-// We can even give an alias to the named constant
+// Putem chiar să dăm o poreclă constantei numite
 import { namedConst as c } from './named';
 
-// These are the *same instances* of the named imports, but they all get imported inside a single object
+// Acestea sunt *same instances* aparținând importurilor numite, însă ele sunt toate importate într-un singur obiect
 import * as named from './named';
 
-// Print out the exports
+// Printarea exporturilor
 console.log(namedConst);
 console.log(c);
 console.log(namedFn());
 console.log(namedObj);
 console.log(namedConstBracket);
 
-// Print out exports from module level import
+// Tipărirea exporturilor din nivelul module al importului
 console.log(named.namedConst);
 console.log(named.namedFn());
 console.log(named.namedObj);
 console.log(named.namedConstBracket);
 
-// The named and module-level imports reference the same object instances
+// Importurile denumite și la nivel de module fac referire către aceleași instanțe ale obiectului 
 console.log(namedObj === named.namedObj); // true
 
-// Default import can be named anything we want as the consumer
+// Importul implicit poate fi numit oricum vrem precum consumator 
 import DefaultClass from './default';
 import Foo from './default';
 
