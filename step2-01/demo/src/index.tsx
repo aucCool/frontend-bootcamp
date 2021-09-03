@@ -1,19 +1,19 @@
-// Interesting TypeScript Topics
+// Subiecte interesante TypeScript 
 
-// types
+// tipuri
 import './types';
 
-// interface
+// interfață
 import './interfaces';
 
-// modularity
+// modularitate
 import './modules';
 
-// generics
+// generice
 import './generics';
 
-// await / async
+// așteptare / asincronizare
 import './async';
 
-// spread syntax
+// distribuirea sintaxei
 import './spread';
