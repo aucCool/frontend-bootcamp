@@ -1,6 +1,6 @@
-// TODO: create a Stack<T> generic class here:
+// De făcut: creați o clasă Stack<T> generică aici:
 
-// export class Stack<T> {
+// exportați clasa Stack<T> {
 //   push(...) { ... }
 //   pop(...) { ... }
 // }
