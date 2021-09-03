@@ -3,10 +3,10 @@ async function fetchSomething() {
   return await response.text();
 }
 
-// Async functions always return a Promise
+// Funcțiile asincrone mereu returnează o Promise
 fetchSomething().then(text => {
   console.log('hello ' + text);
 });
 
-// adding an export turns this into a "module"
+// adăugând un export o va transforma intr-un "module"
 export default {};
