@@ -1,42 +1,42 @@
-# Step 2.1 - Introduction to TypeScript (Demo)
+# Pasul 2.1 - Introducere în TypeScript (Demonstrație)
 
 [Lessons](../../) | [Exercise](../exercise/) | [Final](../final/)
 
-In this step, we'll cover enough TypeScript concepts to be productive with the React & Redux frameworks.
+În acest curs, vom descoperi destule concepte TypeScript pentru a fi productivi în cadrul utilizării React & Redux.
 
-Topics in this step will include:
+Acest pas va include următoarele subiecte:
 
 - [ES modules](#modules)
 - [Types](#typescript-types)
-- [Spread](#spread-operator) and [Destructuring](#destructuring)
-- [Promise](#promise) and [Async / Await](#async--await)
+- [Spread](#spread-operator) și [Destructuring](#destructuring)
+- [Promise](#promise) și [Async / Await](#async--await)
 
-> To try out TypeScript concepts and see the corresponding JavaScript, you can use the [TypeScript playground](http://www.typescriptlang.org/play/index.html). We won't be using it in this training, but it's very handy in general!
+> Pentru a încerca utilizarea conceptelor noastre TypeScript și pentru a vedea corespondentul în JavaScript, puteți utiliza [TypeScript playground](http://www.typescriptlang.org/play/index.html). Nu o vom utiliza în aceast curs, însă, în general, este destul de folositoare. 
 
 ## Modules
 
-Historically, JS was only executed in-browser. The code all had to be loaded using `<script>` tags. With the introduction of node.js, the JS community needed a way to scale beyond just single script files. Other languages support the notion of modules, so various groups started developing modularity standards for JS.
+Din punct de vedere istoric, JS a fost executat numai în browser. Codul trebuia încărcat cu ajutorul etichetelor `<script>`. Odată cu introducerea node.js-ului, comunitatea JS avea nevoie de o modalitate de o calculare mai complexă, nu doar a fișierelor de tip script. Alte limbaje acceptă noțiunea de module, astfel încât diferite grupuri au început să dezvolte standarde de modularitate pentru JS.
 
-The most important ones to know about are:
+Cele mai importante lucruri de știut sunt următoarele:
 
-- **commonjs** - Node.js's standard to support modules
-  - synchronous loading using `require()` function
-  - `require()` can be dynamically called in the course of a program
-- **ESM (ECMAScript module)** - language-level support
-  - statically analyzable and synchronous
-  - dynamic and asynchronous support via `import()` that returns a promise
+- **commonjs** - standardul Node.js-ului pentru a suporta module-le
+  - încărcarea sincronă folosind funcțiile `require()` 
+  - `require()` ce poate fi solicitată dinamic în cursul programului
+- **ESM (ECMAScript module)** - suport la nivel de limbaj 
+  - analizarea statică și sincronă
+  - suportul dinamic și asincron cu ajutorul `import()` care va returna promise
 
-> For more information about the _many_ modularity patterns and standards developed over time, see [this article](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc). You may still encounter some of the older patterns in legacy code.
+> Pentru mai multe informații despre tiparele și standardele _many_ modularity dezvoltate de-a lungul timpului, vedeți [acest articol](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc). Încă s-ar putea să mai întâlniți unele din tiparele vechi în codul moșteninit.
 
-## TypeScript types
+## Tipuri TypeScript 
 
-Refer to [`demo/src/types`](./src/types/index.ts) for examples of some of the types available in TS that benefit a React developer.
+Referire către [`demo/src/types`](./src/types/index.ts) pentru exemple a unor tipuri valabile în TS care beneficiază de derulare React.
 
-## Spread operator
+## Operator Spread 
 
-The spread operator `...` provides a quick way to clone and concatenate objects and arrays. This syntax is seen a lot inside React props and Redux reducers.
+Operatorul spread `...` oferă o modalitate rapidă de clonare și concatenare a obiectelor și matricelor. Această sintaxă este întâlnită de multe ori în interiorul suporturilor React și a reductoarelor Redux.
 
-With **objects**:
+Cu **objects**:
 
 ```ts
 // Shallow copy an object
@@ -52,15 +52,14 @@ const cloned2 = { ...obj1, ...obj2, key: value };
 const overridden = { ...object, [key + '-suffix']: value };
 ```
 
-With **arrays**:
+Cu **arrays**:
 
 ```ts
 const copy1 = [...arr];
 const copy2 = [...arr1, ...arr2];
 const copyWithExtras = [123, ...arr, 'hello'];
 ```
-
-Spreading an array into positional arguments to a function:
+Distribuirea unei matrici în argumente poziționale la o funcție: 
 
 ```ts
 function myFunc(a: number, b: number, c: number) {
@@ -70,7 +69,7 @@ const arr = [1, 2, 3];
 myFunc(...arr);
 ```
 
-Spreading an object into props for a React component:
+Distribuirea unui obiect în suporturi pentru o componentă React:
 
 ```jsx
 const obj = { a: 1, b: 2, c: 3 };
@@ -81,7 +80,7 @@ const rendered = <MyComponent {...obj} />;
 
 ## Destructuring
 
-Destructuring is a concise way to take properties out of an object or array:
+Destructurarea este o modalitate concisă de a înlătura proprietățile unui obiect sau unei matrici:
 
 ```ts
 const obj = { foo: 1, bar: 2 };
@@ -93,7 +92,7 @@ const [foo, bar] = arr;
 // foo = 1, bar = 2
 ```
 
-You can separate an item from the rest of the object with destructuring:
+Puteți separa un obiect de restul obiectelor cu ajutorul destructurării: 
 
 ```ts
 const obj = { a: 1, b: 2, c: 3, d: 4 };
@@ -107,7 +106,7 @@ const [foo, ...bar] = arr;
 
 ## Promise
 
-A promise is an object representing work that will be completed later, asynchronously. Promises are chainable, which helps with writing maintainable async code. (Typically, legacy async code uses callbacks to let the caller have control over what to do after the task has been completed, which becomes [very hard to read](http://callbackhell.com/).)
+Promise-ul este un obiect ce reprezintă lucrul ce va fi finalizat ulterior, asincron. Promise-le sunt înlănțuite, aceasta ne ajută la scrierea unui cod asincron mentenabil. (Tipic, codul asincron moștenit folosește apeluri inverse pentru a permite apelantului să aibă control asupra a ceea ce trebuie să facă după ce sarcina a fost finalizată, care devine [foarte greu de citit](http://callbackhell.com/).) 
 
 ```ts
 const aPromise = new Promise((resolve, reject) => {
@@ -119,7 +118,7 @@ const aPromise = new Promise((resolve, reject) => {
 });
 ```
 
-Each promise instance exposes a `then()` function that is chainable. It also provides `catch()`, which catches all exceptions or `reject()` calls:
+Fiecare instanță promise expune o funcție `then()` care este înlănțuită. Aceasta va furniza, de asemenea, `catch()`, care cuprinde toate excepțiile sau apelurile `reject()`:
 
 ```ts
 // Promise.resolve() creates an already-resolved promise instance
@@ -137,11 +136,11 @@ aPromise
   });
 ```
 
-> For more information, see [this overview of promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) or [this deep dive](https://developers.google.com/web/fundamentals/primers/promises).
+> Pentru mai multe informații, vedeți [aceasta sinteza a promise-urilor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) sau [această aprofundare](https://developers.google.com/web/fundamentals/primers/promises). 
 
 ## Async / await
 
-**Async / Await** is a language-level feature for writing asynchronous functions as if they are ordinary, synchronous code. JS support for this is built on top of `Promise`s and is inspired heavily by [C#'s async / await syntax](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/). An async function is written like this:
+**Async / Await** este o proprietate la nivel de limbaj pentru scrierea funcțiilor asincrone la fel ca pentru cele obișnuite, codificate sincron. Suportul JS pentru aceasta este construit pe baza superiorității `Promise`-ului și inspirat puternic din [C#'s async / await syntax](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/). O funcție asincronă este scrisă în următorul mod: 
 
 ```ts
 async function someFunctionAsync() {
@@ -151,7 +150,7 @@ async function someFunctionAsync() {
 }
 ```
 
-All functions that are marked `async` return a `Promise` automatically. The previous example returned a `Promise<string>`, and can be used like this:
+Toate funcțiile care sunt marcate cu `async` redau automat o `Promise`. Exemplele anterioare returnau o `Promise<string>` și pot fi folosite astfel: 
 
 ```ts
 someFunctionAsync().then(result => {
@@ -159,4 +158,4 @@ someFunctionAsync().then(result => {
 });
 ```
 
-> For more information, see [this article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function).
+> Pentru mai multe informații, vedeți [acest articol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function).
