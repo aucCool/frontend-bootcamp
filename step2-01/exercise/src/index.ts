@@ -1,32 +1,32 @@
-// TODO: import the fib(n) function and the constant from './fibonacci.ts'
+// De făcut: importați funcția fib(n) și constanta din './fibonacci.ts'
 // import FibConst, {fib} from ...
 
-// TODO: import Stack from ...
+// De făcut: importați Stack din ...
 
-// Do the exercises here, outputting results using console.log()
+// Derulați exercițiul aici, obțineți rezultatelor utilizând console.log()
 console.log('hello world');
 
 // ---- Modules ----
 
-// TODO: log the result of fib(FibConst)
+// De făcut: înregistrați rezultatele din istoric (FibConst)
 
-// ---- Types and Interfaces ----
+// ---- Tipuri și Interfețe ----
 
-// TODO: define TrafficLight type
+// De făcut: definiți tipul TrafficLight 
 // type TrafficLight = ???
 
-// TODO: define Car interface
+// De făcut: definiți interfața Car 
 // interface Car { ??? }
 
-// TODO: create Car instance
+// De făcut: creați instanța Car 
 // const myCar: Car = { ??? }
 
-// ---- Generics ----
+// ---- Generice ----
 
-// TODO: Demonstrate the Stack
+// De făcut: Demonstați Stack-ul
 // const myStack: Stack<number> = ???
 
-// ---- Spread and Destructuring ----
+// ---- Distribuirea și destructurarea ----
 const obj1 = {
   first: 'who',
   second: 'what',
@@ -40,24 +40,24 @@ const obj2 = {
   catcher: 'today'
 };
 
-// TODO: combine obj1 and obj2 into a single object megaObj using spread syntax
+// De făcut: combinați obj1 și obj2 într-un singur obiect megaObj folosind sintaxa de distribuire
 // const megaObj = ???
 
-// TODO: use destructuring syntax to extract { first, second, catcher }
+// De făcut: utilizați sintaxa de destructurare și înregistrați rezultatele { first, second, catcher }
 
-// ---- Async / Await ----
+// ---- Asincronizare / Așteptare ----
 function makePromise() {
   return Promise.resolve(5);
 }
 
-// TODO: create a new async function
+// De făcut: creați o funcție nouă asincronă
 
 async function run() {
-  // TODO: call makePromise() using await syntax and log the results
-  // TODO: call your new async function
+  // De făcut: apelați makePromise() folosind sintaxa de așteptare și înregistrați rezultatele
+  // De făcut: apelați funcția dumneavoastră asincronă 
 }
 
 run();
 
-// Make this file a module so its code doesn't go in the global scope
+// Faceți din acest fișier un module, astfel încât codul său să nu intre în domeniul global
 export {};
