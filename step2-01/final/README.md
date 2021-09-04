@@ -1,5 +1,5 @@
-# Step 2.1 - Introduction to TypeScript (Final)
+# Pasul 2.1 - Introducere în TypeScript (Final)
 
-[Lessons](../../) | [Demo](../demo/) | [Exercise](../exercise/)
+[Curs](../../) | [Demonstrație](../demo/) | [Exercițiu](../exercise/)
 
-Look at the src folder for exercise solutions.
+Uitați-vă în folderul src pentru a vedea rezolvarea exercițiilor.
