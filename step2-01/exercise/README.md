@@ -1,46 +1,47 @@
-# Step 2.1 - Introduction to TypeScript (Exercise)
 
-[Lessons](../../) | [Demo](../demo/) | [Final](../final/)
+# Pasul 2.1 – Introducere în TypeScript (Exercițiu)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder.
+[Curs](../../) | [Demonstrație](../demo/) | [Final](../final/)
 
-Exercises will be completed under this step's `exercise/src` folder unless otherwise noted. You'll also want to open the [Step2-01 exercise page](http://localhost:8080/step2-01/exercise/) to see the results as you work.
+Dacă încă nu aveți aplicația în derulare, începeți derularea cu `npm start` din rădăcina folderului `frontend-bootcamp`.
 
-## Modules
+Exercițiile vor fi completate în dosarul ce se află sub acest pas step's `exercise/src`, în cazul în care nu se specifică altceva. De asemenea, puteți să deschideți [Pasul 2.01 pagina de exerciții](http://localhost:8080/step2-01/exercise/) pentru a vedea rezultatele muncii dumneavoastră.
 
-1. Open the file `exercise/src/fibonacci.ts` in VS Code
+## Module
 
-2. Inside this file, write a function called `fib(n)` that takes in a number and returns the `n`-th Fibonacci number (be sure the specify the type of `n`).
+1. Deschideți fișierul `exercise/src/fibonacci.ts` în codul VS
+
+2. Înăuntru acestui fișier, scrieți o funcție numită `fib(n)` care preia un număr și returnează numărul Fibonacci `n`-th (asigurați-vă că specificați tipul `n`).
 
 > HINT: `function fib(n: number) { return n <= 1 ? n : fib(n - 1) + fib(n - 2); }`
 
-3. Export `fib(n)` as a **named export**
+3. Exportați `fib(n)` precum **named export**
 
-4. Export a const variable `FibConst` as a **default export**
+4. Exportați o variabilă constantă `FibConst` precum **default export**
 
-5. Inside `index.ts` in the same folder, import both `fib` and `FibConst`, and use the built-in `console.log()` function to log the result of `fib(FibConst)`.
+5. Înăuntru aceluiași folder `index.ts`, importați ambele `fib` și `FibConst` și utilizați construcția în funcția `console.log()` pentru a înregistra rezultatele din `fib(FibConst)`.
 
-## Types and interfaces
+## Tipuri și interfețe  
 
-Inside `exercise/src/index.ts`:
+Înăuntru `exercise/src/index.ts`-ului:
 
-1. Add a type alias for string union type describing the states of Red-Green-Yellow traffic light: `type TrafficLight = ???`
+1. Adăugați un tip alias pentru șirul de tip union ce descrie statusul culorilor din trafic Red-Green-Yellow: `type TrafficLight = ???`
 
-2. Describe a type of car with an interface: `interface Car { ... }` complete with `wheels`, `color`, `make`, `model`
+2. Descrieți un tip de mașină cu o interfață: `interface Car { ... }` completată cu  `wheels`, `color`, `make`, `model`
 
-3. Create a valid car instance and log it using `console.log()`: `const myCar: Car = { ??? }`;
+3. Creați o instanță auto validă și înregistrați-o folosind `console.log()`: `const myCar: Car = { ??? }`;
 
-## Generics
+## Generice
 
-Inside `exercise/src/stack.ts`, create a generic class for a `Stack<T>` complete with a typed `pop()` and `push()` methods.
+Înăuntru `exercise/src/stack.ts`, creați o clasă generică pentru `Stack<T>` completată cu tipuri de metode `pop()` și `push()`.
 
-> Hint: the JavaScript array already has `push()` and `pop()` implemented for you. That can be your backing store.
+> Sugestie: matricea JavaScript are deja `push()` și `pop()` implementate pentru dumneavoastră, care pot fi depozitul suport pentru dumneavoastră. 
 
-In `exercise/src/index.ts`, create a `Stack<number>` and use `console.log()` to demonstrate its functionality.
+În `exercise/src/index.ts`, creați un `Stack<number>` și utilizați `console.log()` pentru a îi demonstra funcționalitatea.
 
-## Spread and destructuring
+## Răspândirea și destructurarea
 
-1. Note the following code in index.ts:
+1. Notați următorul cod în index.ts:
 
 ```ts
 const obj1 = {
@@ -57,13 +58,13 @@ const obj2 = {
 };
 ```
 
-2. Now create a one-liner using the spread syntax `{...x, ...y}` to create a new variable `megaObj` that combines these two objects.
+2. Acum creați o singură linie, folosind sintaxa de răspândire `{...x, ...y}`, pentru a crea o nouă variabilă `megaObj`, care combină aceste două obiecte.
 
-3. Use the destructuring syntax to retrieve the values for `{first, second, catcher}` from `megaObj`.
+3. Folosiți sintaxa de destructurare în scopul recuperării valorilor pentru `{first, second, catcher}` din `megaObj`.
 
-## Async / await
+## Asincronizare / așteptare 
 
-Note the following code in index.ts:
+Notați următorul cod în index.ts:
 
 ```ts
 function makePromise() {
@@ -71,6 +72,7 @@ function makePromise() {
 }
 ```
 
-1. Call `makePromise()` with the `await` syntax and log the results.
+1. Apelați `makePromise()` cu sintaxa `await` și înregistrați rezultatele.
 
-2. Create a new function that uses the `async` keyword. Inside the function, make an `await` call to `makePromise()` and return the results.
+2. Creați o nouă funcție care utilizează cuvântul cheie `async`. În interiorul funcției, faceți un`await` ce apelează `makePromise()` și returnează rezultatele.
+
