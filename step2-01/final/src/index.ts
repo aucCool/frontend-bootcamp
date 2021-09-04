@@ -3,10 +3,10 @@ import { Stack } from './stack';
 
 console.log('hello world');
 
-// ---- Modules ----
+// ---- Module ----
 console.log('fib(FibConst) is:', fib(FibConst));
 
-// ---- Types and Interfaces ----
+// ---- Tipuri și interfețe ----
 type TrafficLight = 'red' | 'green' | 'yellow';
 const annoyingLight: TrafficLight = 'red';
 
@@ -23,17 +23,17 @@ const myCar: Car = {
   make: 'Toyota',
   model: 'Camry'
 };
-// JSON.stringify makes a nice string representation of an object
+// JSON.stringify realizează o bună reprezentare în șir a unui obiect 
 console.log('My car:', JSON.stringify(myCar));
 
-// ---- Generics ----
+// ---- Generice ----
 const myStack = new Stack<number>();
 myStack.push(1);
 myStack.push(2);
 myStack.push(3);
 console.log('Number on top of the stack:', myStack.pop());
 
-// ---- Spread and Destructuring ----
+// ---- Distribuiri și destructurări ----
 const obj1 = {
   first: 'who',
   second: 'what',
@@ -54,7 +54,7 @@ console.log('First:', first);
 console.log('Second:', second);
 console.log('Catcher:', catcher);
 
-// ---- Async / Await ----
+// ---- Asincronizare / Așteptare ----
 function makePromise(): Promise<number> {
   return Promise.resolve(5);
 }
@@ -73,5 +73,4 @@ async function run() {
 
 run();
 
-// Make this file a module so its code doesn't go in the global scope
-export {};
+// Faceți din acest fișier un modul, astfel încât codul său să nu intre în domeniul global export {};
