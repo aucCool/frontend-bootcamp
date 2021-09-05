@@ -1,39 +1,39 @@
-# Step 2.2 - UI Fabric component library (Demo)
+# Paul 2.2 - Librăria de componente UI Fabric (Demonstație)
 
-[Lessons](../../) | [Exercise](../exercise/)
+[Cursuri](../../) | [Exerciții](../exercise/)
 
-[UI Fabric](https://developer.microsoft.com/en-us/fabric) is a component library that reflects the latest Microsoft design language. It is used in many Microsoft web applications and is [developed in the open](https://github.com/OfficeDev/office-ui-fabric-react).
+[UI Fabric](https://developer.microsoft.com/en-us/fabric) este o librărie de componente ce reflctă ultimul design de limbaj Microsoft. Este folosită în mai multe aplicații Microsoft web fiind aceasta [derulată accesând acest link](https://github.com/OfficeDev/office-ui-fabric-react).
 
-We'll talk about:
+Vom vorbi despre:
 
-- [What makes it good](#what-makes-it-good)
-- [How to find it](#how-to-find-it)
-- [How to use it](#how-to-use-it)
-- [Laying out apps with Stack](#layout-with-stack)
+- [Caracteristicile ce o îmbunătățesc](#what-makes-it-good)
+- [Cum să o găsiți](#how-to-find-it)
+- [Cum să o utilizați](#how-to-use-it)
+- [Partajarea aplicațiilor cu Stack](#layout-with-stack)
 
-## What makes it good
+## Caracteristicile ce o îmbunătățesc
 
-- Fabric has been developed BOTH by developers and design engineers working together as a team
-- Most notable Microsoft web products use it
-- It is documented both with examples and TypeScript API documentation
-- Components are highly customizable and themeable
-- Comprehensive library
-- Works with assistive technologies and conforms to web accessibility standards for focus management
-- Fully funded and well managed - shield rotation and lots of automation work
-- Engineering is done in the open on GitHub
-- Engineering system is shared and re-usable by other teams
+- Fabric a fost dezvoltat atât de către dezvoltatori căt și de către ingineri de design lucrănd împreună precum o echipă
+- Cele mai importante produse Microsoft îl folosesc
+- Este documentat atât cu exemple căt și cu documentații TypeScript API 
+- Componentele sunt extrem de personalizate și tematice
+- Librărie cuprinzătoare
+- Lucrează cu tehnologii de asistare și se conformează standardelor de accesibilitate web pentru gestionarea focalizării 
+- Complet finanțat și bine gestionat - rotații de protecție și o mulțime de lucrări automatizate
+- Ingineria este realizată liber în GitHub
+- Sistemele de inginerie sunt partajate și reutilizate de către alte echipe 
 
-## How to find it
+## Cum să o găsiți
 
 GitHub repo:
 https://github.com/officedev/office-ui-fabric-react
 
-Documentation:
+Documentație:
 https://developer.microsoft.com/en-us/fabric/#/components
 
-## How to use it
+## Cum să o utilizați
 
-### Importing a component
+### Importarea unei componente
 
 ```jsx
 import { DefaultButton } from 'office-ui-fabric-react';
@@ -47,11 +47,11 @@ const MyComponent = () => {
 };
 ```
 
-### Customizing behavior of individual components
+### Personalizarea comportamentului componentelor individuale 
 
-Take a look at the [Button documentation](https://developer.microsoft.com/en-us/fabric#/components/button).
+Aruncați o privire asupra acestui [Documentația butonului](https://developer.microsoft.com/en-us/fabric#/components/button).
 
-From the documentation, we can see that if we want to render an icon along with the button's text, we can pass `iconProps` to the button:
+Din document, putem vedea că daca vrem să redăm o pictigramă împreună cu textul butonului, putem trece `iconProps`-ul către buton:
 
 ```js
 import { DefaultButton } from 'office-ui-fabric-react';
@@ -65,9 +65,9 @@ const MyComponent = () => {
 };
 ```
 
-### Customizing component rendering
+### Personalizarea componentelor de redare
 
-Some Fabric components take in a render functions to allow customizing certain parts of the component. An example with TextField:
+Câteva componente Fabric includ funcții de redare pentru a permite personalizarea anumitor părți ale componentei. Un exemplu cu TextField:
 
 ```js
 import { TextField } from 'office-ui-fabric-react';
@@ -82,27 +82,27 @@ const MyComponent = () => {
 };
 ```
 
-## Layout with Stack
+## Aspect cu Stack
 
-Before we start, let's look at flexbox--a modern CSS layout method which is powerful, but really, really complex to use:
+Înainte de a începe, să aruncăm o privire asupra aspectului modern flexbox--a CSS, o metodă care este puternică, dar foarte, foarte complicată de utilizat: 
 
-- A guide: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-- A tool: http://the-echoplex.net/flexyboxes/
-- Did you know there were three or so flexbox standards? (this means old articles may have non-working code)
+- Un ghidaj: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+- Un instrument: http://the-echoplex.net/flexyboxes/
+- Știați că au existat aproximativ trei standarde flexbox? (asta înseamnă că articolele vechi s-ar putea să aibă un cod nefuncționabil)
 
-Fabric's answer is: Stack.
+Răspunsul oferit de Fabric este: Stack.
 
-**Stack** is a container-type component that abstracts the usage of flexbox to define the layout of its child components.
+**Stack** este o componentă de tip container care abstractizază utilizarea flexbox-ului pentru a defini aspectul compenentelor secundare acestuia.
 
-Flexbox uses CSS styles to control:
+Flexbox folosește stiluri CSS pentru a controla:
 
-- direction
-- grow
-- shrink
-- wrap
-- justification
-- alignment
+- direcția
+- creșterea
+- micșorarea
+- învelișul
+- justificarea
+- alinierea
 
-Stack abstracts these CSS styles and provides typings to make them more discoverable.
+Stack abstractizază aceste stiluri CSS și oferă tastări pentru a le face mai accesibile.
 
-Check out a cookbook of sorts in our [documentation](https://developer.microsoft.com/en-us/fabric#/components/stack).
+Consultați un fel de carte de bucate în a noastră [documentație](https://developer.microsoft.com/en-us/fabric#/components/stack).
