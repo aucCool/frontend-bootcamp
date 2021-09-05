@@ -1,27 +1,27 @@
-# Step 2.2 - UI Fabric component library (Exercise)
+# Pasul 2.2 - Librăria de componente UI Fabric (Exercițiu)
 
-[Lessons](../../) | [Demo](../demo/)
+[Cursuri](../../) | [Demonstrație](../demo/)
 
-# Exercise 1: Getting familiar with the Fabric documentation site:
+# Exercițiul 1: Familiarizarea cu site-ul de documentare Fabric:
 
-Open the [documentation for DefaultButton](https://developer.microsoft.com/en-us/fabric/#/components/button). Use the sidebar to explore other available components.
+Deschideți [documentația pentru DefaultButton](https://developer.microsoft.com/en-us/fabric/#/components/button). Utilizați bara laterală pentru a explora alte componente valabile.
 
-# Exercise 2: "Fabric"ize the TodoFooter.tsx
+# Exercițiul 2: "Fabric"(fabricarizarea) TodoFooter.tsx-ului
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 2 step 2 to see results.
+Dacă încă nu aveți aplicația în derulare, începeți derularea cu `npm start` din rădăcina folderului `frontend-bootcamp`. Accesați link-ul "exercise" din ziua 2 pasul 2 pentru a vedea rezultatele.
 
-1. Open TSX file inside `exercise/src/components/TodoFooter.tsx`
-2. Follow the top TODO comment to import Stack, Text and DefaultButton components from Fabric
-3. Follow the TODO comment to:
+1. Deschideți fișierul TSX înăuntru `exercise/src/components/TodoFooter.tsx`
+2. Urmăriți comentariul De făcut din partea de sus pentru a importa componentele Stack, Text și DefaultButton din Fabric
+3. Urmăriți comentariul De făcut pentru a:
 
-- replace `<footer>` with a `<Stack>`
-- replace `<span>` with a `<Text>`
-- replace `<button>` with a `<DefaultButton>`
+- înlocui `<footer>` cu `<Stack>`
+- înlocui `<span>` cu `<Text>`
+- înlocui `<button>` cu `<DefaultButton>`
 
-## Bonus Exercise
+## Exercițiu Bonus
 
-GO WILD! There are so many components in the Fabric library! Try to put some components in the exercise component files. Try out these concepts mentioned earlier:
+Dezlănțuiți-vă! Există atât de multe informații în librăria de componente! Încercați să introduceți câteva componente în fișierele cu componente ale exercițiului. Încercați aceste concepte menționate anterior:
 
-- Importing components from `office-ui-fabric-react`
-- Customizing component with props found on the documentation site
-- Customize component with render props (these will be called onRender\_\_\_ or similar)
+- Importarea componentelor din `office-ui-fabric-react`
+- Personalizarea componentei cu suporturi găsite în site-ul de documentare 
+- Personalizarea componentei cu redarea suporturilor (acestea vor fi numite onRender\_\_\_ or similar)
