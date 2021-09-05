@@ -1,7 +1,7 @@
 import React from 'react';
 import { Store } from '../store';
 
-// TODO: import DefaultButton, Stack, and Text
+// De făcut: importați DefaultButton, Stack, și Text
 
 interface TodoFooterProps {
   clear: () => void;
@@ -11,10 +11,10 @@ interface TodoFooterProps {
 export const TodoFooter = (props: TodoFooterProps) => {
   const itemCount = Object.keys(props.todos).filter(id => !props.todos[id].completed).length;
 
-  // TODO:
-  // 1. replace the <footer> with the Fabric control <Stack>
-  // 2. replace the <span> with the Fabric control <Text>
-  // 3. replace the <button> with Fabric control <DefaultButton>
+  // De făcut:
+  // 1. înlocuiți <footer>-ul cu controlul Fabric-ii <Stack>
+  // 2. înlocuiți <span>-ul cu controlul Fabric-ii <Text>
+  // 3. înlocuiți <button>-ul cu controlul Fabric-ii <DefaultButton>
 
   return (
     <footer>
