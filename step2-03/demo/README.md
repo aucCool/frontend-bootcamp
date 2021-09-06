@@ -1,25 +1,25 @@
-# Step 2.3 - Theming and styling with UI Fabric (Demo)
+# Pasul 2.3 - Tematizare și stilizare cu UI Fabric (Demonstrație)
 
-[Lessons](../../) | [Exercise](../exercise/)
+[Cursuri](../../) | [Exerciții](../exercise/)
 
-In this section, we will illustrate how to use some of the built-in theming and styling features of the UI Fabric component library.
+În această parte, vom ilustra cum putem să folosim câteva dintre proprietățile de tematizare și stilizare încorporate în librăria de componente ale UI Fabric-ii.
 
-These are the theming and styling methods that we will focus on in this step:
+Acestea sunt metodele de tematizare și stilizare asupra cărora ne vom focusa în acest curs:
 
-1. Theming using the `<Customizer>` component
-2. Customizing themes and loading with `loadTheme()`
-3. Customizing Fabric components via the `styles` prop
-4. CSS-in-JS with `mergeStyles`
+1. Tematizare folosind metoda `<Customizer>` 
+2. Personalizarea temelor și încărcarea lor cu `loadTheme()`
+3. Personalizarea componentelor Fabric prin intermediul suportului `styles` 
+4. CSS-in-JS cu `mergeStyles`
 
-The first three methods only work with Fabric components, but the fourth, `mergeStyles`, can be used in other projects as well (and is typically not used within Fabric-based projects).
+Primele trei metode funcționează doar cu componente Fabric, însă a patra,`mergeStyles`, poate fi folosită la fel de bine și în alte proiecte  (în general, nu este utilizată în proiectele de bază Fabric).
 
-## 1. Applying Fabric themes using `<Customizer>`
+## 1. Aplicarea temelor Fabric utilizănd `<Customizer>`
 
-One way to apply a theme is by wrapping the components to be themed with a `<Customizer>` component. `Customizer` propagates the theme down to children through the [React Context](https://reactjs.org/docs/context.html) mechanism.
+O modalitate de a aplica o temă este de a ambala componentele pentru a fi tematizate cu o altă componentă `<Customizer>`. `Customizer` propagă tema în jos către subsidiari prin intermediul mecanismului [React Context](https://reactjs.org/docs/context.html).
 
-There are some predefined themes within Fabric already, like Fluent (which will become the default in the next major release), MDL2, Azure, and some other sample themes like Teams.
+Există deja câteva teme predefinite în Fabric, cum ar fi Fluent (care va deveni implicită în următoarea versiune majoră), MDL2, Azure, și alte exemple de teme precum Teams.
 
-The following code (simplified from `demo/src/components/TodoApp.tsx`) shows an example of applying the Fluent theme to our todo app using `Customizer`.
+Următorul cod (simplificat din `demo/src/components/TodoApp.tsx`) ilustrează un exemplu de aplicare a temei Fluent la aplicația noastră vizată folosind `Customizer`.
 
 ```jsx
 import { Customizer } from 'office-ui-fabric-react';
@@ -38,11 +38,11 @@ function render() {
 }
 ```
 
-## 2. Applying customized themes using `loadTheme()`
+## 2. Aplicarea temelor personalizate folosind `loadTheme()`
 
-Another way to apply a theme is using the `loadTheme()` function. Themes loaded this way apply to the entire application.
+O altă modalitate de a aplica o temă este folosirea funcției `loadTheme()`. Temele încărcate în acest fel se aplică întregii aplicații.
 
-To try out `loadTheme()` in our todo app, remove the `<Customizer>` tag from `TodoApp.tsx` and place this code in the module scope.
+Pentru a încerca `loadTheme()` în aplicația noastră vizată, eliminați eticheta `<Customizer>` din `TodoApp.tsx` și plasați acest cod în domeniul de aplicare al modulului.
 
 ```ts
 import { loadTheme } from 'office-ui-fabric-react';
@@ -75,17 +75,17 @@ loadTheme({
 });
 ```
 
-> If you'd like to create your own theme, the Fabric website has a [handy theme generator](https://aka.ms/themedesigner) to help get you started.
+> Dacă veți dori să creați propria dumneavoastră temă, website-ul Fabric are un  [operator tematic comod](https://aka.ms/themedesigner) pentru a vă ajuta să începeți.
 
-## 3. Customizing one Fabric control instance
+## 3. Personalizarea unei instanțe de control Fabric 
 
-If you just want to customize a single component instance's styling, Fabric components expose a `styles` prop (not to be confused with the React built-in one called `style`).
+Daca doriți să personalizați o singură componentă din stilul instanței, componentele Fabric expun un suport de `styles` (a nu fi confundate cu cel încorporat în  React numit `style`).
 
-You can use intellisense to discover which parts of the component you can to customize.
+Puteți utiliza inteligența pentru a descoperi ce părți din componentă le puteți personaliza.
 
-The `styles` prop can take either an object, or a function which returns a style object based on the component's prop values.
+Suportul `styles` poate lua fie un obiect, sau o funcție, care returnează un obiect de stil bazat pe suportul de valori ale componentei.
 
-The following code (simplified from `demo/src/components/TodoHeader.tsx`) demonstrates using `styles` to customize individual components. The TextField uses a style function and the PrimaryButton uses a style object.
+Următorul cod (simplificat din `demo/src/components/TodoHeader.tsx`) demonstrează folosirea `styles` pentru personalizarea individuală a componentelor. TextField-ul utilizează o funcție de stil și PrimaryButton-ul utilizeaza un obiect de stil.
 
 ```js
 function render() {
@@ -113,20 +113,20 @@ function render() {
 }
 ```
 
-## 4. CSS-in-JS with `mergeStyles`
+## 4. CSS-in-JS cu `mergeStyles`
 
-`mergeStyles` is a styling library that creates CSS class names from styles that are expressed as JavaScript objects. These classes can be used as the `className` prop of any component or element, such as `<div>`.
+`mergeStyles` este o bibliotecă de stilizare a claselor de nume CSS din stiluri care sunt exprimate ca obiecte JavaScript. Aceste clase pot fi utilizate ca suport `className` al oricărei componente sau suport, precum `<div>`.
 
-This is an advanced approach which also works outside of Fabric. Within Fabric-based apps, you would typically only use `mergeStyles` in certain niche scenarios. (Fabric itself uses `mergeStyles` under the hood to power some of its styling.)
+Aceasta este o abordare avansată care, de asemenea, funcționează și în exteriorul Fabric-ii. În aplicațiile de bază Fabric, veți folosi în mod obișnuit doar `mergeStyles` în anumite scenarii de nișă. (Fabric însăși utilizează `mergeStyles` sub acoperire pentru a îmbunătăți o parte din stilul său.)
 
-Benefits of `mergeStyles` include:
+Beneficiile `mergeStyles`-ului includ:
 
-- Works in any app
-- Eliminates the need to import or bundle CSS stylesheets (all styles are bundled as normal JS code)
-- Provides type checking for styles (like Sass) when used with TypeScript
-- Very performant compared with other similar libraries
+- Funcționalitate în orice aplicație
+- Elimină necesitatea de a importa sau de a grupa foile de stil CSS (toate stilurile sunt grupate precum un cod normal)
+- Oferă verificarea tipului pentru stiluri (precum Sass) cănd este utilizat cu TypeScript
+- Forte performant în comparație cu alte librării similare 
 
-The following is a basic example using mergeStyles. ([This CodePen](https://codepen.io/dzearing/pen/jGdgrE?editors=1011) illustrates in more detail what `mergeStyles` does and includes some advanced examples.)
+Următorul cod este un exemplu de bază folosind mergeStyles. ([Acest CodePen](https://codepen.io/dzearing/pen/jGdgrE?editors=1011) ilustrează mult mai detaliat ce face `mergeStyles` și include căteva exemple avansate.)
 
 ```jsx
 // can also import from office-ui-fabric-react in Fabric-based apps
