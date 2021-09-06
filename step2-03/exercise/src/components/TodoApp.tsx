@@ -5,12 +5,12 @@ import { TodoHeader } from './TodoHeader';
 import { TodoList } from './TodoList';
 import { Store } from '../store';
 
-// TODO: Change me to another theme!
+// De făcut: Schimbați-mă cu altă temă!
 import { TeamsCustomizations } from '@uifabric/theme-samples';
 
 let index = 0;
 
-// TODO: Change this to add other CSS styles like backgroundColor, fontSize, etc
+// De făcut: Modificați prin adăugarea unui alt stil CSS precum backgroundColor, fontSize, etc
 const className = mergeStyles({
   padding: 25,
   ...getTheme().effects.elevation4
