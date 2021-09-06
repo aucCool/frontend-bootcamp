@@ -1,48 +1,48 @@
-# Step 2.3 - Theming and styling with UI Fabric (Exercise)
+# Pasul 2.3 - Tematizare și stilizare cu UI Fabric (Exercițiu)
 
-[Lessons](../../) | [Demo](../demo/)
+[Cursuri](../../) | [Demonstrație](../demo/)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 2 step 3 to see results.
+Dacă încă nu aveți aplicația derulată, începeți derularea cu `npm start` din rădăcina fișierului `frontend-bootcamp`. Accesați link-ul "exercise" din ziua 2 pasul 3 pentru a vedea rezultatele.
 
-## Applying Fabric themes
+## Aplicarea temelor Fabric 
 
-Try applying some predefined themes from UI Fabric packages inside the TodoApp under `exercise/src/components/TodoApp.tsx`. Do this by replacing:
+Aplicarea unor teme predefinite din pachetul UI Fabric înăuntru TodoApp sub `exercise/src/components/TodoApp.tsx`. Faceți aceasta prin înlocuirea:
 
 ```ts
 import { FluentCustomizations } from '@uifabric/fluent-theme';
 ```
 
-with:
+cu:
 
 ```ts
 import { TeamsCustomizations } from '@uifabric/theme-samples';
 ```
 
-## Applying customized themes
+## Aplicarea temelor personalizate
 
-1. Create your own theme using the [theme generator](https://developer.microsoft.com/en-us/fabric#/styles/themegenerator) and copy the generated code.
+1. Creați propria dumneavoastră temă folosind [generator de teme](https://developer.microsoft.com/en-us/fabric#/styles/themegenerator) și copiați codul generat.
 
-2. In `exercise/src/components/TodoApp.tsx`, delete the `Customizer` component.
+2. În `exercise/src/components/TodoApp.tsx`, ștergeți componenta `Customizer`.
 
-3. Paste in the generated theme code before the `TodoApp` component definition.
+3. Lipiți în tema codului generat înainte de `TodoApp` definiția componentei.
 
-4. Play around with the values and use VS Code's intellisense to discover more properties of the `ITheme` type.
+4. Jucați-vă cu valorile și folosiți-vă de inteligența codului VS pentru a descoperi mai multe proprietăți ale tipului `ITheme`.
 
-## Customizing one Fabric control instance
+## Personalizați o instanță de control Fabric 
 
-1. Open `exercise/src/components/TodoFooter.tsx`
+1. Deschideți `exercise/src/components/TodoFooter.tsx`
 
-2. Find the `<DefaultButton>` and insert a `styles` prop
+2. Găsiți `<DefaultButton>` și inserați un suport `styles` 
 
-3. Try to customize this with a styles object (let the Intellisense of VS Code guide you on what you can use to customize)
+3. Încercați să personalizați aceasta cu un obiect de stil (lăsați inteligența codului VS să vă ghideze cu privire la ce puteți utiliza pentru personalizare)
 
-4. Try to customize this with a styles function
+4. Încercați să personalizați aceasta cu o funcție de stil 
 
-## CSS-in-JS with `mergeStyles`
+## CSS-in-JS cu `mergeStyles`
 
-As mentioned in the demo, this is an advanced approach which also works outside of Fabric. You wouldn't typically use this approach within a Fabric-based app.
+Așa cum a fost menționat în demonstrație, aceasta este o abordare avansată care funcționează și în afara Fabric-ii. În general, nu veți utiliza această abordare în aplicațiile Fabric.
 
-1. Try generating a class name using `mergeStyles` and use it as a `className` prop inside `TodoApp`
+1. Incercați să generați un nume de clasă utilizănd `mergeStyles` și folosiți-o ca pe un suport `className` în interiorul `TodoApp`
 
 ```jsx
 import { mergeStyles } from 'office-ui-fabric-react';
@@ -57,4 +57,4 @@ const className = mergeStyles({
 });
 ```
 
-2. Try to give a few components extra padding
+2. Încercați să oferiți câtorva coponente mai multă substanță 
