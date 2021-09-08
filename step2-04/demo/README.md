@@ -1,35 +1,33 @@
-# Step 2.4 - React Context (Demo)
+# Pasul 2.4 - React Context (Demonstrație)
 
-[Lessons](../../) | [Exercise](../exercise/)
+[Curs](../../) | [Exercițiu](../exercise/)
 
-In this step, we describe some problems we encounter when creating a more complex application.
+În această parte, vom descrie câteva probleme pe care le întâlnim atunci când creăm o aplicație mult mai complexă.
+Vom soluționa aceste probleme cu [Contextul React API](https://reactjs.org/docs/context.html). Contextul API este constituit din componentele Provider și Consumer. Să aruncăm o privire asupra conținutului acestei părți:
+1. Problema aplicațiilor complexe
+2. Contextul React API
+3. Contextul Consuming dintr-o componentă de clasă
+4. Contextul Consuming dintr-o componentă funcțională  
 
-We will solve these problems with the [React Context API](https://reactjs.org/docs/context.html). The Context API consists of Provider and Consumer components. Let's take a look at what is in this step:
+## Problema aplicațiilor complexe
 
-1. The problem of complex applications
-2. React Context API
-3. Consuming context from a class component
-4. Consuming context from a functional component
-
-## The problem of complex applications
-
-React represents a single component like this:
+React reprezintă o singură componentă, cum ar fi aceasta:
 
 ```
 (props) => view;
 ```
 
-In a real application, these functions are composed. It looks more like this:
+În aplicația reală, aceste funcții sunt compuse. Arată mai mult ca aceasta:
 
 ![](../../assets/todo-components.png)
 
-Being able to compose components is helpful, but it introduces some complexity:
+Capacitatea de a compune componente este utilă, dar prezintă o oarecare complexitate:
 
-1. Data needs to be passed down from component to component via props--even if some of the intermediate components don't need to know about some of the data. This is a problem called **props drilling**.
+1. Datele trebuie să fie trecute de la o componentă la alta cu ajutorul suporturilor, chiar dacă unele din componentele intermediare nu trebuie să cunoască câte ceva informații despre anumite alte date. Aceasta este o problemă numită **props drilling**.
 
-2. Shared data can be changed by various actors (user interaction, updates from server), and there is no coordination of these changes. This makes propagating updates between components challenging.
+2. Datele partajate pot fi schimbate de diverși factori (interacțiunea utilizatorului, actualizări de la server) și nu există o coordonare a acestor modificări. Acest lucru face ca propagarea actualizărilor între componente să fie dificilă.
 
-Even in our simple application, we saw this problem. For example, `<TodoList>` has this props interface:
+Întâlnim această problemă chiar și în simpla noastră aplicație. De exemplu, `<TodoList>` are o interfață de suporturi:
 
 ```ts
 interface TodoListProps {
@@ -41,27 +39,27 @@ interface TodoListProps {
 }
 ```
 
-None of these props are used in the `TodoList` itself; they're only passed down to child `TodoListItem` components:
+Nociunul dintre aceste suporturi nu sunt utilizați în însăși `TodoList`; ele sunt doar trecute mai jos către componentele subsidiare `TodoListItem`:
 
 ```js
 <TodoListItem todos="{todos}" complete="{complete}" remove="{remove}" edit="{edit}" />
 ```
 
-## React Context API
+## Contextul React API
 
-Let's solve these problems with the [React Context API](https://reactjs.org/docs/context.html). Context is React's way to share data from components with their child components without explicitly passing it down through props at every level of the tree. In simpler terms, it solves the props drilling issue mentioned above!
+Să rezolvăm aceste probleme cu [Contextul React API](https://reactjs.org/docs/context.html). Contextul este o modalitate a React-ului de a partaja date din componente cu componentele lor subsidiare fără a le trece explicit în jos prin suporturi la fiecare nivel al arborelui. În termeni mai simpli, acesta rezolvă problema gestionării suporturilor menționată mai sus.
 
-React context is created by calling `createContext()` with some initial data. Use the `<TodoContext.Provider>` component to wrap a part of the component tree that should be handed the context.
+Contextul React este creat numind `createContext()` cu câteva date inițiale. Folosiți componenta `<TodoContext.Provider>` pentru a înfășura o parte a arborelui component căruia i se va înmâna contextul.
 
-### Providing context with `<TodoContext.Provider>`
+### Furnizarea contextului cu `<TodoContext.Provider>`
 
 ```js
-// To create an empty context
+// Pentru a crea un context gol
 const TodoContext = React.createContext(undefined);
 
 class TodoApp extends React.Component {
   render() {
-    // Pass in some state and functions to the provider's value prop
+    // Treceți în câteva stări și funcții valoarea furnizorului de suport
     return (
       <TodoContext.Provider
         value={{
@@ -81,25 +79,25 @@ class TodoApp extends React.Component {
 }
 ```
 
-### Consume context from a class component
+### Consumați contextul dintr-o componentă de clasă 
 
-Inside a class-based child component, such as `<TodoHeader>`, the context created in the parent can be accessed via `this.context`. Note that for this to work, you must also set the component class's `contextType` property to the context type created above.
+Înăuntru unei clase de componente subsidiară de bază, precum`<TodoHeader>`, contextul creat în sursă poate fi accesat prin intermediul `this.context`. Rețineți că pentru acest lucru, trebuie, de asemenea, să setați proprietățile claselor de componente `contextType` către tipul contextului creat mai sus.
 
 ```js
 class TodoHeader extends React.Component {
   render() {
-    // Step 1: use the context prop
+    // Pasul 1: utilizați suportul contextului
     return <div>Filter is {this.context.filter}</div>;
   }
 }
 
-// Step 2: be sure to set the contextType property of the component class
+// Pasul 2: asigurați-vă că setați proprietatea clasei de componente contextType 
 TodoHeader.contextType = TodoContext;
 ```
 
-### Consume context from a functional component
+### Consumați contextul dintr-o componentă funcțională  
 
-If you're using the functional component syntax, you can access the context with the `useContext()` hook:
+Dacă folosiți sintaxa funcțională a componentei, puteți să accesați contextul cu prescurtarea `useContext()`:
 
 ```js
 const TodoFooter = props => {
@@ -112,6 +110,7 @@ const TodoFooter = props => {
 };
 ```
 
-> Note that `useContext()` requires a recent release of React (16.8+)
+> Rețineți că`useContext()` necesită o lansare recentă a React-ului (16.8+)
 
-There is another legal syntax for accessing context with the `<TodoContext.Consumer>`, but we'll leave that out as an exercise for you!
+Există o altă sintaxă oficială pentru accesarea contextului cu  `<TodoContext.Consumer>`, dar o vom lasă să fie un Exercițiu pentru dumneavoastră!
+
