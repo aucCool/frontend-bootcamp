@@ -1,27 +1,27 @@
-# Step 2.4 - React Context (Exercise)
+# Pasul 2.4 - React Context (Exercițiu)
 
-[Lessons](../../) | [Demo](../demo/)
+[Cursuri](../../) | [Demonstrație](../demo/)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 2 step 4 to see results.
+Dacă încă nu aveți aplicația în derulare, începeți derularea cu `npm start` din rădăcina fișierului `frontend-bootcamp`. Accesați link-ul "exercise" din ziua 2 pasul 4 pentru a vedea rezultatele.
 
-## TodoContext.Provider component
+## TodoContext. Componenta de furnizare
 
-1. Open `exercise/src/components/TodoApp.tsx`
+1. Deschideți `exercise/src/components/TodoApp.tsx`
 
-2. Uncomment the missing functions inside the value prop
+2. Decomentați funcțiile lipsă din interiorul valorii suport
 
-## TodoFooter: context inside functional component
+## De făcut pentru subsol: context în interiorul componentei funcționale 
 
-1. Open `exercise/src/components/TodoFooter.tsx`
+1. Deschideți `exercise/src/components/TodoFooter.tsx`
 
-2. Use `useContext` to access the `TodoContext` and replace the two constants with values from the context
+2. Folosiți `useContext` pentru a accesa`TodoContext` și înlocuiți cele doua constante cu valoarea din context 
 
-## TodoHeader: context inside class component
+## De făcut pentru subsol: context în interiorul componentei de clasă
 
-1. Open `exercise/src/components/TodoHeader.tsx`
+1. Deschideți `exercise/src/components/TodoHeader.tsx`
 
-2. Replace `onAdd` with a real implementation using the `this.context` object
+2. Înlocuiți `onAdd` cu o implementare reală folosind obiectul `this.context` 
 
-3. Replace `onFilter` with a real implementation using the `this.context` object
+3. Înlocuiți `onFilter` cu o implementare reală folosind obiectul `this.context` 
 
-4. Be sure to set the `contextType` of the TodoHeader component
+4. Asigurați-vă că setați `contextType` a componentei TodoHeader 
