@@ -1,4 +1,4 @@
 import React from 'react';
 
-// The typing forces us to put something inside createContext(); start with undefined
-export const TodoContext = React.createContext(undefined);
+// Tastarea ne obligă să punem ceva înăuntru createContext()-ului; începeți cu o constantă de 
+export nedefinită TodoContext = React.createContext(undefined);
