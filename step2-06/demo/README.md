@@ -1,19 +1,19 @@
-# Step 2.6 - Redux: React binding (Demo)
+# Pasul 2.6 - Redux: React binding (Demo)
 
-[Lessons](../../) | [Exercise](../exercise/)
+[Cursuri](../../) | [Exerciții](../exercise/)
 
-Redux is currently the most popular Flux implementation, and the ecosystem of related libraries has grown as a result. This is one of the reasons why it is a very popular library within Microsoft products.
+Redux este în prezent cea mai populară implementare Flux și, ca urmare, ecosistemul bibliotecilor conexe a crescut. Acesta este unul dintre motivele pentru care este o bibliotecă foarte populară în cadrul produselor Microsoft.
 
-Various GitHub users have collected "awesome lists" of tech and articles related to Redux. Here is [one such list](https://github.com/xgrommx/awesome-redux#react---a-javascript-library-for-building-user-interfaces), but it is literally impossible to list out all the related tech.
+Diverși utilizatori GitHub users au colecționat "awesome lists" de tehnologie și articole similare cuRedux. Aici este [o astfel de listă](https://github.com/xgrommx/awesome-redux#react---a-javascript-library-for-building-user-interfaces), dar este literalmente imposibil să enumerăm toate tehnologiile conexe.
 
-In this step, we introduce one useful library that works with Redux: [`react-redux`](https://react-redux.js.org/). Whereas the Step 2.5 code could be used with any web UI framework, we'll now use `react-redux` to connect the store to our React app. There are two steps in this process:
+În acest curs, introducem o bibliotecă utilă care funcționează cu Redux: [`react-redux`](https://react-redux.js.org/). Intrucat codul pasului 2.5 ar putea fi utilizat cu o oricare construcție web UI, acum vom utiliza `react-redux` pentru a conecta magazinul la aplicația noastră React. Există doi pași în acest proces:
 
-1. Providing the store to the views
-2. Mapping the store to props
+1. Furnizarea magazinului pentru vizualizări
+2. Cartografierea magazinului cu suporturi
 
-## Provide the store context to the views
+## Furnizarea contextului magazinului vizualizărilor
 
-Class components will access the Redux store via the [`<Provider>`](https://react-redux.js.org/api/provider) from `react-redux`. Under the hood, `react-redux` uses the context API to pass the store to the descendant components.
+Componentele clasei vor accesa magazinul Redux prin intermediul [`<Provider>`](https://react-redux.js.org/api/provider) din `react-redux`. Sub acoperire, `react-redux` folosește conceptul API pentru a trece magazinul către componentele descendente.
 
 ```jsx
 const store = createStore(reducers);
@@ -27,9 +27,10 @@ const App = () => {
 };
 ```
 
-## Mapping the store to props
+## Cartografierea magazinului cu suporturi
 
-`react-redux` also provides the [`connect()`](https://react-redux.js.org/api/connect) function, which maps portions of the state tree and dispatch functions into props for the child React component. Let's look at how that is done.
+`react-redux` frunizează, de asemenea,funcții [`connect()`](https://react-redux.js.org/api/connect), care mapează porțiuni din arborele de stare și distribuie funcțiile în suporturi pentru componenta subsidiară React. Să vedem cum se face acest lucru.
+
 
 ```jsx
 import { connect } from 'react-redux';
@@ -53,21 +54,21 @@ const ConnectedComponent = connect(
 )(MyComponent);
 ```
 
-So, that's a lot to digest. We'll go through the different parts:
+Deci, există o mulțime de lucruri de asimilat. Vom parcurge diferitele părți:
 
-1. `<MyComponent>` is simple component that expects to have props, without any knowledge of Redux. It is just a plain React component.
+1. `<MyComponent>` este o componentă simplă care se așteaptă să aibă suporturi, fără nicio cunoștință despre Redux. Este doar o simplă componentă React.
 
-2. The `connect()` function takes in several arguments.
+2. Funcția `connect()` preia mai multe argumente.
 
-   - The first argument maps portions of the Redux _state tree_ into `<MyComponent>` _props_
-   - The second arguments maps dispatch functions into `<MyComponent>` _props_ (typically used as callbacks to respond to user interaction)
+   - Primul argument mapează fragmente de Redux _state tree_ into `<MyComponent>` _props_
+   - Al doilea argument mapează funcții de distribuire în `<MyComponent>` _props_ (utilizate, în general, ca și apeluri de reîntoarcere pentru a răspunde la interacțiunea utilizatorului)
 
-3. Finally, `connect()` actually returns a function, which we immediately call to **decorate** `<MyComponent>` into `<ConnectedComponent>` - it is a strange syntax, so do study it more closely here.
+3. În cele din urmă, `connect()` returnează de fapt o funcție, pe care o apelăm imediat să **decorate** `<MyComponent>` în `<ConnectedComponent>` - este o sintaxă dubioasa, așa că studiați-o aici mai atent.
 
-> Yes, `connect()` is a function that takes in functions as arguments and returns a function that takes in a component and returns a component. Try to say this fast 10 times. :)
+> Da, `connect()` este o funcție care preia funcții ca argumente și returnează o funcție care preia o componentă și returnează o componentă . Încercați să repetați aceasta repede de 10 ori. :)
 
-## A note on performance
+## O notă despre performanță
 
-Some folks going through this bootcamp cannot wait to start making screaming fast apps with Redux. Performance isn't free, and it certainly isn't with Redux. Try going through these links to get started on that topic:
+Unii oameni care trec prin acest bootcamp abia așteaptă să înceapă să creeze aplicații cu tipuri rapide Redux. Performanța nu este gratuită, și în mod sigur nu este cu Redux. Încercați să parcurgeți aceste link-uri pentru a începe acest subiect:
 
 https://github.com/markerikson/react-redux-links/blob/master/react-performance.md#redux-performance
