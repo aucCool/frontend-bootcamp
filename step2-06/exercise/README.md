@@ -1,21 +1,21 @@
-# Step 2.6 - Redux: React binding (Exercise)
+# Pasul 2.6 - Redux: React binding (Exercițiu)
 
-[Lessons](../../) | [Demo](../demo/)
+[Cursuri](../../) | [Demonstrație](../demo/)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 2 step 6 to see results.
+Dacă încă nu ai aplicația derulată, începe derularea cu `npm start` din radăcina fișierului `frontend-bootcamp`. Accesați link-ul "exercise" din ziua 2 pasul 6 pentru a vedea rezultatele.
 
-At the beginning of this exercise, the "Add" and "Clear Completed" buttons do not work. We'll be fixing that in this step!
+La începutul acestui exercițiu, adăugați butoanelor să nu lucreze "Add" și "Clear Completed" . Vom remedia problema în acest pas!
 
-1. Open `exercise/src/index.tsx` and wrap `<TodoApp>` with `<Provider>` as instructed in the comment
+1. Deschideți `exercise/src/index.tsx` și infășurați `<TodoApp>` cu `<Provider>` conform instrucțiunilor din comentariu
 
-2. Open `exercise/src/components/TodoFooter.tsx` and erase the "nullable" type modifier (the `?`) in the interface definition of `TodoFooterProps`
+2. Deschideți `exercise/src/components/TodoFooter.tsx` și ștergeți modificatorul de tip "nullable" type  (`?`-ul) în definiția interfeței a `TodoFooterProps`
 
-3. Uncomment the bottom bits of code and fill in `connect()` arguments - feel free to use `TodoListItem.tsx` as a guide
+3. Decomentați fragmentele de cod de jos și completați argumentele `connect()` - simțiți-vă liberi să utilizați `TodoListItem.tsx` precum un ghid
 
-4. Repeat steps 2, 3 for the `TodoHeader.tsx` file
+4. Repetați pașii 2, 3 pentru fișierul `TodoHeader.tsx` 
 
-## Bonus exercise
+## Exercițiu Bonus
 
-For further reading, go here to learn more about the `mergeProps` and `options` parameters to `connect()`:
+Pentru lecturi suplimentare, accesați aici pentru a învăța mai multe despre parametrii `mergeProps` `options` pentru `connect()`:
 
 https://react-redux.js.org/api/connect
