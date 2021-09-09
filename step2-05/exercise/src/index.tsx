@@ -5,7 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(reducer, {}, composeWithDevTools());
 
-// TODO: try doing some store.dispatch() calls here
-// HINT: remember to use the functions inside "actions" object
+// De făcut: încercați să faceți aici căteva apeluri store.dispatch()
+// Sugestie: rețineți să folosiți funcția înăutru obiectului "actions" 
 
 console.log(store.getState());
