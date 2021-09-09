@@ -1,17 +1,17 @@
-# Step 2.5 - Redux: The Store (Exercise)
+# Paul 2.5 - Redux: Magazinul (Exercițiu)
 
-[Lessons](../../) | [Demo](../demo/)
+[Cursuri](../../) | [Demonstrație](../demo/)
 
-If you don't already have the app running, start it by running `npm start` from the root of the `frontend-bootcamp` folder. Click the "exercise" link under day 2 step 5 to see results.
+Dacă încă nu aveți aplicația în derulare, începeți derularea cu `npm start` din rădăcina fișierului `frontend-bootcamp`. Accesați link-ul "exercise" din ziua 2 pasul 5 pentru a vedea rezultatele.
 
-1. First, take a look at the store interface in `exercise/src/store/index.ts`. Note that the `Store` interface has two keys: `todos` and `filter`. We'll concentrate on `todos`, which is an object where the keys are string IDs and the values are of type `TodoItem`.
+1. Mai întâi, aruncați o privire la interfața magazinului în `exercise/src/store/index.ts`. Rețineți că interfața `Store` are doua chei: `todos` și `filter`. Ne vom concentra asupra la `todos`, care este un obiect unde cheile sunt șir de ID-uri și valorile sunt de tipul `TodoItem`.
 
-2. Open `exercise/src/reducers/index.ts` and fill in the missing reducer implementations.
+2. Deschideți `exercise/src/reducers/index.ts` și completați implementările în reductoarele lipsă.
 
-3. Open `exercise/src/index.tsx` and write some `dispatch` calls.
+3. Deschideți `exercise/src/index.tsx` și scrieți câteva apeluri `dispatch`.
 
-4. Take a look what is written in the console (F12 on PC, `cmd-option-I` on Mac).
+4. Uitați-vă la ceea ce este scris în consolă (F12 pentru PC, `cmd-option-I` pentru Mac).
 
-5. Install the Redux DevTools [Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/) extension
+5. Instalați instrumentele de lucru Redux [Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) sau [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/) extensia
 
-6. Observe the state changes and try doing "time travel"
+6. Observați modificările de stare și încercați să faceți "time travel"
