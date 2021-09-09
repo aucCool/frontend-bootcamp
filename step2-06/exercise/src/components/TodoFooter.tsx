@@ -4,8 +4,8 @@ import { actions } from '../actions';
 import { connect } from 'react-redux';
 import { Store } from '../store';
 
-// TODO: these ?'s after the keys of an interface makes it optional
-// and can be removed when you finished connecting this component
+// De făcut: ?-le acestea după cheile interfeței o fac opțională
+// și poate fi eliminat când ați terminat conectarea acestei componente
 interface TodoFooterProps {
   todos?: Store['todos'];
   clear?: () => void;
@@ -26,9 +26,9 @@ const TodoFooter = (props: TodoFooterProps) => {
   );
 };
 
-// TODO: write out the mapping functions for state and dispatch functions
+// De făcut: scrieți funcțiile de mapare pentru stări și funcții de distribuire
 /*
-  HINT: you can get started by copy pasting below code as arguments to connect()
+  Sugestie: puteți începe prin copierea lipirii de mai jos a codului ca argumente pentru conectare()
 
   (state: Store) => ({
     // TODO: mapping for state
