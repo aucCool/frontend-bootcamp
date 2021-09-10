@@ -32,7 +32,7 @@ O etichetă HTML ia următoarea formă:
 ```html
 <tag class="foo" onclick="myFunction()" otherAttributes="values"> </tag>
 ```
-Etichetele HTML pot fi, de asemenea, însumate pentru a crea o arborizație pe care o numim [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction).
+Etichetele HTML pot fi, de asemenea, însumate pentru a crea o arborizație pe care o numim [Model de obiect document](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction).
 
 [Pagina de demonstrație HTML](https://microsoft.github.io/frontend-bootcamp/step1-01/demo) oferă o largă colecție de elemente HTML pe care le veți întâlni în timpul derulării. Întreaga listă de elemente poate fi întâlnită pe pagina [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
 
@@ -59,11 +59,11 @@ Etichetele HTML pot fi, de asemenea, însumate pentru a crea o arborizație pe c
     <main>
       <h2>About This Workshop</h2>
       <p>
-        The first day provides an introduction to the fundamentals of the web: HTML, CSS and JavaScript.
+        Prima zi furnizează o indroducere în bazele web-ului: HTML, CSS și JavaScript.
       </p>
       <img src="../../assets/todo_screenshot.jpg" alt="Picture of the Todo App we will build" />
       <p>
-        On the second day we'll dive into more advanced topics like TypeScript, testing, and state management.
+        În ziua a doua  second ne vom aprofunda în subiecte mult mai avansate precum TypeScript, testare, și managementul stării.
       </p>
     </main>
     <footer>
